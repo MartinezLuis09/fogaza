@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Fogaza</title>
+    <link rel="shortcut icon" href="ecommerce/recursos/img/logo/logo.png" type="image/x-icon">
+
+    <!-- ICON-FONT [FONTELLO] -->
+    <!-- https://fontello.com/ -->
+    <link rel="stylesheet" href="ecommerce/recursos/fontello/css/fontello.css">
+    <link rel="stylesheet" href="ecommerce/recursos/fontello/css/animation.css">
+
+    <!-- BOOTSTRAP -->
+    <!-- https://getbootstrap.com/docs/5.2/getting-started/introduction/ -->
+    <link rel="stylesheet" href="ecommerce/recursos/bootstrap-5.2.0/css/bootstrap.min.css">
+    <script src="ecommerce/recursos/bootstrap-5.2.0/popper.js"></script>
+    <script src="ecommerce/recursos/bootstrap-5.2.0/js/bootstrap.min.js"></script>
+
+    <!-- JQUERY -->
+    <!-- https://jquery.com/ -->
+    <script src="ecommerce/recursos/jQuery-3.6.0/jquery-3.6.0.min.js"></script>
+
+    <!-- ANIMATION CSS -->
+    <!-- https://animate.style/ -->
+    <link rel="stylesheet" href="ecommerce/recursos/plugins/animate/animate.min.css">
+
+    <!-- SWEETALERT -->
+    <!-- https://sweetalert2.github.io/ -->
+    <link rel="stylesheet" href="ecommerce/recursos/plugins/sweetalert2/package/dist/sweetalert2.min.css">
+    <script src="ecommerce/recursos/plugins/sweetalert2/package/dist/sweetalert2.all.min.js"></script>
+
+    <!-- AOS Framework -->
+    <!-- https://michalsnik.github.io/aos/ -->
+    <link rel="stylesheet" href="ecommerce/recursos/plugins/aos-master/dist/aos.css">
+    <script src="ecommerce/recursos/plugins/aos-master/dist/aos.js"></script>
+
+    <link rel="stylesheet" href="ecommerce/recursos/css/style.css">
+</head>
+
+<body>
+    <!-- BARRA DE MENÚ -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <div class="container">
+                <a class="navbar-brand d-none d-sm-block" href="./">
+                    <img src="ecommerce/recursos/img/logo/logo.png" alt="" height="48">
+                </a>
+            </div>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse me-0 me-sm-5" id="navbarNavDropdown">
+                <ul class="navbar-nav justify-content-end">
+
+                    <form class="d-flex col-12 col-sm-12 mt-3 mt-sm-3 mt-lg-0">
+                        <div class="input-group flex-nowrap" >
+                            <input type="text" class="form-control" placeholder="Búsqueda" aria-label="Buscador de productos"
+                                aria-describedby="addon-wrapping" id="iptBusqueda">
+                            <span class="input-group-text bg-danger text-white pointer border-none btnBusqueda" id="addon-wrapping"><i
+                                    class="icon-search"></i></span>
+                        </div>
+                    </form>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="pedidos.html">Pedidos</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="contacto.html">Contacto</a>
+                    </li>
+
+                    <li class="nav-item dropdown  animate__animated animate__headShake" style="z-index:2;">
+                        <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdownMenuLink" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Mi cuenta
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="#" id="btnLogin"><i class="icon-user"></i> Iniciar Sesión</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#"><i class="icon-pencil"></i> Registrarse</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown collapse">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Leonardo Martínez
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="#"><i class="icon-user"></i> Perfil</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#"><i class="icon-off"></i> Cerrar Sesión</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item collapse">
+                        <a class="nav-link " href="#">Mis compras</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="carrito.html"><i class="icon-basket"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ENCABEZADO CATEGORIAS -->
+    <div class="bg-light pt-3 ps-3 mb-2">
+        <div class="col-12 ">
+            <nav class="text-uppercase" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="./"
+                            class="txt-none bold text-danger txt-hover-reset">INICIO</a></li>
+                    <li class="breadcrumb-item active bold" aria-current="page">CARRITO</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <main>
+        <!-- PRODUCTOS -->
+        <section class="container">
+            <div class="row">
+                <div class="card p-0">
+                    <div class="card-header fw-bold">
+                        CARRITO DE COMPRAS
+                    </div>
+                    <div class="card-body p-sm-2 p-md-4 p-lg-4 p-xl-4">
+                        <div class="row">
+                            <div class="card-text text-center collapse">
+                                <p class="text-muted fs-5"><i class="icon-basket"></i> Su carrito de compras está vacío.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="card-text col-4 col-sm-4 col-md-4 col-lg-2 col-xl-2">
+                                <img src="ecommerce/recursos/img/productos/principal/default.png" width="100px" alt="">
+                            </div>
+                            <div class="card-text col-8 col-sm-8 col-md-8 col-lg-4 col-xl-5">
+                                <p class="text-uppercase fw-bold">PRODUCTO #</p>
+                                <p class="text-muted m-0">Sabor: #</p>
+                                <p class="text-muted m-0">Tamaño: #</p>
+                                <p class="text-muted m-0 ellipsis-2">Lorem ipsum dolor sit amet consectetur adipisicing
+                                    elit. Consequatur tempore maiores possimus ipsum, nulla quae esse corporis voluptate
+                                    fuga laboriosam numquam dolor perspiciatis minus et totam facere veritatis. Numquam,
+                                    nihil?</p>
+                            </div>
+                            <div class="card-text col-6 col-sm-6 col-md-6 col-lg-3 col-xl-2">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text bg-white pointer" id="iptMinus"
+                                        aria-label="Restar cantidad"><i class="icon-minus"></i></span>
+                                    <input type="text" class="form-control c-auto text-center" id="iptCantidad"
+                                        precio="10.5" aria-label="cantidad" value="1" readonly>
+                                    <span class="input-group-text bg-white pointer" aria-label="Sumar cantidad"
+                                        id="iptPlus"><i class="icon-plus"></i></span>
+                                </div>
+                            </div>
+                            <div class="card-text col-3 col-sm-2 col-md-3 col-lg-2 col-xl-2 text-center">
+                                <p class="fw-bold">$ 0.00</p>
+                            </div>
+                            <div class="card-text col-3 col-sm-2 col-md-3 col-lg-1 col-xl-1 text-center">
+                                <button class="btn btn-outline-danger"><i class="icon-trash"></i></button>
+                            </div>
+                            <hr>
+                        </div>
+                        <div class="row">
+                            <div class="card-text col-4 col-sm-4 col-md-4 col-lg-2 col-xl-2">
+                                <img src="ecommerce/recursos/img/productos/principal/default.png" width="100px" alt="">
+                            </div>
+                            <div class="card-text col-8 col-sm-8 col-md-8 col-lg-4 col-xl-5">
+                                <p class="text-uppercase fw-bold">PRODUCTO #</p>
+                                <p class="text-muted m-0">Sabor: #</p>
+                                <p class="text-muted m-0">Tamaño: #</p>
+                                <p class="text-muted m-0 ellipsis-2">Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Consequatur tempore maiores possimus ipsum, nulla quae esse
+                                    corporis voluptate fuga laboriosam numquam dolor perspiciatis minus et totam
+                                    facere veritatis. Numquam, nihil?</p>
+                            </div>
+                            <div class="card-text col-6 col-sm-6 col-md-6 col-lg-3 col-xl-2">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text bg-white pointer" id="iptMinus"
+                                        aria-label="Restar cantidad"><i class="icon-minus"></i></span>
+                                    <input type="text" class="form-control c-auto text-center" id="iptCantidad"
+                                        precio="10.5" aria-label="cantidad" value="1" readonly>
+                                    <span class="input-group-text bg-white pointer" aria-label="Sumar cantidad"
+                                        id="iptPlus"><i class="icon-plus"></i></span>
+                                </div>
+                            </div>
+                            <div class="card-text col-3 col-sm-2 col-md-3 col-lg-2 col-xl-2 text-center">
+                                <p class="fw-bold">$ 0.00</p>
+                            </div>
+                            <div class="card-text col-3 col-sm-2 col-md-3 col-lg-1 col-xl-1 text-center">
+                                <button class="btn btn-outline-danger"><i class="icon-trash"></i></button>
+                            </div>
+                            <hr>
+                        </div>
+                        <div class="row">
+                            <div class="card-text col-4 col-sm-4 col-md-4 col-lg-2 col-xl-2">
+                                <img src="ecommerce/recursos/img/productos/principal/default.png" width="100px" alt="">
+                            </div>
+                            <div class="card-text col-8 col-sm-8 col-md-8 col-lg-4 col-xl-5">
+                                <p class="text-uppercase fw-bold">PRODUCTO #</p>
+                                <p class="text-muted m-0">Sabor: #</p>
+                                <p class="text-muted m-0">Tamaño: #</p>
+                                <p class="text-muted m-0 ellipsis-2">Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Consequatur tempore maiores possimus ipsum, nulla quae
+                                    esse corporis voluptate fuga laboriosam numquam dolor perspiciatis minus et
+                                    totam facere veritatis. Numquam, nihil?</p>
+                            </div>
+                            <div class="card-text col-6 col-sm-6 col-md-6 col-lg-3 col-xl-2">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text bg-white pointer" id="iptMinus"
+                                        aria-label="Restar cantidad"><i class="icon-minus"></i></span>
+                                    <input type="text" class="form-control c-auto text-center" id="iptCantidad"
+                                        precio="10.5" aria-label="cantidad" value="1" readonly>
+                                    <span class="input-group-text bg-white pointer" aria-label="Sumar cantidad"
+                                        id="iptPlus"><i class="icon-plus"></i></span>
+                                </div>
+                            </div>
+                            <div class="card-text col-3 col-sm-2 col-md-3 col-lg-2 col-xl-2 text-center">
+                                <p class="fw-bold">$ 0.00</p>
+                            </div>
+                            <div class="card-text col-3 col-sm-2 col-md-3 col-lg-1 col-xl-1 text-center">
+                                <button class="btn btn-outline-danger"><i class="icon-trash"></i></button>
+                            </div>
+                            <hr>
+                        </div>
+                    </div>
+                    <div class="card-footer text-center text-md-center text-lg-end">
+                        <button class="btn btn-danger col-11 col-sm-10 col-lg-5 col-xl-3">Continuar</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="bg-dark mt-4">
+            <div class="col text-center text-light p-3">
+                <strong style="color:#A8A8A8;"> <i class="icon-copyright"></i> 2022 Copyright </strong> La Fogaza.
+                Tapachula, Chiapas
+            </div>
+        </div>
+    </footer>
+
+    <script src="ecommerce/recursos/js/index.js"></script>
+
+    <script>
+        AOS.init();
+    </script>
+</body>
+
+</html>

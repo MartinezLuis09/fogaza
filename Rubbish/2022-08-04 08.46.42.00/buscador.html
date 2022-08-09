@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Fogaza</title>
+    <link rel="shortcut icon" href="ecommerce/recursos/img/logo/logo.png" type="image/x-icon">
+
+    <!-- ICON-FONT [FONTELLO] -->
+    <!-- https://fontello.com/ -->
+    <link rel="stylesheet" href="ecommerce/recursos/fontello/css/fontello.css">
+    <link rel="stylesheet" href="ecommerce/recursos/fontello/css/animation.css">
+
+    <!-- BOOTSTRAP -->
+    <!-- https://getbootstrap.com/docs/5.2/getting-started/introduction/ -->
+    <link rel="stylesheet" href="ecommerce/recursos/bootstrap-5.2.0/css/bootstrap.min.css">
+    <script src="ecommerce/recursos/bootstrap-5.2.0/popper.js"></script>
+    <script src="ecommerce/recursos/bootstrap-5.2.0/js/bootstrap.min.js"></script>
+
+    <!-- JQUERY -->
+    <!-- https://jquery.com/ -->
+    <script src="ecommerce/recursos/jQuery-3.6.0/jquery-3.6.0.min.js"></script>
+
+    <!-- ANIMATION CSS -->
+    <!-- https://animate.style/ -->
+    <link rel="stylesheet" href="ecommerce/recursos/plugins/animate/animate.min.css">
+
+    <!-- SWEETALERT -->
+    <!-- https://sweetalert2.github.io/ -->
+    <link rel="stylesheet" href="ecommerce/recursos/plugins/sweetalert2/package/dist/sweetalert2.min.css">
+    <script src="ecommerce/recursos/plugins/sweetalert2/package/dist/sweetalert2.all.min.js"></script>
+
+    <!-- AOS Framework -->
+    <!-- https://michalsnik.github.io/aos/ -->
+    <link rel="stylesheet" href="ecommerce/recursos/plugins/aos-master/dist/aos.css">
+    <script src="ecommerce/recursos/plugins/aos-master/dist/aos.js"></script>
+
+    <link rel="stylesheet" href="ecommerce/recursos/css/style.css">
+</head>
+
+<body>
+    <!-- BARRA DE MENÚ -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <div class="container">
+                <a class="navbar-brand d-none d-sm-block" href="./">
+                    <img src="ecommerce/recursos/img/logo/logo.png" alt="" height="48">
+                </a>
+            </div>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse me-0 me-sm-5" id="navbarNavDropdown">
+                <ul class="navbar-nav justify-content-end">
+
+                    <form class="d-flex col-12 col-sm-12 mt-3 mt-sm-3 mt-lg-0">
+                        <div class="input-group flex-nowrap" >
+                            <input type="text" class="form-control" placeholder="Búsqueda" aria-label="Buscador de productos"
+                                aria-describedby="addon-wrapping" id="iptBusqueda">
+                            <span class="input-group-text bg-danger text-white pointer border-none btnBusqueda" id="addon-wrapping"><i
+                                    class="icon-search"></i></span>
+                        </div>
+                    </form>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="pedidos.html">Pedidos</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="contacto.html">Contacto</a>
+                    </li>
+
+                    <li class="nav-item dropdown  animate__animated animate__headShake" style="z-index:2;">
+                        <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdownMenuLink" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Mi cuenta
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="#" id="btnLogin"><i class="icon-user"></i> Iniciar Sesión</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#"><i class="icon-pencil"></i> Registrarse</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown collapse">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Leonardo Martínez
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="#"><i class="icon-user"></i> Perfil</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#"><i class="icon-off"></i> Cerrar Sesión</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item collapse">
+                        <a class="nav-link " href="#">Mis compras</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="carrito.html"><i class="icon-basket"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ENCABEZADO CATEGORIAS -->
+    <div class="row bg-light pt-3 ps-3 mb-2">
+        <div class=" col-12 col-sm-10 col-lg-6">
+        <nav class="text-uppercase" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="./" class="txt-none bold text-danger txt-hover-reset">SEGUIR
+                        COMPRANDO</a></li>
+                <li class="breadcrumb-item active bold" id="productoBuscado" aria-current="page"></li>
+            </ol>
+        </nav>
+    </div>
+
+    <div class="col-4 col-sm-2 col-lg-6 d-none d-sm-flex flex-row-reverse">
+        <button type="button" class="btn btn-default" id="btnGridList"><i class="icon-th-list"></i></button>
+        <button type="button" class="btn btn-default" id="btnGridCol"><i class="icon-th"></i></button>
+    </div>
+    </div>
+
+    <main>
+        <!-- PRODUCTOS -->
+        <section class="container">
+            <div class="row">
+                <div class="gridProduct pointer col-6 col-lg-3 pt-4" producto="1">
+                    <div class="card">
+                        <div class="rowList">
+                            <div class="imgList" data-aos="fade-up">
+                                <img src="ecommerce/recursos/img/productos/principal/default.png" class="card-img-top"
+                                    alt="...">
+                            </div>
+                            <div class="bodyList">
+                                <div class="card-body">
+                                    <p class="card-title text-uppercase m-0"><strong>producto #</strong></p>
+                                    <h4 class="card-text">$ 0.00</h4>
+                                    <p class="card-text">
+                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry...
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="gridProduct pointer col-6 col-lg-3 pt-4">
+                    <div class="card">
+                        <div class="rowList">
+                            <div class="imgList" data-aos="fade-up">
+                                <img src="ecommerce/recursos/img/productos/principal/default.png" class="card-img-top"
+                                    alt="...">
+                            </div>
+                            <div class="bodyList">
+                                <div class="card-body">
+                                    <p class="card-title text-uppercase m-0"><strong>PRODUCTO #</strong></p>
+                                    <h4 class="card-text">$ 0.00</h4>
+                                    <p class="card-text">
+                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry...
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="gridProduct pointer col-6 col-lg-3 pt-4">
+                    <div class="card">
+                        <div class="rowList">
+                            <div class="imgList" data-aos="fade-up">
+                                <img src="ecommerce/recursos/img/productos/principal/default.png" class="card-img-top"
+                                    alt="...">
+                            </div>
+                            <div class="bodyList">
+                                <div class="card-body">
+                                    <p class="card-title text-uppercase m-0"><strong>PRODUCTO #</strong></p>
+                                    <h4 class="card-text">$ 0.00</h4>
+                                    <p class="card-text">
+                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry...
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="gridProduct pointer col-6 col-lg-3 pt-4">
+                    <div class="card">
+                        <div class="rowList">
+                            <div class="imgList" data-aos="fade-up">
+                                <img src="ecommerce/recursos/img/productos/principal/default.png" class="card-img-top"
+                                    alt="...">
+                            </div>
+                            <div class="bodyList">
+                                <div class="card-body">
+                                    <p class="card-title text-uppercase m-0"><strong>PRODUCTO #</strong></p>
+                                    <h4 class="card-text">$ 0.00</h4>
+                                    <p class="card-text">
+                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry...
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="gridProduct pointer col-6 col-lg-3 pt-4">
+                    <div class="card">
+                        <div class="rowList">
+                            <div class="imgList" data-aos="fade-up" data-aos-offset="150">
+                                <img src="ecommerce/recursos/img/productos/principal/default.png" class="card-img-top"
+                                    alt="...">
+                            </div>
+                            <div class="bodyList">
+                                <div class="card-body">
+                                    <p class="card-title text-uppercase m-0"><strong>PRODUCTO #</strong></p>
+                                    <h4 class="card-text">$ 0.00</h4>
+                                    <p class="card-text">
+                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry...
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="gridProduct pointer col-6 col-lg-3 pt-4">
+                    <div class="card">
+                        <div class="rowList">
+                            <div class="imgList" data-aos="fade-up" data-aos-offset="150">
+                                <img src="ecommerce/recursos/img/productos/principal/default.png" class="card-img-top"
+                                    alt="...">
+                            </div>
+                            <div class="bodyList">
+                                <div class="card-body">
+                                    <p class="card-title text-uppercase m-0"><strong>PRODUCTO #</strong></p>
+                                    <h4 class="card-text">$ 0.00</h4>
+                                    <p class="card-text">
+                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry...
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="gridProduct pointer col-6 col-lg-3 pt-4">
+                    <div class="card">
+                        <div class="rowList">
+                            <div class="imgList" data-aos="fade-up" data-aos-offset="150">
+                                <img src="ecommerce/recursos/img/productos/principal/default.png" class="card-img-top"
+                                    alt="...">
+                            </div>
+                            <div class="bodyList">
+                                <div class="card-body">
+                                    <p class="card-title text-uppercase m-0"><strong>PRODUCTO #</strong></p>
+                                    <h4 class="card-text">$ 0.00</h4>
+                                    <p class="card-text">
+                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry...
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="gridProduct pointer col-6 col-lg-3 pt-4">
+                    <div class="card">
+                        <div class="rowList">
+                            <div class="imgList" data-aos="fade-up" data-aos-offset="150">
+                                <img src="ecommerce/recursos/img/productos/principal/default.png" class="card-img-top"
+                                    alt="...">
+                            </div>
+                            <div class="bodyList">
+                                <div class="card-body">
+                                    <p class="card-title text-uppercase m-0"><strong>PRODUCTO #</strong></p>
+                                    <h4 class="card-text">$ 0.00</h4>
+                                    <p class="card-text">
+                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry...
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="gridProduct pointer col-6 col-lg-3 pt-4">
+                    <div class="card">
+                        <div class="rowList">
+                            <div class="imgList" data-aos="fade-up" data-aos-offset="150">
+                                <img src="ecommerce/recursos/img/productos/principal/default.png" class="card-img-top"
+                                    alt="...">
+                            </div>
+                            <div class="bodyList">
+                                <div class="card-body">
+                                    <p class="card-title text-uppercase m-0"><strong>PRODUCTO #</strong></p>
+                                    <h4 class="card-text">$ 0.00</h4>
+                                    <p class="card-text">
+                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry...
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="gridProduct pointer col-6 col-lg-3 pt-4">
+                    <div class="card">
+                        <div class="rowList">
+                            <div class="imgList" data-aos="fade-up" data-aos-offset="150">
+                                <img src="ecommerce/recursos/img/productos/principal/default.png" class="card-img-top"
+                                    alt="...">
+                            </div>
+                            <div class="bodyList">
+                                <div class="card-body">
+                                    <p class="card-title text-uppercase m-0"><strong>PRODUCTO #</strong></p>
+                                    <h4 class="card-text">$ 0.00</h4>
+                                    <p class="card-text">
+                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry...
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="gridProduct pointer col-6 col-lg-3 pt-4">
+                    <div class="card">
+                        <div class="rowList">
+                            <div class="imgList" data-aos="fade-up" data-aos-offset="150">
+                                <img src="ecommerce/recursos/img/productos/principal/default.png" class="card-img-top"
+                                    alt="...">
+                            </div>
+                            <div class="bodyList">
+                                <div class="card-body">
+                                    <p class="card-title text-uppercase m-0"><strong>PRODUCTO #</strong></p>
+                                    <h4 class="card-text">$ 0.00</h4>
+                                    <p class="card-text">
+                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry...
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="gridProduct pointer col-6 col-lg-3 pt-4">
+                    <div class="card">
+                        <div class="rowList">
+                            <div class="imgList" data-aos="fade-up" data-aos-offset="150">
+                                <img src="ecommerce/recursos/img/productos/principal/default.png" class="card-img-top"
+                                    alt="...">
+                            </div>
+                            <div class="bodyList">
+                                <div class="card-body">
+                                    <p class="card-title text-uppercase m-0"><strong>PRODUCTO #</strong></p>
+                                    <h4 class="card-text">$ 0.00</h4>
+                                    <p class="card-text">
+                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry...
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="row bg-dark mt-4">
+            <div class="col text-center text-light p-3">
+                <strong style="color:#A8A8A8;"> <i class="icon-copyright"></i> 2022 Copyright </strong> La Fogaza.
+                Tapachula, Chiapas
+            </div>
+        </div>
+    </footer>
+
+    <script src="ecommerce/recursos/js/index.js"></script>
+    <script src="ecommerce/recursos/js/buscador.js"></script>
+
+    <script>
+        AOS.init();
+    </script>
+</body>
+
+</html>
