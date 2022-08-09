@@ -66,7 +66,7 @@
                                             <input type="email" class="form-control" id="floatingInput"
                                                 placeholder="correo@dominio.com">
                                             <label for="floatingInput" aria-label="Correo electrónico ó email"><i
-                                                    class="icon-at"></i> Correo electrónico</label>
+                                                    class="icon-at"></i> Correo </label>
                                         </div>
                                     </div>
                                     <div class="col-12 col-sm-3">
