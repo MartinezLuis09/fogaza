@@ -3,7 +3,6 @@
 
 <?php
  include("header.php");
- include("navbar.php");
  ?>
 
 <body>
@@ -12,7 +11,7 @@
         <div class="col-12">
             <nav class="text-uppercase" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="./" class="txt-none bold text-danger txt-hover-reset">INICIO</a></li>
+                    <li class="breadcrumb-item"><a href="index.php" class="txt-none bold text-danger txt-hover-reset">INICIO</a></li>
                     <li class="breadcrumb-item active bold" aria-current="page">PRODUCTO #</li>
                 </ol>
             </nav>
@@ -140,14 +139,9 @@
         </section>
     </main>
 
-    <footer>
-        <div class="bg-dark mt-4">
-            <div class="col text-center text-light p-3">
-                <strong style="color:#A8A8A8;"> <i class="icon-copyright"></i> 2022 Copyright </strong> La Fogaza.
-                Tapachula, Chiapas
-            </div>
-        </div>
-    </footer>
+    <?php
+ include("footer.php");
+ ?>
 
     <script src="../recursos/js/index.min.js"></script>
     <script src="../recursos/js/producto.min.js"></script>

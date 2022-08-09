@@ -135,7 +135,9 @@
                 </div>
         </section>
     </main>
-
+    <?php
+ include("footer.php");
+ ?>
     <!-- BOOTSTRAP -->
     <!-- https://getbootstrap.com/docs/5.2/getting-started/introduction/ -->
     <script src="../recursos/bootstrap-5.2.0/popper.js"></script>
@@ -158,10 +160,6 @@
     <script>
         AOS.init();
     </script>
-
-<?php
- include("footer.php");
- ?>
 </body>
 
 </html>
