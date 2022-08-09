@@ -1,7 +1,7 @@
 <?php
-    require("header.php");
+    include("header.php");
     require("navbar.php");
-    include("slider.php");
-    include("buscador.php");
-    require("footer.php");
+    require("slider.php");
+    require("buscador.php");
+    include("footer.php");
 ?>

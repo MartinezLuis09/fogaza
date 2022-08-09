@@ -141,7 +141,7 @@
  include("footer.php");
  ?>
 
-    <script src="ecommerce/recursos/js/index.js"></script>
+    <script src="../recursos/js/index.js"></script>
 
     <script>
         AOS.init();

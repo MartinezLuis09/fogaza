@@ -7,5 +7,5 @@
     </div>
 </footer>
 
-<script src="ecommerce/recursos/bootstrap-5.2.0/popper.js"></script>
-<script src="ecommerce/recursos/bootstrap-5.2.0/js/bootstrap.min.js"></script>
+<script src="../recursos/bootstrap-5.2.0/popper.js"></script>
+<script src="../recursos/bootstrap-5.2.0/js/bootstrap.min.js"></script>

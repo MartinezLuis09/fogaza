@@ -158,8 +158,8 @@
         </section>
     </main>
 
-    <script src="/recursos/js/index.js"></script>
-    <script src="/recursos/js/buscador.js"></script>
+    <script src="../recursos/js/index.js"></script>
+    <script src="../recursos/js/buscador.js"></script>
 
     <script>
         AOS.init();

@@ -138,22 +138,22 @@
 
     <!-- BOOTSTRAP -->
     <!-- https://getbootstrap.com/docs/5.2/getting-started/introduction/ -->
-    <script src="ecommerce/recursos/bootstrap-5.2.0/popper.js"></script>
-    <script src="ecommerce/recursos/bootstrap-5.2.0/js/bootstrap.min.js"></script>
+    <script src="../recursos/bootstrap-5.2.0/popper.js"></script>
+    <script src="../recursos/bootstrap-5.2.0/js/bootstrap.min.js"></script>
 
     <!-- JQUERY -->
     <!-- https://jquery.com/ -->
-    <script src="ecommerce/recursos/jQuery-3.6.0/jquery-3.6.0.min.js"></script>
+    <script src="../recursos/jQuery-3.6.0/jquery-3.6.0.min.js"></script>
 
     <!-- SWEETALERT -->
     <!-- https://sweetalert2.github.io/ -->
-    <script src="ecommerce/recursos/plugins/sweetalert2/package/dist/sweetalert2.all.min.js"></script>
+    <script src="../recursos/plugins/sweetalert2/package/dist/sweetalert2.all.min.js"></script>
 
     <!-- AOS Framework -->
     <!-- https://michalsnik.github.io/aos/ -->
-    <script src="ecommerce/recursos/plugins/aos-master/dist/aos.js"></script>
+    <script src="../recursos/plugins/aos-master/dist/aos.js"></script>
 
-    <script src="ecommerce/recursos/js/index.js"></script>
+    <script src="../recursos/js/index.js"></script>
 
     <script>
         AOS.init();

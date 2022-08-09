@@ -42,7 +42,7 @@
             </div>
         </section>
     </main>
-    <script src="ecommerce/recursos/js/index.min.js"></script>
+    <script src="../recursos/js/index.min.js"></script>
 
     <script>
         AOS.init();

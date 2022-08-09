@@ -149,8 +149,8 @@
         </div>
     </footer>
 
-    <script src="ecommerce/recursos/js/index.min.js"></script>
-    <script src="ecommerce/recursos/js/producto.min.js"></script>
+    <script src="../recursos/js/index.min.js"></script>
+    <script src="../recursos/js/producto.min.js"></script>
 
     <script>
         AOS.init();
