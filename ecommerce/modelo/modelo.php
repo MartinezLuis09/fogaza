@@ -1,10 +1,11 @@
 <?php
-
 include_once('_CRUD.php');
+
 Class ClaseModulo extends CRUD {
-    function nombreFuncion1 () {
-        $query = "SELECT * FROM ASDASD";
-        $sql = $this->_Select($query,null,"1");
+    function nombreFuncion1 ($u,$p) {
+        $array = array($u,$p);
+        $query = "SELECT * FROM usuarios WHERE user = ? AND pass = ?";
+        $sql = $this->_Select($query,$array,"1");
         
         // se retorna consulta especifica
         // foreach($sql as $row);

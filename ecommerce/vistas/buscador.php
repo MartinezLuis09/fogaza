@@ -4,7 +4,9 @@
 
 <?php
  include("header.php");
+ include("navbar.php");
  ?>
+
 
 <body>
    
@@ -157,13 +159,16 @@
             </div>
         </section>
     </main>
-
+    <?php
+ include("footer.php");
+ ?>
     <script src="../recursos/js/index.js"></script>
     <script src="../recursos/js/buscador.js"></script>
 
     <script>
         AOS.init();
     </script>
+    
 </body>
 
 </html>

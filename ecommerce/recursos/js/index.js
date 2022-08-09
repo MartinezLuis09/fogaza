@@ -1,3 +1,25 @@
+$(function() {
+  let datos = new FormData();
+  datos.append("opc", 1);
+  /* datos.append("date", $("#dateRetiros").val());
+ */
+  $.ajax({
+    type: "POST",
+    url: "../controlador/controlador.php",
+    contentType: false,
+    data: datos,
+    processData: false,
+    cache: false,
+    /* beforeSend: function () {
+      $("#tablaRetiros").html(load);
+    }, */
+    success: function (respuesta) {
+       $(".breadcrumb-item a").html(respuesta); 
+      console.log("consultaAjax",respuesta);
+    },
+  });
+});
+
 $("#btnGridList").click(function () {
   //convierto a lista
   $(this).addClass("active");
@@ -34,7 +56,7 @@ $(".gridProduct").click(function () {
   localStorage.setItem("nameProducto", nameProducto);
   localStorage.setItem("precio", precio);
   setInterval(() => {
-    window.location.href = "producto.html";
+    window.location.href = "producto.php";
   }, 100);
 });
 
@@ -53,7 +75,7 @@ $("#iptBusqueda").keydown(function (e) {
     } else {
       let producto = $(this).val();
       sessionStorage.setItem("productoBuscado", producto);
-      window.location.href = "buscador.html";
+      window.location.href = "buscador.php";
     }
     e.preventDefault();
   }
@@ -66,6 +88,6 @@ $(".btnBusqueda").click(function () {
   } else {
     let producto = $(this).val();
     sessionStorage.setItem("productoBuscado", producto);
-    window.location.href = "buscador.html";
+    window.location.href = "buscador.php";
   }
 });

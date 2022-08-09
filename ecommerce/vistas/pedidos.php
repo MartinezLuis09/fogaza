@@ -42,13 +42,14 @@
             </div>
         </section>
     </main>
+    <?php
+ include("footer.php");
+ ?>
     <script src="../recursos/js/index.min.js"></script>
 
     <script>
         AOS.init();
     </script>
-    <?php
- include("footer.php");
- ?>
+
 </body>
 </html>
