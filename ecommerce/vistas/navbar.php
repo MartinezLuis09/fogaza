@@ -2,7 +2,7 @@
         <div class="container-fluid">
             <div class="container">
                 <a class="navbar-brand col-1 d-none d-sm-block" href="./">
-                    <img src="ecommerce/recursos/img/logo/logo.png" alt="" height="48">
+                    <img src="../recursos/img/logo/logo.png" alt="" height="48">
                 </a>
             </div>
 
@@ -23,11 +23,11 @@
                     </form>
 
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="pedidos.html">Pedidos</a>
+                        <a class="nav-link text-light" href="pedidos.php">Pedidos</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="contacto.html">Contacto</a>
+                        <a class="nav-link text-light" href="contacto.php">Contacto</a>
                     </li>
 
                     <li class="nav-item dropdown  animate__animated animate__headShake" style="z-index:2;">
@@ -61,7 +61,7 @@
                         <a class="nav-link " href="#">Mis compras</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="carrito.html"><i class="icon-basket"></i></a>
+                        <a class="nav-link text-light" href="carrito.php"><i class="icon-basket"></i></a>
                     </li>
                 </ul>
             </div>
