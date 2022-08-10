@@ -10,9 +10,9 @@ function consultaAjax() {
     data: datos,
     processData: false,
     cache: false,
-    beforeSend: function () {
+  /*   beforeSend: function () {
       $("#tablaRetiros").html(load);
-    },
+    }, */
     success: function (respuesta) {
       $("#tablaRetiros").html(respuesta);
       console.log("consultaAjax",respuesta);

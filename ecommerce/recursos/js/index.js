@@ -14,8 +14,8 @@ $(function() {
       $("#tablaRetiros").html(load);
     }, */
     success: function (respuesta) {
-       $(".breadcrumb-item a").html(respuesta); 
-      console.log("consultaAjax",respuesta);
+/*        $(".breadcrumb-item a").html(respuesta); 
+ */      console.log("consultaAjax",respuesta);
     },
   });
 });
