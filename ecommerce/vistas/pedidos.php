@@ -66,7 +66,7 @@
                                             <input type="email" class="form-control" id="floatingInput"
                                                 placeholder="correo@dominio.com">
                                             <label for="floatingInput" aria-label="Correo electrónico ó email"><i
-                                                    class="icon-at"></i> Correo </label>
+                                                    class="icon-at"></i> Correo electrónico</label>
                                         </div>
                                     </div>
                                     <div class="col-12 col-sm-3">
@@ -232,7 +232,7 @@
     <?php
  include("footer.php");
  ?>
-    <script src="../recursos/js/index.min.js"></script>
+    <script src="../recursos/js/index.js"></script>
 
     <script>
         AOS.init();
