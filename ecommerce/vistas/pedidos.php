@@ -2,9 +2,9 @@
 <html lang="es">
 
 <?php
- include("header.php");
- include("navbar.php");
- ?>
+include("header.php");
+include("navbar.php");
+?>
 
 <body>
     <!-- ENCABEZADO CATEGORIAS -->
@@ -30,87 +30,90 @@
                             <div class="card-body">
                                 <h5 class="card-title fw-bold text-uppercase text-center">Solicitud de Pedido</h5>
 
-                                <div class="card-text row">
-                                    <div class="col-12 col-sm-3">
-                                        <div class="form-floating mb-3">
-                                            <input type="text" class="form-control" id="floatingInput"
-                                                placeholder="00/00/0000">
-                                            <label for="floatingInput" aria-label="Fecha"><i
-                                                    class="icon-calendar-2"></i>
-                                                Fecha</label>
+                                <fieldset disabled>
+                                    <div class="card-text row">
+                                        <div class="col-12 col-sm-3">
+                                            <div class="form-floating mb-3">
+                                                <input type="text" class="form-control" id="fechaActual"
+                                                    placeholder="00/00/0000">
+                                                <label for="fechaActual" aria-label="Fecha Actual"><i
+                                                        class="icon-calendar-2"></i>
+                                                    Fecha</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-sm-6"></div>
+                                        <div class="col-12 col-sm-3">
+                                            <div class="form-floating mb-3">
+                                                <input type="number" class="form-control" id="folioPedido"
+                                                    placeholder="000">
+                                                <label for="folioPedido" aria-label="Folio"><i class="icon-hash"></i>
+                                                    Numero de Pedido</label>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="col-12 col-sm-6"></div>
-                                    <div class="col-12 col-sm-3">
-                                        <div class="form-floating mb-3">
-                                            <input type="number" class="form-control" id="floatingInput"
-                                                placeholder="000">
-                                            <label for="floatingInput" aria-label="Folio"><i class="icon-hash"></i>
-                                                Numero de Pedido</label>
+
+                                    <div class="card-text row">
+                                        <div class="col-12 col-sm-4">
+                                            <div class="form-floating mb-3">
+                                                <input type="text" class="form-control" id="nombreCliente"
+                                                    placeholder="Juan Perez Lopez">
+                                                <label for="nombreCliente" aria-label="Nombre Completo"><i
+                                                        class="icon-user"></i> Nombre Completo</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-sm-5">
+                                            <div class="form-floating mb-3">
+                                                <input type="email" class="form-control" id="email"
+                                                    placeholder="correo@dominio.com">
+                                                <label for="email" aria-label="Correo electrónico ó email"><i
+                                                        class="icon-at"></i> Correo Electronico </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-sm-3">
+                                            <div class="form-floating mb-3">
+                                                <input type="number" class="form-control" id="telefono"
+                                                    placeholder="962 000 00 00">
+                                                <label for="telefono" aria-label="Telefono"><i class="icon-phone-1"></i>
+                                                    Teléfono</label>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                </fieldset>
 
 
                                 <div class="card-text row">
                                     <div class="col-12 col-sm-4">
                                         <div class="form-floating mb-3">
-                                            <input type="text" class="form-control" id="floatingInput"
-                                                placeholder="Juan Perez Lopez">
-                                            <label for="floatingInput" aria-label="Nombre Completo"><i
-                                                    class="icon-user"></i> Nombre Completo</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-sm-5">
-                                        <div class="form-floating mb-3">
-                                            <input type="email" class="form-control" id="floatingInput"
-                                                placeholder="correo@dominio.com">
-                                            <label for="floatingInput" aria-label="Correo electrónico ó email"><i
-                                                    class="icon-at"></i> Correo </label>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-sm-3">
-                                        <div class="form-floating mb-3">
-                                            <input type="number" class="form-control" id="floatingInput"
-                                                placeholder="962 000 00 00">
-                                            <label for="floatingInput" aria-label="Telefono"><i
-                                                    class="icon-phone-1"></i> Teléfono</label>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                                <div class="card-text row">
-                                    <div class="col-12 col-sm-4">
-                                        <div class="form-floating mb-3">
-                                            <input type="text" class="form-control" id="floatingInput"
-                                                placeholder="Modelo">
-                                            <label for="floatingInput" aria-label="Modelo"><i class="icon-user"></i>
+                                            <input type="text" class="form-control" id="modelo" placeholder="Modelo">
+                                            <label for="modelo" aria-label="Modelo"><i class="icon-cube"></i>
                                                 Modelo</label>
                                         </div>
                                     </div>
                                     <div class="col-12 col-sm-4">
                                         <div class="form-floating mb-3">
-                                            <select id="floatingInput" class="form-select"
+                                            <select id="opcionRelleno" class="form-select"
                                                 placeholder="Selecciona una Opción">
-                                                <option selected>Selecciona una Opción</option>
-                                                <option>Opcion 1</option>
-                                                <option>Opcion 2</option>
+                                                <option selected value="Selecciona una Opción">Selecciona una Opción
+                                                </option>
+                                                <option value="Opcion 1">Opcion 1</option>
+                                                <option value="Opcion 2">Opcion 2</option>
                                             </select>
-                                            <label for="floatingInput" aria-label="Relleno"><i class="icon-at"></i>
+                                            <label for="opcionRelleno" aria-label="Relleno"><i
+                                                    class="icon-chart-pie-alt"></i>
                                                 Relleno</label>
                                         </div>
                                     </div>
                                     <div class="col-12 col-sm-4">
                                         <div class="form-floating mb-3">
-                                            <select id="floatingInput" class="form-select"
+                                            <select id="opcionSabor" class="form-select"
                                                 placeholder="Selecciona una Opción">
-                                                <option selected>Selecciona una Opción</option>
-                                                <option>3 Leches</option>
-                                                <option>Tradicional</option>
+                                                <option selected value="Selecciona una Opción">Selecciona una Opción
+                                                </option>
+                                                <option value="3 Leches">3 Leches</option>
+                                                <option value="Tradicional">Tradicional</option>
                                             </select>
-                                            <label for="floatingInput" aria-label="Sabor de Pan"><i
-                                                    class="icon-phone-1"></i> Sabor de Pan</label>
+                                            <label for="opcionSabor" aria-label="Sabor de Pan"><i
+                                                    class="icon-emo-wink2"></i> Sabor de Pan</label>
                                         </div>
                                     </div>
                                 </div>
@@ -118,41 +121,48 @@
 
                                 <div class="card-text">
                                     <div class="form-floating mb-3">
-                                        <input type="text" class="form-control" id="floatingInput"
-                                            placeholder="La Fogaza">
-                                        <label for="floatingInput" aria-label="Leyenda"><i class="icon-edit-1"></i>
+                                        <input type="text" class="form-control" id="leyenda" placeholder="La Fogaza">
+                                        <label for="leyenda" aria-label="Leyenda"><i class="icon-edit-1"></i>
                                             Leyenda del Pastel</label>
                                     </div>
                                 </div>
 
 
                                 <div class="card-text row">
-                                    <div class="col-12 col-sm-4">
+                                    <div class="col-12 col-sm-3">
                                         <div class="form-floating mb-3">
-                                            <input type="number" class="form-control" id="floatingInput"
+                                            <input type="number" class="form-control" id="kilosPersonas"
                                                 placeholder="00">
-                                            <label for="floatingInput" aria-label="Kilos o Número de Personas"><i
-                                                    class="icon-users"></i> Kilos o Número de Personas</label>
+                                            <label for="kilosPersonas" aria-label="Kilos o Número de Personas"><i
+                                                    class="icon-users"></i> Kilos / Número de Personas</label>
                                         </div>
                                     </div>
-                                    <div class="col-12 col-sm-4">
+                                    <div class="col-12 col-sm-3">
                                         <div class="form-floating mb-3">
-                                            <select id="floatingInput" class="form-select"
+                                            <select id="tipoEntrega" class="form-select"
                                                 placeholder="Selecciona una Opción">
-                                                <option selected>Selecciona una Opción</option>
-                                                <option>Envio Domicilio</option>
-                                                <option>Entrega en Tienda</option>
+                                                <option selected value="opc1">Selecciona una Opción</option>
+                                                <option value="Envio Domicilio">Envio Domicilio</option>
+                                                <option value="Entrega en Tienda">Entrega en Tienda</option>
                                             </select>
-                                            <label for="floatingInput" aria-label="Sabor de Pan"><i
+                                            <label for="tipoEntrega" aria-label="Sabor de Pan"><i
                                                     class="icon-truck"></i> Tipo de Entrega</label>
                                         </div>
                                     </div>
-                                    <div class="col-12 col-sm-4">
+                                    <div class="col-12 col-sm-3">
                                         <div class="form-floating mb-3">
-                                            <input type="datetime-local" class="form-control" id="floatingInput"
-                                                placeholder="dd/mm/aaaa --:-- --">
-                                            <label for="floatingInput" aria-label="Correo electrónico ó email"><i
-                                                    class="icon-clock"></i> Fecha y Hora de Entrega</label>
+                                            <input type="text" class="form-control text-center" id="fechaEntrega"
+                                                placeholder="dd/mm/aaaa">
+                                            <label for="fechaEntrega" aria-label="Fecha de Entrega"><i
+                                                    class="icon-calendar-2"></i> Fecha de Entrega</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-3">
+                                        <div class="form-floating mb-3">
+                                            <input type="time" class="form-control" id="horaEntrega"
+                                                placeholder="--:-- --">
+                                            <label for="horaEntrega" aria-label="Hora de Entrega"><i
+                                                    class="icon-clock"></i> Hora de Entrega</label>
                                         </div>
                                     </div>
                                 </div>
@@ -160,9 +170,9 @@
                                 <div class="card-text">
                                     <div class="form-floating mb-3">
                                         <textarea class="form-control textarea" placeholder="Direccion"
-                                            id="floatingTextarea2" style="height: 125px"></textarea>
-                                        <label for="floatingTextarea2" aria-label="Dirección"><i
-                                                class=" icon-map-pin"></i>
+                                            id="direccionEntrega" style="height: 75px"></textarea>
+                                        <label for="direccionEntrega" aria-label="Dirección"><i
+                                                class=" icon-location"></i>
                                             Direccion</label>
                                     </div>
                                 </div>
@@ -171,33 +181,33 @@
                                 <div class="card-text row">
                                     <div class="col-12 col-sm-3">
                                         <div class="form-floating mb-3">
-                                            <input type="number" class="form-control" id="floatingInput"
+                                            <input type="number" class="form-control" id="montoTotal"
                                                 placeholder="$00.00">
-                                            <label for="floatingInput" aria-label="Monto Total"><i
+                                            <label for="montoTotal" aria-label="Monto Total"><i
                                                     class="icon-dollar"></i>Monto Total</label>
                                         </div>
                                     </div>
                                     <div class="col-12 col-sm-3">
                                         <div class="form-floating mb-3">
-                                            <input type="number" class="form-control" id="floatingInput"
+                                            <input type="number" class="form-control" id="montoAnticipo"
                                                 placeholder="Anticipo Minimo 30%">
-                                            <label for="floatingInput" aria-label="Anticipo Minimo 30%"><i
+                                            <label for="montoAnticipo" aria-label="Anticipo Minimo 30%"><i
                                                     class="icon-percent"></i> Anticipo Recomendado</label>
                                         </div>
                                     </div>
                                     <div class="col-12 col-sm-3">
                                         <div class="form-floating mb-3">
-                                            <input type="number" class="form-control" id="floatingInput"
+                                            <input type="number" class="form-control" id="montoRestante"
                                                 placeholder="Monto Restante">
-                                            <label for="floatingInput" aria-label="Restante"><i class="icon-dollar"></i>
+                                            <label for="montoRestante" aria-label="Restante"><i class="icon-dollar"></i>
                                                 Monto Restante</label>
                                         </div>
                                     </div>
                                     <div class="col-12 col-sm-3">
                                         <div class="form-floating mb-3">
-                                            <input type="number" class="form-control" id="floatingInput"
+                                            <input type="number" class="form-control" id="importeBase"
                                                 placeholder="Importe de Base">
-                                            <label for="floatingInput" aria-label="Importe de Base"><i
+                                            <label for="importeBase" aria-label="Importe de Base"><i
                                                     class="icon-dollar"></i> Importe de Base</label>
                                         </div>
                                     </div>
@@ -208,35 +218,38 @@
                                 <div class="card-text">
                                     <div class="form-floating mb-3">
                                         <textarea class="form-control textarea" placeholder="Observacion"
-                                            id="floatingTextarea2" style="height: 125px"></textarea>
-                                        <label for="floatingTextarea2" aria-label="Observaciones"><i
+                                            id="observaciones" style="height: 125px"></textarea>
+                                        <label for="observaciones" aria-label="Observaciones"><i
                                                 class="icon-edit-1"></i>
                                             Observaciones</label>
                                     </div>
+                                </div>
+
+                                <div class="card-text text-center text-md-center text-lg-end p-3">
+                                    <button class="btn btn-danger col-12 col-xl-7" aria-label="Realizar Pedido"><i
+                                            class="icon-basket-1"></i>
+                                        Realizar Pedido</button>
                                 </div>
 
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="card-footer text-center text-md-center text-lg-end p-3">
-                    <button class="btn btn-danger col-12 col-sm-10 col-lg-5 col-xl-7" aria-label="Realizar Pedido"><i
-                            class="icon-basket-1"></i>
-                        Realizar Pedido</button>
-                </div>
-            </div>
             </div>
         </section>
     </main>
+
     <?php
- include("footer.php");
- ?>
-    <script src="../recursos/js/index.min.js"></script>
+    include("footer.php");
+    ?>
+
+    <script src="../recursos/js/index.min.js?t=<?php echo time(); ?>"></script>
+    <script src="../recursos/js/pedidos.js?t=<?php echo time(); ?>"></script>
 
     <script>
-        AOS.init();
+    AOS.init();
     </script>
 
 </body>
+
 </html>
