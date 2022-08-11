@@ -8,9 +8,8 @@ switch($opc){
     case 0://FUNCION DETERMINADA POR LA VARIABLE DE OPCION
         $coincidencia = $_POST['coincidencia'];
         $tarjetas = $obj -> prueba();
-/*for  ($i=0; $i < 10; $i++) { 
+        for  ($i=0; $i < 10; $i++) { 
     
-
         $tarjetas .= '
         <div class="gridProduct pointer col-6 col-lg-3 pt-4" identificador="1" name="producto 1" precio="10">
             <div class="card">
@@ -43,7 +42,7 @@ switch($opc){
             </div>
         </div>
         ';
-} */
+}
 
         echo $tarjetas;
         break;
