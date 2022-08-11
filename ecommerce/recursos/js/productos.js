@@ -1,8 +1,8 @@
 $(function() {
     let datos = new FormData();
     datos.append("opc", 1);
-    /* datos.append("date", $("#dateRetiros").val());
-   */
+    datos.append("titulo", n);
+  
     $.ajax({
       type: "POST",
       url: "../controlador/ctrl_Productos.php",
@@ -11,7 +11,7 @@ $(function() {
       processData: false,
       cache: false,
       success: function (respuesta) {
-      $(".card-title").html(respuesta); 
+      $("#contenedorProductosLista").html(respuesta); 
         console.log("Metodo Ajax",respuesta);
       },
     });
