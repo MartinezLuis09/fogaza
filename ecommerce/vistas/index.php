@@ -30,7 +30,7 @@
        <section class="container">
        <div class="row" id="contenedorProductosLista">
                 
-                </div>
+        </div>
        </section>
    </main>
    <?php
