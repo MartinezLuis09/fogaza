@@ -7,8 +7,7 @@ $opc    = $_POST['opc'];
 switch($opc){
     case 0://FUNCION DETERMINADA POR LA VARIABLE DE OPCION
         $coincidencia = $_POST['coincidencia'];
-        $tarjetas = $obj -> mostrarProductosBuscador();
-        
+        $tarjetas = $obj -> mostrarProductosBuscador();        
          for  ($i=0; $i < 10; $i++) { 
         $tarjetas .= '
         <div class="gridProduct pointer col-6 col-lg-3 pt-4" identificador="1" name="producto 1" precio="10">
@@ -43,7 +42,6 @@ switch($opc){
         </div>
         ';
         }
-
         echo $tarjetas;
     break;
 }
