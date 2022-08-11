@@ -9,15 +9,15 @@ switch($opc){
     case 0://FUNCION DETERMINADA POR LA VARIABLE DE OPCION
         $tarjetas = '';
         $coincidencia = $_POST['coincidencia'];
-        $descripcion= $_POST['descripcion'];
-        $precio = $_POST['precio'];
+        $descripcion= '';
+        $precio = '';
         //La primera es crear un arreglo independiente
         // $array = array($coincidencia);
 
         //Al parecer el array no esta funcionando hay que probar la 2da forma
         //Hay que meter la variable directamente. Y modificar el modelo.
         // Ahora si funciona
-        $sql = $obj -> mostrarProductosBuscador($coincidencia, $descripcion, $precio);     
+        $sql = $obj -> mostrarProductosBuscador($coincidencia);     
         // Ahora solo modificamos un poco para que nos muestre el nombre real dentro de la BD   
         // para ello hacemos uso de la variable $row
         // Podemos poner el nombre de la columna existente en la BD o ponemos la posicion

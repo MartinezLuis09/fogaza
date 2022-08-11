@@ -84,10 +84,8 @@ include("navbar.php");
                                 <div class="card-text row">
                                     <div class="col-12 col-sm-4">
                                         <div class="form-floating mb-3">
-<<<<<<< HEAD
                                             <input type="text" class="form-control" id="modelo" placeholder="Modelo">
                                             <label for="modelo" aria-label="Modelo"><i class="icon-cube"></i>
-=======
                                             <input type="text" class="form-control" id="floatingInput"
                                                 placeholder="Juan Perez Lopez">
                                             <label for="floatingInput" aria-label="Nombre Completo"><i
@@ -119,7 +117,6 @@ include("navbar.php");
                                             <input type="text" class="form-control" id="floatingInput"
                                                 placeholder="Modelo">
                                             <label for="floatingInput" aria-label="Modelo"><i class="icon-user"></i>
->>>>>>> 6e71403ddb34509aeab1d42c4587bb4847a622a5
                                                 Modelo</label>
                                         </div>
                                     </div>
