@@ -14,8 +14,8 @@ $(function() {
       $("#tablaRetiros").html(load);
     }, */
     success: function (respuesta) {
-       $(".breadcrumb-item a").html(respuesta); 
-      console.log("consultaAjax",respuesta);
+/*        $(".breadcrumb-item a").html(respuesta); 
+ */      console.log("consultaAjax",respuesta);
     },
   });
 });
@@ -73,8 +73,7 @@ $("#iptBusqueda").keydown(function (e) {
       $("#iptBusqueda").focus();
       $("#iptBusqueda").addClass("is-invalid");
     } else {
-      let producto = $(this).val();
-      sessionStorage.setItem("productoBuscado", producto);
+      localStorage.setItem("productoBuscado", $(this).val());
       window.location.href = "buscador.php";
     }
     e.preventDefault();
@@ -86,8 +85,7 @@ $(".btnBusqueda").click(function () {
     $("#iptBusqueda").focus();
     $("#iptBusqueda").addClass("is-invalid");
   } else {
-    let producto = $(this).val();
-    sessionStorage.setItem("productoBuscado", producto);
+    localStorage.setItem("productoBuscado", $(this).val());
     window.location.href = "buscador.php";
   }
 });

@@ -84,8 +84,42 @@ include("navbar.php");
                                 <div class="card-text row">
                                     <div class="col-12 col-sm-4">
                                         <div class="form-floating mb-3">
+<<<<<<< HEAD
                                             <input type="text" class="form-control" id="modelo" placeholder="Modelo">
                                             <label for="modelo" aria-label="Modelo"><i class="icon-cube"></i>
+=======
+                                            <input type="text" class="form-control" id="floatingInput"
+                                                placeholder="Juan Perez Lopez">
+                                            <label for="floatingInput" aria-label="Nombre Completo"><i
+                                                    class="icon-user"></i> Nombre Completo</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-5">
+                                        <div class="form-floating mb-3">
+                                            <input type="email" class="form-control" id="floatingInput"
+                                                placeholder="correo@dominio.com">
+                                            <label for="floatingInput" aria-label="Correo electrónico ó email"><i
+                                                    class="icon-at"></i> Correo electrónico</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-3">
+                                        <div class="form-floating mb-3">
+                                            <input type="number" class="form-control" id="floatingInput"
+                                                placeholder="962 000 00 00">
+                                            <label for="floatingInput" aria-label="Telefono"><i
+                                                    class="icon-phone-1"></i> Teléfono</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="card-text row">
+                                    <div class="col-12 col-sm-4">
+                                        <div class="form-floating mb-3">
+                                            <input type="text" class="form-control" id="floatingInput"
+                                                placeholder="Modelo">
+                                            <label for="floatingInput" aria-label="Modelo"><i class="icon-user"></i>
+>>>>>>> 6e71403ddb34509aeab1d42c4587bb4847a622a5
                                                 Modelo</label>
                                         </div>
                                     </div>
@@ -240,11 +274,17 @@ include("navbar.php");
     </main>
 
     <?php
+<<<<<<< HEAD
     include("footer.php");
     ?>
 
     <script src="../recursos/js/index.min.js?t=<?php echo time(); ?>"></script>
     <script src="../recursos/js/pedidos.js?t=<?php echo time(); ?>"></script>
+=======
+ include("footer.php");
+ ?>
+    <script src="../recursos/js/index.js"></script>
+>>>>>>> 6e71403ddb34509aeab1d42c4587bb4847a622a5
 
     <script>
     AOS.init();
