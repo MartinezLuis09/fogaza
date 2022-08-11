@@ -9,13 +9,15 @@ switch($opc){
     case 0://FUNCION DETERMINADA POR LA VARIABLE DE OPCION
         $tarjetas = '';
         $coincidencia = $_POST['coincidencia'];
+        $descripcion= $_POST['descripcion'];
+        $precio = $_POST['precio'];
         //La primera es crear un arreglo independiente
         // $array = array($coincidencia);
 
         //Al parecer el array no esta funcionando hay que probar la 2da forma
         //Hay que meter la variable directamente. Y modificar el modelo.
         // Ahora si funciona
-        $sql = $obj -> mostrarProductosBuscador($coincidencia);     
+        $sql = $obj -> mostrarProductosBuscador($coincidencia, $descripcion, $precio);     
         // Ahora solo modificamos un poco para que nos muestre el nombre real dentro de la BD   
         // para ello hacemos uso de la variable $row
         // Podemos poner el nombre de la columna existente en la BD o ponemos la posicion
@@ -36,19 +38,11 @@ switch($opc){
                     </a>
                     <div class="bodyList">
                         <div class="card-body pb-4" style="height: 200px;">
-                            <p class="card-title m-0 text-danger text-uppercase fw-bold"><strong>'.$row[6].'</strong></p>
-                            <h4 class="card-text">$ 10.00</h4>
+                            <p class="card-title m-0 text-danger text-uppercase fw-bold"><strong>'.$row['titulo'].'</strong></p>
+                            <h4 class="card-text">$'.$row['precio'].'</h4>
                             <hr>
                             <p class="card-text ellipsis-2 text-muted descripcion">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua. Sodales ut etiam sit amet nisl
-                                purus in mollis nunc. Iaculis at erat pellentesque adipiscing. Elementum eu
-                                facilisis sed odio morbi quis commodo odio. Eleifend quam adipiscing vitae proin
-                                sagittis nisl rhoncus mattis. Morbi non arcu risus quis varius quam quisque.
-                                Facilisi cras fermentum odio eu feugiat pretium. Vitae congue mauris rhoncus
-                                aenean vel elit. Morbi non arcu risus quis varius quam quisque id. Fermentum et
-                                sollicitudin ac orci phasellus egestas tellus rutrum tellus. Pharetra sit amet
-                                aliquam id diam maecenas ultricies mi. Aliquam sem et tortor consequat.
+                            '.$row['descripcion'].'
                             </p>
                         </div>
                     </div>
