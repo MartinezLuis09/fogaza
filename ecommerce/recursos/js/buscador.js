@@ -8,6 +8,8 @@ function busqueda(n) {
   let datos = new FormData();
   datos.append("opc", 0);
   datos.append("coincidencia", n);
+  datos.append("descripcion", n);
+  datos.append("precio", n);
 
   $.ajax({
     type: "POST",
