@@ -1,8 +1,6 @@
 $(function() {
     let datos = new FormData();
     datos.append("opc", 1);
-    
-    
     $.ajax({
       type: "POST",
       url: "../controlador/ctrl_Productos.php",

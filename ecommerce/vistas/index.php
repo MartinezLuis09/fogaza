@@ -10,10 +10,14 @@
         <div class="row">
             <div class="col-11 col-sm-6 col-lg-3">
                 <select class="form-select form-select ms-4 col-2" aria-label="Categorías" id="">
-                    <option selected>Destacados</option>
-                    <option value="1">Categoría 1</option>
-                    <option value="2">Categoría 2</option>
-                    <option value="3">Categoría 3</option>
+                <option selected>Categorías</option>
+                    <option value="1">Pasteleria</option>
+                    <option value="2">Pan Blanco</option>
+                    <option value="3">Pan Dulce</option>
+                    <option value="4">Bocadillos</option>
+                    <option value="5">Velas</option>
+                    <option value="6">Postres Y Panques</option>
+                    <option value="7">Galletas</option>
                 </select>
             </div>
             <div class="col-4 col-sm-6 col-lg-9 d-none d-sm-flex flex-row-reverse">

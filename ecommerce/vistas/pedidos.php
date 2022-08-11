@@ -29,16 +29,13 @@ include("navbar.php");
                         <div class="col">
                             <div class="card-body">
                                 <h5 class="card-title fw-bold text-uppercase text-center">Solicitud de Pedido</h5>
-
                                 <fieldset disabled>
                                     <div class="card-text row">
                                         <div class="col-12 col-sm-3">
                                             <div class="form-floating mb-3">
-                                                <input type="text" class="form-control" id="fechaActual"
-                                                    placeholder="00/00/0000">
+                                                <input type="text" class="form-control text-center" id="fechaActual">
                                                 <label for="fechaActual" aria-label="Fecha Actual"><i
-                                                        class="icon-calendar-2"></i>
-                                                    Fecha</label>
+                                                        class="icon-calendar-2"></i>Fecha</label>
                                             </div>
                                         </div>
                                         <div class="col-12 col-sm-6"></div>
@@ -79,37 +76,6 @@ include("navbar.php");
                                         </div>
                                     </div>
                                 </fieldset>
-
-
-                                <div class="card-text row">
-                                    <div class="col-12 col-sm-4">
-                                        <div class="form-floating mb-3">
-                                            <input type="text" class="form-control" id="modelo" placeholder="Modelo">
-                                            <label for="modelo" aria-label="Modelo"><i class="icon-cube"></i>
-                                            <input type="text" class="form-control" id="floatingInput"
-                                                placeholder="Juan Perez Lopez">
-                                            <label for="floatingInput" aria-label="Nombre Completo"><i
-                                                    class="icon-user"></i> Nombre Completo</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-sm-5">
-                                        <div class="form-floating mb-3">
-                                            <input type="email" class="form-control" id="floatingInput"
-                                                placeholder="correo@dominio.com">
-                                            <label for="floatingInput" aria-label="Correo electrónico ó email"><i
-                                                    class="icon-at"></i> Correo electrónico</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-sm-3">
-                                        <div class="form-floating mb-3">
-                                            <input type="number" class="form-control" id="floatingInput"
-                                                placeholder="962 000 00 00">
-                                            <label for="floatingInput" aria-label="Telefono"><i
-                                                    class="icon-phone-1"></i> Teléfono</label>
-                                        </div>
-                                    </div>
-                                </div>
-
 
                                 <div class="card-text row">
                                     <div class="col-12 col-sm-4">
@@ -169,15 +135,16 @@ include("navbar.php");
                                         </div>
                                     </div>
                                     <div class="col-12 col-sm-3">
-                                        <div class="form-floating mb-3">
-                                            <select id="tipoEntrega" class="form-select"
-                                                placeholder="Selecciona una Opción">
-                                                <option selected value="opc1">Selecciona una Opción</option>
-                                                <option value="Envio Domicilio">Envio Domicilio</option>
-                                                <option value="Entrega en Tienda">Entrega en Tienda</option>
+                                        <div class="form-floating  mb-3">
+
+                                            <select class="form-select" aria-label="Default select example">
+                                                <option value="Entrega en Tienda" selected>Entrega en Tienda</option>
+                                                <option value="Entrega a Domicilio">Entrega a Domicilio</option>
                                             </select>
-                                            <label for="tipoEntrega" aria-label="Sabor de Pan"><i
-                                                    class="icon-truck"></i> Tipo de Entrega</label>
+
+                                            <label for="tipoEntrega" aria-label="Sabor de Pan"><i class="icon-truck">
+                                                </i> Tipo de
+                                                Entrega</label>
                                         </div>
                                     </div>
                                     <div class="col-12 col-sm-3">
@@ -244,8 +211,6 @@ include("navbar.php");
                                     </div>
                                 </div>
 
-
-
                                 <div class="card-text">
                                     <div class="form-floating mb-3">
                                         <textarea class="form-control textarea" placeholder="Observacion"
@@ -271,17 +236,11 @@ include("navbar.php");
     </main>
 
     <?php
-<<<<<<< HEAD
     include("footer.php");
     ?>
 
     <script src="../recursos/js/index.min.js?t=<?php echo time(); ?>"></script>
     <script src="../recursos/js/pedidos.js?t=<?php echo time(); ?>"></script>
-=======
- include("footer.php");
- ?>
-    <script src="../recursos/js/index.js"></script>
->>>>>>> 6e71403ddb34509aeab1d42c4587bb4847a622a5
 
     <script>
     AOS.init();
