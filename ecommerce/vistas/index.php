@@ -5,24 +5,23 @@
 ?>
 <body>
    
-   <!-- ENCABEZADO CATEGORIAS -->
-   <div class="bg-light pt-3 ps-3 mb-2">
-       <div class="row">
-           <div class="col-12 col-sm-10 col-lg-6">
-               <nav class="text-uppercase" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
-                   <ol class="breadcrumb">
-                       <li class="breadcrumb-item"><a href="./"
-                               class="txt-none bold text-danger txt-hover-reset">INICIO</a></li>
-                       </ol>
-               </nav>
-           </div>
-
-           <div class="col-sm-2 col-md-6 col-lg-6 d-none d-sm-flex flex-row-reverse">
-               <button type="button" class="btn btn-default" id="btnGridList"><i class="icon-th-list"></i></button>
-               <button type="button" class="btn btn-default" id="btnGridCol"><i class="icon-th"></i></button>
-           </div>
-       </div>
-   </div>
+ <!-- ENCABEZADO CATEGORIAS -->
+ <div class="bg-light p-2">
+        <div class="row">
+            <div class="col-11 col-sm-6 col-lg-3">
+                <select class="form-select form-select ms-4 col-2" aria-label="Categorías" id="">
+                    <option selected>Destacados</option>
+                    <option value="1">Categoría 1</option>
+                    <option value="2">Categoría 2</option>
+                    <option value="3">Categoría 3</option>
+                </select>
+            </div>
+            <div class="col-4 col-sm-6 col-lg-9 d-none d-sm-flex flex-row-reverse">
+                <button type="button" class="btn btn-default" id="btnGridList"><i class="icon-th-list"></i></button>
+                <button type="button" class="btn btn-default active" id="btnGridCol"><i class="icon-th"></i></button>
+            </div>
+        </div>
+    </div>
 
 
    <main>
