@@ -49,4 +49,3 @@ switch($opc){
             echo json_encode($ARRAY); */
         break;
 }
-?>

@@ -16,8 +16,7 @@ function busqueda(n) {
     processData: false,
     cache: false,
     success: function (respuesta) {
-        $("#contenedorProductos").html(respuesta);
+      $("#contenedorProductos").html(respuesta);
     },
   });
-
 }
