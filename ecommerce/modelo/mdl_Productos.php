@@ -8,11 +8,11 @@ Class Producto extends CRUD {
         return $sql;
     }
 
-/*     function mostrarProductosCat() {
+    function mostrarProductosCat() {
         $query = "SELECT * FROM productos WHERE $id_categoria";//Y concatenamos directamente la variable
         $sql = $this->_Select($query,null,"2"); //Agregar un null xq no existe ningun array
         return $sql;
-      }  */
+      } 
 
 }
 ?>
