@@ -3,7 +3,7 @@ $(function() {
     datos.append("opc", 1);
     $.ajax({
       type: "POST",
-      url: "../controlador/ctrl_Productos.php",
+      url: "ecommerce/controlador/ctrl_Productos.php",
       contentType: false,
       data: datos,
       processData: false,
@@ -14,7 +14,7 @@ $(function() {
     });
   });
 
-  $(function categorias() {
+ /*  $(function categorias() {
     let datos = new FormData();
     datos.append("opc", 2);
     datos.append("id_categoria", n);
@@ -29,4 +29,4 @@ $(function() {
       $("#contenedorProductosLista").html(respuesta); 
       },
     });
-  });
+  }); */

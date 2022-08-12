@@ -4,7 +4,6 @@ $obj = new Producto;
 
 $opc    = $_POST['opc'];
 
-
 switch($opc){
     case 1://FUNCION DETERMINADA POR LA VARIABLE DE OPCION
         $tarjetas = null;
@@ -42,7 +41,7 @@ switch($opc){
            }  
                    break;
     case 2:
-        $tarjetas = null;
+        /* $tarjetas = null;
         $titulo ='';   
         $descripcion = '';   
         $precio = '';
@@ -75,7 +74,7 @@ switch($opc){
         </div>
             ';  
             echo $tarjetas;
-           }  
+           }   */
         break;
 }
 ?>

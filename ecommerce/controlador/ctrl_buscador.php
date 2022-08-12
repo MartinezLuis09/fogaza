@@ -4,8 +4,7 @@ $obj = new Busqueda;
 
 $opc    = $_POST['opc'];
 
-
-switch($opc){
+switch ($opc) {
     case 0://FUNCION DETERMINADA POR LA VARIABLE DE OPCION
         $tarjetas = '';
         $coincidencia = $_POST['coincidencia'];
@@ -13,7 +12,6 @@ switch($opc){
         $precio = '';
         //La primera es crear un arreglo independiente
         // $array = array($coincidencia);
-
         //Al parecer el array no esta funcionando hay que probar la 2da forma
         //Hay que meter la variable directamente. Y modificar el modelo.
         // Ahora si funciona

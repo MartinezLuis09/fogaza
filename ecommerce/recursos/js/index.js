@@ -5,7 +5,7 @@ $(function() {
  */
   $.ajax({
     type: "POST",
-    url: "../controlador/controlador.php",
+    url: "ecommerce/controlador/controlador.php",
     contentType: false,
     data: datos,
     processData: false,

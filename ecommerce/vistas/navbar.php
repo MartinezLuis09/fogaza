@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #211B1D;">
         <div class="container-fluid">
             <div class="container">
-                <a class="navbar-brand col-1 d-none d-sm-block" href="./">
+                <a class="navbar-brand col-1 d-none d-sm-block" href="../../index.php">
                     <img src="../recursos/img/logo/logo.png" alt="" height="48">
                 </a>
             </div>
