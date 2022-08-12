@@ -82,8 +82,6 @@ include("navbar.php");
                                         <div class="form-floating mb-3">
                                             <select id="categoriaProducto" class="form-select"
                                                 placeholder="Selecciona una Opción">
-                                                <option selected value="Selecciona una Opción">Selecciona una Opción
-                                                </option>
                                             </select>
                                             <label for="categoriaProducto" aria-label="Categoria Producto"><i
                                                     class="icon-th-list"></i>

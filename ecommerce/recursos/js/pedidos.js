@@ -56,6 +56,25 @@ $(function MostrarInfoUsu() {
   });
 });
 
+//------------------------
+$(function getCategorias() {
+  let datos = new FormData();
+  let men =
+    '<option selected value="Selecciona una Opción">Selecciona una Opción</option>';
+  datos.append("opc", 4);
+  $.ajax({
+    type: "POST",
+    url: "../controlador/ctrl_Pedidos.php",
+    contentType: false,
+    data: datos,
+    processData: false,
+    cache: false,
+    success: function (respuesta) {
+      $("#categoriaProducto").html(men + respuesta);
+    },
+  });
+});
+
 //-------------------------------------------------
 $(function fnc_fechaEntrega() {
   const dateGoTo = new Date();
@@ -94,23 +113,6 @@ $(function fnc_fechaEntrega() {
         "Noviembre",
         "Diciembre",
       ],
-    },
-  });
-});
-
-//------------------------
-$(function getCategorias() {
-  let datos = new FormData();
-  datos.append("opc", 4);
-  $.ajax({
-    type: "POST",
-    url: "../controlador/ctrl_Pedidos.php",
-    contentType: false,
-    data: datos,
-    processData: false,
-    cache: false,
-    success: function (respuesta) {
-      $("#categoriaProducto").html(respuesta);
     },
   });
 });
