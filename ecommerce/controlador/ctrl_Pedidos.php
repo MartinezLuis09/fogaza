@@ -26,15 +26,10 @@ switch ($opc) {
         echo json_encode($infoUsuario);
         break;
     case 4:
-
-        $opciones = "null";
-
-        $categoria = '';
+        $opciones = null;
         $sql = $obj->getCatProd();
-
         foreach ($sql as $row) {
-            $opciones =
-                '<option value="' . $row['categoria'] . '">' . $row['categoria'] . '</option>';
+            $opciones = '<option value="' . $row['categoria'] . '">' . $row['categoria'] . '</option>';
             echo $opciones;
         }
 
