@@ -57,7 +57,8 @@ $(function MostrarInfoUsu() {
 //------------------------
 $(function mostrarCategorias() {
   let datos = new FormData();
-  let men = '<option selected value="0">Seleccione una Opción</option>';
+  let men =
+    '<option selected value="0" disabled >Seleccione una Opción</option>';
   datos.append("opc", 4);
   $.ajax({
     type: "POST",
@@ -88,9 +89,9 @@ $("#listaCategorias").change(function () {
     cache: false,
     success: function (data) {
       if (seleccion > 0) {
+        $("#listaCategorias").prop("selectedIndex", 0);
         $("#catalogoProductos").html(data);
         $("#modalProductos").modal("show");
-        $("#listaCategorias").val();
       }
     },
   });

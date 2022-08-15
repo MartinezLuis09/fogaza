@@ -236,7 +236,29 @@ include("navbar.php");
                 <div class="modal-dialog modal-xl modal-dialog-scrollable">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title fw-bold text-uppercase text-center">Catalogo de Productos</h5>
+                            <div class="card-text row">
+                                <div class="col-12 ">
+                                    <div class="form-floating mb-3">
+                                        <h5 class="modal-title fw-bold text-uppercase">Catalogo de Productos
+                                        </h5>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card-text row">
+                                <div class="col-12 col-sm-4">
+                                    <div class="form-floating mb-3">
+                                        <select id="listaCategorias" class="form-select"
+                                            placeholder="Selecciona una Opción">
+                                        </select>
+                                        <label for="listaCategorias" aria-label="Categoria Producto"><i
+                                                class="icon-th-list"></i>
+                                            Categoria Producto</label>
+                                    </div>
+                                </div>
+                            </div>
+
+
                         </div>
                         <div class="modal-body">
                             <div class="row" id="catalogoProductos">
