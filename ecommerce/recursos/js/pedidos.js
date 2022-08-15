@@ -11,7 +11,6 @@ $(function fechaActual() {
     cache: false,
     success: function (res) {
       $("#fechaActual").val(res.trim());
-      console.log("Metodo Fecha Actual", res);
     },
   });
 });
@@ -29,7 +28,6 @@ $(function ultimoFolioPedido() {
     cache: false,
     success: function (res) {
       $("#folioPedido").val(parseInt(res, 10) + 1);
-      console.log("Metodo Ultimo Folio", res);
     },
   });
 });
@@ -57,10 +55,9 @@ $(function MostrarInfoUsu() {
 });
 
 //------------------------
-$(function getCategorias() {
+$(function mostrarCategorias() {
   let datos = new FormData();
-  let men =
-    '<option selected value="Selecciona una Opción">Selecciona una Opción</option>';
+  let men = '<option selected value="0">Selecciona una Opción</option>';
   datos.append("opc", 4);
   $.ajax({
     type: "POST",
@@ -73,6 +70,11 @@ $(function getCategorias() {
       $("#categoriaProducto").html(men + respuesta);
     },
   });
+});
+
+$("#categoriaProducto").change(function () {
+  let datos = $(this).val();
+  $("#leyenda").val(datos);
 });
 
 //-------------------------------------------------
@@ -91,7 +93,7 @@ $(function fnc_fechaEntrega() {
   const hour = dateGoTo.getHours() + ":" + dateGoTo.getMinutes();
   const today = date + " " + hour;
 
-  $('input[name="fechaEntrega"]').daterangepicker({
+  $("").daterangepicker({
     singleDatePicker: true,
     defaultDate: today,
     timePicker: true,

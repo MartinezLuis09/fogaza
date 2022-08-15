@@ -21,14 +21,21 @@ class Pedidos extends CRUD
 
     function consutarInformacionCliente($email)
     {
-        $query = "SELECT * FROM usuarios WHERE email = '%" . $email . "%'";
+        $query = "SELECT * FROM usuarios WHERE email = '" . $email . "'";
         $sql = $this->_Select($query, null, "1");
         return $sql;
     }
 
-    function getCatProd()
+    function mostrarCategoriaProdudctos()
     {
         $query = "SELECT * FROM categorias ORDER BY id ASC";
+        $sql = $this->_Select($query, null, "1");
+        return $sql;
+    }
+
+    function mostrarProductosFiltrados($id_categoria)
+    {
+        $query = "SELECT * FROM productos WHERE id_categoria = '" . $id_categoria . "'";
         $sql = $this->_Select($query, null, "1");
         return $sql;
     }
