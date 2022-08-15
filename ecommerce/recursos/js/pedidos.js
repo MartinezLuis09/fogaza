@@ -77,7 +77,7 @@ $("#listaCategorias").change(function () {
   let seleccion = $(this).val();
 
   datos.append("opc", 5);
-  datos.append("id_categoria", 2);
+  datos.append("id_categoria", seleccion);
 
   $.ajax({
     type: "POST",
@@ -86,9 +86,12 @@ $("#listaCategorias").change(function () {
     data: datos,
     processData: false,
     cache: false,
-    success: function (respuesta) {
-      $("#catalogoProductos").html(respuesta);
-      // console.log("Mostrar",respuesta);
+    success: function (data) {
+      if (seleccion > 0) {
+        $("#catalogoProductos").html(data);
+        $("#modalProductos").modal("show");
+        $("#listaCategorias").val();
+      }
     },
   });
 });

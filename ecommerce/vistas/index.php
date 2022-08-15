@@ -43,9 +43,9 @@
    <?php
 include("footer.php");
 ?>
-   <script src="../recursos/js/index.js"></script>
-   <script src="../recursos/js/productos.js"></script>
-   <script src="../recursos/js/buscador.js"></script>
+   <script src="../recursos/js/index.js"=<?php echo time(); ?>"></script>
+   <script src="../recursos/js/productos.js"=<?php echo time(); ?>"></script>
+   <script src="../recursos/js/buscador.js"=<?php echo time(); ?>"></script>
 
    <script>
        AOS.init();
