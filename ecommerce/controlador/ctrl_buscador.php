@@ -35,8 +35,7 @@ switch($opc){
                         <a href="producto.php">
                             <img src="../recursos/img/productos/principal/default.png?t='.time().'" class="card-img-top"
                                 alt="...">
-                                </a>
-                        </div>
+                        </a>
                     </div>
                     <div class="bodyList">
                         <div class="card-body pb-4" style="height: 200px;">
