@@ -12,25 +12,25 @@ switch($opc){
         foreach($sql as $row){
             $tarjetas = '
             <div class="gridProduct pointer col-6 col-lg-3 pt-4">
-                    <div class="card">
-                        <div class="rowList">
-                            <div class="imgList" data-aos="fade-up">
-                                <img src="../recursos/img/productos/principal/default.png?t='.time().'" class="card-img-top"
-                                    alt="...">
-                            </div>
-                            <div class="bodyList">
-                                <div class="card-body pb-4" style="height: 200px;">
-                                    <p class="card-title m-0 text-danger fw-bold"><strong>'.$row['titulo'].'</strong></p>
-                                    <h4 class="card-text">'.$row['precio'].'</h4>
-                                    <hr>
-                                    <p class="card-text ellipsis-2 text-muted descripcion">
-                                    '.$row['descripcion'].' 
-                                    </p>
-                                </div>
-                            </div>
+            <div class="card">
+                <div class="rowList">
+                    <div class="imgList">
+                    <img src="../recursos/img/productos/principal/default.png?t='.time().'" class="card-img-top"
+                    alt="...">
+                    </div>
+                    <div class="bodyList">
+                        <div class="card-body pb-4" style="height: 200px;">
+                            <p class="card-title m-0 text-danger fw-bold"><strong>'.$row['titulo'].'</strong></p>
+                            <h4 class="card-text">$ '.$row['precio'].'</h4>
+                            <hr>
+                            <p class="card-text ellipsis-2 text-muted descripcion">
+                            '.$row['descripcion'].' 
+                            </p>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
             ';  
             echo $tarjetas;
            }  
@@ -54,14 +54,14 @@ switch($opc){
                 <div class="gridProduct pointer col-6 col-lg-3 pt-4">
                 <div class="card">
                     <div class="rowList">
-                        <div class="imgList" data-aos="fade-up">
+                        <div class="imgList">
                         <img src="../recursos/img/productos/principal/default.png?t='.time().'" class="card-img-top"
                         alt="...">
                         </div>
                         <div class="bodyList">
                             <div class="card-body pb-4" style="height: 200px;">
                                 <p class="card-title m-0 text-danger fw-bold"><strong>'.$row['titulo'].'</strong></p>
-                                <h4 class="card-text">'.$row['precio'].'</h4>
+                                <h4 class="card-text">$ '.$row['precio'].'</h4>
                                 <hr>
                                 <p class="card-text ellipsis-2 text-muted descripcion">
                                 '.$row['descripcion'].' 
@@ -71,7 +71,7 @@ switch($opc){
                     </div>
                 </div>
             </div>
-                ';  
+                ';
                 echo $tarjetasCat;
                }  
             break;
