@@ -29,7 +29,7 @@ switch($opc){
         foreach($sql as $row){ 
         $tarjetas .= '
         <div class="gridProduct pointer col-6 col-lg-3 pt-4">
-            <div class="card">
+            <div class="card" >
                 <div class="rowList">
                     <div class="imgList">
                         <img src="../recursos/img/productos/principal/default.png?t=' . time() . '" class="card-img-top"
