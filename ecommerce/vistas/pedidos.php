@@ -83,10 +83,7 @@ include("navbar.php");
                                     <div class="col-12 col-sm-4">
                                         <div class="form-floating mb-3">
                                             <select id="listaCategorias" class="form-select"
-                                                data-bs-target="#modalProductos" data-bs-toggle="modal"
                                                 placeholder="Selecciona una Opción">
-
-                                                <!-- data-bs-toggle="modal" -->
                                             </select>
                                             <label for="listaCategorias" aria-label="Categoria Producto"><i
                                                     class="icon-th-list"></i>
@@ -96,7 +93,7 @@ include("navbar.php");
                                     </div>
                                     <div class="col-12 col-sm-4">
                                         <div class="form-floating mb-3">
-                                            <select id="opcionRelleno" class="form-select text-center"
+                                            <select id="opcionRelleno" class="form-select"
                                                 placeholder="Selecciona una Opción">
                                                 <option selected value="Selecciona una Opción">Selecciona una Opción
                                                 </option>
@@ -234,15 +231,17 @@ include("navbar.php");
             </div>
 
             <!-- Modal -->
-            <div class="modal fade" id="modalProductos" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            <div class="modal fade " id="modalProductos" data-bs-backdrop="static" tabindex="-1"
                 aria-labelledby="modalProductos" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-scrollable">
+                <div class="modal-dialog modal-xl modal-dialog-scrollable">
                     <div class="modal-content">
-                        <div class="modal-header align-content-center">
+                        <div class="modal-header">
                             <h5 class="modal-title fw-bold text-uppercase text-center">Catalogo de Productos</h5>
                         </div>
-                        <div class="modal-body" id="catalogoProductos">
+                        <div class="modal-body">
+                            <div class="row" id="catalogoProductos">
 
+                            </div>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-danger col-12 col-xl-7" data-bs-dismiss="modal">
