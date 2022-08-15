@@ -28,7 +28,7 @@ $(function getCategorias() {
     cache: false,
     success: function (respuesta) {
       $("#slCat").html(sl + respuesta);
-      // console.log("categorias",respuesta) 
+      console.log("categorias",respuesta) 
      },
   });
 });
