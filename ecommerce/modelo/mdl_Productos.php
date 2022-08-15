@@ -14,5 +14,11 @@ Class Producto extends CRUD {
         return $sql;
       } 
 
+         function getCatProdInd()
+    {
+        $query = "SELECT * FROM categorias ORDER BY id ASC";
+        $sql = $this->_Select($query, null, "1");
+        return $sql;
+    }
 }
 ?>

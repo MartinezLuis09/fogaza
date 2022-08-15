@@ -14,10 +14,9 @@ $(function () {
   });
 });
 
-$(function categorias() {
+$(function getCategorias() {
   let datos = new FormData();
   datos.append("opc", 2);
-  datos.append("id_categoria", n);
   $.ajax({
     type: "POST",
     url: "../controlador/ctrl_Productos.php",
@@ -26,7 +25,10 @@ $(function categorias() {
     processData: false,
     cache: false,
     success: function (respuesta) {
-      $("#contenedorProductosLista").html(respuesta);
+      $("#slCat").html(respuesta);
+      console.log(respuesta)
     },
   });
 });
+
+
