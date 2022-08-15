@@ -13,10 +13,10 @@
             <div class="collapse navbar-collapse me-0 me-sm-5" id="navbarNavDropdown">
                 <ul class="navbar-nav justify-content-end">
 
-                    <form class="d-flex col-12 col-sm-12 mt-3 mt-sm-3 mt-lg-0">
+                    <form class="d-flex col-12 col-sm-12 mt-3 mt-sm-3 mt-lg-0" role="form" method="POST">
                         <div class="input-group flex-nowrap" >
-                            <input type="text" class="form-control" placeholder="Búsqueda" aria-label="Buscador de productos"
-                                aria-describedby="addon-wrapping" id="iptBusqueda">
+                            <input type="text" class="form-control" placeholder="Buscar" aria-label="Buscador de productos"
+                                aria-describedby="addon-wrapping" id="iptBusqueda" >
                             <span class="input-group-text bg-danger text-white pointer border-none btnBusqueda" id="addon-wrapping"><i
                                     class="icon-search"></i></span>
                         </div>

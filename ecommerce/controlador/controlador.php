@@ -1,12 +1,12 @@
 <?php
-/* include_once('../modelo.php');
-$obj = new ClaseModulo; */
+include_once('../modelo/modelo.php');
+$obj = new ClaseModulo;
 
 $opc    = $_POST['opc'];
 
 switch($opc){
     case 1://FUNCION DETERMINADA POR LA VARIABLE DE OPCION
-        echo "FUNCION DETERMINADA POR LA VARIABL";
+        echo "FUNCION DETERMINADA POR LA VARIABLE";
             /* $sql = $obj->nombreFuncion1();
             $obj->nombreFuncion2($array); */
         break;
