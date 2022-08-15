@@ -90,7 +90,7 @@ $("#listaCategorias").change(function () {
       if (seleccion > 0) {
         $("#catalogoProductos").html(data);
         $("#modalProductos").modal("show");
-        $(listaCategorias).val();
+        $("#listaCategorias").val();
       }
     },
   });
