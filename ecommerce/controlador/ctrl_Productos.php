@@ -8,10 +8,6 @@ $opc    = $_POST['opc'];
 switch($opc){
     case 1://FUNCION DETERMINADA POR LA VARIABLE DE OPCION
         $tarjetas = null;
-        $titulo ='';   
-        $descripcion = '';   
-        $precio = '';
-        $portada = '';
         $sql = $obj -> mostrarProductos();  
         foreach($sql as $row){
             $tarjetas = '
@@ -52,10 +48,6 @@ switch($opc){
 
         case 3:
             $tarjetas = null;
-            $titulo ='';   
-            $descripcion = '';   
-            $precio = '';
-            $portada = '';
             $idCat = $_POST['idCat'];
             $sql = $obj -> mostrarProductosCat($idCat);  
             foreach($sql as $row){

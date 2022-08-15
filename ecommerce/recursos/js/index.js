@@ -15,7 +15,8 @@ $(function() {
     }, */
     success: function (respuesta) {
 /*        $(".breadcrumb-item a").html(respuesta); 
- */      console.log("consultaAjax",respuesta);
+ */      
+// console.log("consultaAjax",respuesta);
     },
   });
 });

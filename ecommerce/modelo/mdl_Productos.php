@@ -9,7 +9,7 @@ Class Producto extends CRUD {
     }
 
     function mostrarProductosCat($idCat) {
-        $query = "SELECT * FROM productos WHERE id_categoria = '%" . $idCat . "%'";
+        $query = "SELECT * FROM productos WHERE id_categoria = '" . $idCat . "'";
         $sql = $this->_Select($query,null,"1");
         return $sql;
       } 

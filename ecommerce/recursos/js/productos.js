@@ -1,4 +1,4 @@
-$(function () {
+$(function mostrartodo() {
   let datos = new FormData();
   datos.append("opc", 1);
   $.ajax({
@@ -17,7 +17,7 @@ $(function () {
 $(function getCategorias() {
   let datos = new FormData();
   let sl =
-  '<option value="0" selected value="CATEGORIAS">CATEGORIAS</option>';
+  '<option disabled selected value="CATEGORIAS">CATEGORIAS</option>';
   datos.append("opc", 2);
   $.ajax({
     type: "POST",
@@ -28,20 +28,17 @@ $(function getCategorias() {
     cache: false,
     success: function (respuesta) {
       $("#slCat").html(sl + respuesta);
-      console.log("categorias",respuesta) 
+      // console.log("categorias",respuesta) 
      },
   });
 });
 
-$(function () {
-  
-});
-
-$(function mostrarProdByCat(n) {
+$("#slCat").change(function () {
   let datos = new FormData();
+  let seleccion = $(this).val();
   datos.append("opc", 3);
-  datos.append("idCat", n);
-  $.ajax({
+  datos.append("idCat", seleccion);
+   $.ajax({
     type: "POST",
     url: "../controlador/ctrl_Productos.php",
     contentType: false,
@@ -50,9 +47,9 @@ $(function mostrarProdByCat(n) {
     cache: false,
     success: function (respuesta) {
       $("#contenedorProductosLista").html(respuesta);
-      console.log("Mostrar",respuesta);
-    },
+      $(".breadcrumb-item.active.bold").html(seleccion);
+      // console.log("Mostrar",respuesta);
+        },
   });
 });
-
 
