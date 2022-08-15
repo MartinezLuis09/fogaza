@@ -122,23 +122,23 @@ include("navbar.php");
     ?>
     <!-- BOOTSTRAP -->
     <!-- https://getbootstrap.com/docs/5.2/getting-started/introduction/ -->
-    <script src="../recursos/bootstrap-5.2.0/popper.js"></script>
+    <script src="../recursos/bootstrap-5.2.0/popper.js"=<?php echo time(); ?>"></script>
     <script src="../recursos/bootstrap-5.2.0/js/bootstrap.min.js"></script>
 
     <!-- JQUERY -->
     <!-- https://jquery.com/ -->
-    <script src="../recursos/jQuery-3.6.0/jquery-3.6.0.min.js"></script>
+    <script src="../recursos/jQuery-3.6.0/jquery-3.6.0.min.js"=<?php echo time(); ?>"></script>
 
     <!-- SWEETALERT -->
     <!-- https://sweetalert2.github.io/ -->
-    <script src="../recursos/plugins/sweetalert2/package/dist/sweetalert2.all.min.js"></script>
+    <script src="../recursos/plugins/sweetalert2/package/dist/sweetalert2.all.min.js"=<?php echo time(); ?>"></script>
 
     <!-- AOS Framework -->
     <!-- https://michalsnik.github.io/aos/ -->
-    <script src="../recursos/plugins/aos-master/dist/aos.js"></script>
+    <script src="../recursos/plugins/aos-master/dist/aos.js"=<?php echo time(); ?>"></script>
 
-    <script src="../recursos/js/index.js"></script>
-    <script src="../recursos/js/index.js"></script>
+    <script src="../recursos/js/index.js"=<?php echo time(); ?>"></script>
+    <script src="../recursos/js/index.js"=<?php echo time(); ?>"></script>
 
     <script>
         AOS.init();

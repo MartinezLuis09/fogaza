@@ -143,7 +143,7 @@
  include("footer.php");
  ?>
 
-    <script src="../recursos/js/index.js"></script>
+    <script src="../recursos/js/index.js"=<?php echo time(); ?>"></script>
 
     
     <!-- <script src="../recursos/js/producto.min.js"></script> -->
