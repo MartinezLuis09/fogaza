@@ -42,11 +42,13 @@ switch($opc){
            }  
                    break;
     case 2:
-            /* echo "RETORNO DE VARIBLE AL JS";
-
-            $ARRAY = ARRAY("VARIABLE"=>'VARIABLE');
-
-            echo json_encode($ARRAY); */
+        $opciones = "";
+        $id = '';
+        $sql = $obj->getCatProdInd();
+        foreach ($sql as $row) {
+            $opciones =
+                '<option value="' . $row['id'] . '">' . $row['categoria'] . '</option>';
+            echo $opciones;
+        }
         break;
 }
-?>

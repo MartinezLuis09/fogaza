@@ -9,11 +9,8 @@
  <div class="bg-light p-2">
         <div class="row">
             <div class="col-11 col-sm-6 col-lg-3">
-                <select class="form-select form-select ms-4 col-2" aria-label="Categorías" id="">
-                    <option selected>Destacados</option>
-                    <option value="1">Categoría 1</option>
-                    <option value="2">Categoría 2</option>
-                    <option value="3">Categoría 3</option>
+                <select class="form-select form-select ms-4 col-2" aria-label="Categorías" id="slCat">
+                
                 </select>
             </div>
             <div class="col-4 col-sm-6 col-lg-9 d-none d-sm-flex flex-row-reverse">
