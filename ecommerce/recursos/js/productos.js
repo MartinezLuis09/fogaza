@@ -36,6 +36,7 @@ $(function getCategorias() {
 $("#slCat").change(function () {
   let datos = new FormData();
   let seleccion = $(this).val();
+  let cat = $('#slCat>option:selected').text();
   datos.append("opc", 3);
   datos.append("idCat", seleccion);
    $.ajax({
@@ -47,7 +48,7 @@ $("#slCat").change(function () {
     cache: false,
     success: function (respuesta) {
       $("#contenedorProductosLista").html(respuesta);
-      $(".breadcrumb-item.active.bold").html(seleccion);
+      $(".breadcrumb-item.active.bold").html(cat);
       // console.log("Mostrar",respuesta);
         },
   });
