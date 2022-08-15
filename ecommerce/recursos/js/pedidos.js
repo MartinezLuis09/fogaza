@@ -57,7 +57,7 @@ $(function MostrarInfoUsu() {
 //------------------------
 $(function mostrarCategorias() {
   let datos = new FormData();
-  let men = '<option selected value="0">Selecciona una Opción</option>';
+  let men = '<option selected value="0">Seleccione una Opción</option>';
   datos.append("opc", 4);
   $.ajax({
     type: "POST",
@@ -67,18 +67,34 @@ $(function mostrarCategorias() {
     processData: false,
     cache: false,
     success: function (respuesta) {
-      $("#categoriaProducto").html(men + respuesta);
+      $("#listaCategorias").html(men + respuesta);
     },
   });
 });
 
-$("#categoriaProducto").change(function () {
-  let datos = $(this).val();
-  $("#leyenda").val(datos);
+$("#listaCategorias").change(function () {
+  let datos = new FormData();
+  let seleccion = $(this).val();
+
+  datos.append("opc", 5);
+  datos.append("id_categoria", 2);
+
+  $.ajax({
+    type: "POST",
+    url: "../controlador/ctrl_Pedidos.php",
+    contentType: false,
+    data: datos,
+    processData: false,
+    cache: false,
+    success: function (respuesta) {
+      $("#catalogoProductos").html(respuesta);
+      // console.log("Mostrar",respuesta);
+    },
+  });
 });
 
 //-------------------------------------------------
-$(function fnc_fechaEntrega() {
+$(function () {
   const dateGoTo = new Date();
 
   let month = dateGoTo.getMonth() + 1;
@@ -93,7 +109,7 @@ $(function fnc_fechaEntrega() {
   const hour = dateGoTo.getHours() + ":" + dateGoTo.getMinutes();
   const today = date + " " + hour;
 
-  $("").daterangepicker({
+  $('input[name="fechaEntrega"]').daterangepicker({
     singleDatePicker: true,
     defaultDate: today,
     timePicker: true,

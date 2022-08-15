@@ -35,7 +35,7 @@ class Pedidos extends CRUD
 
     function mostrarProductosFiltrados($id_categoria)
     {
-        $query = "SELECT * FROM productos WHERE id_categoria = '" . $id_categoria . "'";
+        $query = "SELECT * FROM productos WHERE id_categoria = '" . $id_categoria . "' ";
         $sql = $this->_Select($query, null, "1");
         return $sql;
     }
