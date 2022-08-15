@@ -8,8 +8,6 @@ function busqueda(n) {
   let datos = new FormData();
   datos.append("opc", 0);
   datos.append("coincidencia", n);
-
-
   $.ajax({
     type: "POST",
     url: "../controlador/ctrl_buscador.php",

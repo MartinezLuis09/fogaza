@@ -11,6 +11,7 @@ switch($opc){
         $coincidencia = $_POST['coincidencia'];
         $descripcion= '';
         $precio = '';
+        $portada = '';
         //La primera es crear un arreglo independiente
         // $array = array($coincidencia);
 
@@ -32,17 +33,18 @@ switch($opc){
                 <div class="rowList">
                     <div class="imgList" data-aos="fade-up">
                         <a href="producto.php">
-                            <img src="../recursos/img/productos/principal/default.png" class="card-img-top"
+                            <img src="../recursos/img/productos/principal/default.png?t='.time().'" class="card-img-top"
                                 alt="...">
+                                </a>
+                        </div>
                     </div>
-                    </a>
                     <div class="bodyList">
                         <div class="card-body pb-4" style="height: 200px;">
                             <p class="card-title m-0 text-danger text-uppercase fw-bold"><strong>'.$row['titulo'].'</strong></p>
                             <h4 class="card-text">$'.$row['precio'].'</h4>
                             <hr>
                             <p class="card-text ellipsis-2 text-muted descripcion">
-                            '.$row['descripcion'].'
+                            '.$row['descripcion'].' 
                             </p>
                         </div>
                     </div>
