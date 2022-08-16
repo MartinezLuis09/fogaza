@@ -34,7 +34,7 @@ $(function getFechas() {
     cache: false,
     success: function (respuesta) {
       $("#selectFechas").html(opcionDesabilitadaSl + respuesta);
-      console.log("categoriasxd",respuesta) 
-     },
+/*       console.log("categoriasxd",respuesta) 
+ */     },
   });
 });
