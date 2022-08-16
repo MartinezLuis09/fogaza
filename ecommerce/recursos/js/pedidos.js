@@ -123,7 +123,7 @@ $("#listaCategoriasModal").change(function () {
 });
 
 //---------------------------------------------------
-$("body #catalogoProductos").on("click", "div", function () {
+$("div.modal-body #catalogoProductos").on("click", "div", function () {
   if ($(this).attr("id") != undefined) {
     let id = $(this).attr("id");
     alert(id);
@@ -150,6 +150,7 @@ $(function () {
     singleDatePicker: true,
     defaultDate: today,
     timePicker: true,
+    timePicker24Hour: true,
     startDate: moment().startOf("hour"),
     locale: {
       format: "DD/MM/YYYY",
