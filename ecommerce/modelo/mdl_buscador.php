@@ -10,9 +10,9 @@ Class Busqueda extends CRUD {
     return $sql;
   } 
 
-  function getFecha()
+  function getFechaAntigua()
   {
-      $query = "SELECT * FROM productos ORDER BY id ASC";
+      $query = "SELECT * FROM productos WHERE fecha BETWEEN '20220106 00:00:00' AND '2022-05-06 00:00:00'";
       $sql = $this->_Select($query, null, "1");
       return $sql;
   }
