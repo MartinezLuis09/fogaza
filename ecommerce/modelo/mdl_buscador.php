@@ -9,13 +9,5 @@ Class Busqueda extends CRUD {
     $sql = $this->_Select($query,null,"1"); //Agregar un null xq no existe ningun array
     return $sql;
   } 
-
-  function getFechaAntigua()
-  {
-      $query = "SELECT * FROM productos WHERE fecha BETWEEN '20220106 00:00:00' AND '2022-05-06 00:00:00'";
-      $sql = $this->_Select($query, null, "1");
-      return $sql;
-  }
-    
 }
 ?>
