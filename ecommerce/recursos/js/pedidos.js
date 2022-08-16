@@ -125,23 +125,10 @@ $("#listaCategoriasModal").change(function () {
 //---------------------------------------------------
 $("body #catalogoProductos").on("click", "div", function () {
   if ($(this).attr("id") != undefined) {
+    let id = $(this).attr("id");
+    alert(id);
   }
 });
-
-// div[id=idcapa]
-
-// $(function () {
-//   $("body #catalogoProductos").on("click", "card", function () {
-//     alert($(this).val());
-//   });
-// });
-
-// $(function () {
-//   $("#submit").on("click", function (event) {
-//     alert("Submit button is clicked!");
-//     event.preventDefault();
-//   });
-// });
 
 //-------------------------------------------------
 $(function () {
