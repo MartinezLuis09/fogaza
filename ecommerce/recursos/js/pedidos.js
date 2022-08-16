@@ -90,9 +90,9 @@ $("#listaCategorias").change(function () {
     success: function (data) {
       if (seleccion > 0) {
         $("#listaCategoriasModal").prop("selectedIndex", seleccion);
-        $("#listaCategorias").prop("selectedIndex", 0);
         $("#catalogoProductos").html(data);
         $("#modalProductos").modal("show");
+        $("#listaCategorias").prop("selectedIndex", 0);
         console.log(data);
       }
     },
@@ -122,27 +122,13 @@ $("#listaCategoriasModal").change(function () {
   });
 });
 
-//----------------------------------------------------------
-$(function () {
-  $("body").on("click", "#catalogoProductos card", function () {
-    alert($(this).attr("id"));
-  });
+//---------------------------------------------------
+$("div.modal-body #catalogoProductos").on("click", "div", function () {
+  if ($(this).attr("id") != undefined) {
+    let id = $(this).attr("id");
+    alert(id);
+  }
 });
-
-// div[id=idcapa]
-
-// $(function () {
-//   $("body #catalogoProductos").on("click", "card", function () {
-//     alert($(this).val());
-//   });
-// });
-
-// $(function () {
-//   $("#submit").on("click", function (event) {
-//     alert("Submit button is clicked!");
-//     event.preventDefault();
-//   });
-// });
 
 //-------------------------------------------------
 $(function () {
@@ -164,6 +150,7 @@ $(function () {
     singleDatePicker: true,
     defaultDate: today,
     timePicker: true,
+    timePicker24Hour: true,
     startDate: moment().startOf("hour"),
     locale: {
       format: "DD/MM/YYYY",
