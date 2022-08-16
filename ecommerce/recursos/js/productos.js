@@ -27,7 +27,7 @@ $(function getCategoriasNombre() {
     cache: false,
     success: function (respuesta) {
       $("#selectCategorias").html(opcionDesabilitada + respuesta);
-      console.log("categorias",respuesta) 
+      // console.log("categorias",respuesta) 
      },
   });
 });
@@ -48,7 +48,7 @@ $("#selectCategorias").change(function () {
     success: function (respuesta) {
       $("#contenedorProductosLista").html(respuesta);
       $(".breadcrumb-item.active.bold").html(nombreCategoria);
-      console.log("Mostrar",respuesta);
+      // console.log("Mostrar",respuesta);
         },
   });
 });
