@@ -25,7 +25,7 @@
                 <div class="col-12" producto="1">
                     <div class="card">
                         <div class="row">
-                            <div class="col-12 col-sm-4" data-aos="fade-up">
+                            <div class="col-12 col-sm-4">
 
                                 <!-- <img src="ecommerce/recursos/img/productos/principal/default.png" class="card-img-top"
                                     alt="..."> -->

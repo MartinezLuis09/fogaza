@@ -7,8 +7,6 @@ include 'header.php';
 include 'navbar.php';
 ?>
 
-<body>
-
     <!-- ENCABEZADO CATEGORIAS -->
     <div class="bg-light pt-3 ps-3 mb-2">
         <div class="row">
@@ -22,15 +20,11 @@ include 'navbar.php';
                     </ol>
                 </nav>
                 <div class="col-11 col-sm-6 col-lg-3">
-                <select class="form-select form-select ms-4 col-2" aria-label="Categorías" id="">
-                    <option selected>Destacados</option>
-                    <option value="1">Categoría 1</option>
-                    <option value="2">Categoría 2</option>
-                    <option value="3">Categoría 3</option>
+                <select class="form-select form-select ms-4 col-2" aria-label="Categorías" id="selectFechas">
+            
                 </select>
             </div>
             </div>
-            
 
             <div class="col-sm-2 col-md-6 col-lg-6 d-none d-sm-flex flex-row-reverse">
                 <button type="button" class="btn btn-default" id="btnGridList"><i class="icon-th-list"></i></button>
@@ -40,7 +34,7 @@ include 'navbar.php';
     </div>
     
 
-
+<body>
     <main>
         <section class="container">
             <div class="row" id="contenedorProductos">

@@ -1,5 +1,5 @@
 <?php
-include_once('../modelo/mdl_buscador.php');
+include_once('../modelo/mdl_Buscador.php');
 $obj = new Busqueda;
 
 $opc    = $_POST['opc'];
@@ -55,6 +55,15 @@ switch($opc){
         ';
         }
         echo $tarjetas;
+    break;
+    case 1:
+        $fechas = "";
+        $sql = $obj->getFecha();
+        foreach ($sql as $row) {
+            $fechas =
+                '<option value="' . $row['id'] . '">' . $row['fecha'] . '</option>';
+            echo $fechas;
+        }
     break;
 }
 ?>

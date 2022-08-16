@@ -8,13 +8,13 @@ Class Producto extends CRUD {
         return $sql;
     }
 
-    function mostrarProductosCat($idCat) {
-        $query = "SELECT * FROM productos WHERE id_categoria = '" . $idCat . "'";
+    function mostrarProductosCategoria($idCategoria) {
+        $query = "SELECT * FROM productos WHERE id_categoria = '" . $idCategoria . "'";
         $sql = $this->_Select($query,null,"1");
         return $sql;
       } 
       
-    function getCatProdInd()
+    function getCategoriasProductos()
     {
         $query = "SELECT * FROM categorias ORDER BY id ASC";
         $sql = $this->_Select($query, null, "1");

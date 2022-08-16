@@ -9,7 +9,7 @@
  <div class="bg-light p-2">
         <div class="row">
             <div class="col-11 col-sm-6 col-lg-3">
-                <select class="form-select form-select ms-4 col-2" aria-label="Categorías" id="slCat">
+                <select class="form-select form-select ms-4 col-2" aria-label="Categorías" id="selectCategorias">
                 
                 </select>
             </div>

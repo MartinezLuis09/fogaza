@@ -10,7 +10,7 @@ function busqueda(n) {
   datos.append("coincidencia", n);
   $.ajax({
     type: "POST",
-    url: "../controlador/ctrl_buscador.php",
+    url: "../controlador/ctrl_Buscador.php",
     contentType: false,
     data: datos,
     processData: false,
@@ -20,3 +20,21 @@ function busqueda(n) {
     },
   });
 }
+
+$(function getFechas() {
+  let datos = new FormData();
+  let opcionDesabilitadaSl ='<option disabled selected value="ORDENAR">ORDENAR</option>';
+  datos.append("opc", 1);
+  $.ajax({
+    type: "POST",
+    url: "../controlador/ctrl_Buscador.php",
+    contentType: false,
+    data: datos,
+    processData: false,
+    cache: false,
+    success: function (respuesta) {
+      $("#selectFechas").html(opcionDesabilitadaSl + respuesta);
+      console.log("categoriasxd",respuesta) 
+     },
+  });
+});

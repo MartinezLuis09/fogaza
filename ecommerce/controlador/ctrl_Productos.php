@@ -12,7 +12,7 @@ switch($opc){
         foreach($sql as $row){
             $tarjetas = '
             <div class="gridProduct pointer col-6 col-lg-3 pt-4">
-                <div class="card" >
+                <div class="card" id="'. $row['id'] . '" >
                     <div class="rowList">
                         <div class="imgList">
                             <img src="../recursos/img/productos/principal/default.png?t=' . time() . '" class="card-img-top"
@@ -41,7 +41,7 @@ switch($opc){
                    break;
     case 2:
         $categorias = "";
-        $sql = $obj->getCatProdInd();
+        $sql = $obj->getCategoriasProductos();
         foreach ($sql as $row) {
             $categorias =
                 '<option value="' . $row['id'] . '">' . $row['categoria'] . '</option>';
@@ -51,12 +51,12 @@ switch($opc){
 
         case 3:
             $tarjetas = null;
-            $idCat = $_POST['idCat'];
-            $sql = $obj -> mostrarProductosCat($idCat);  
+            $idCategoria = $_POST['idCategoria'];
+            $sql = $obj -> mostrarProductosCategoria($idCategoria);  
             foreach($sql as $row){
                 $tarjetasCat = '
                 <div class="gridProduct pointer col-6 col-lg-3 pt-4">
-                    <div class="card" >
+                    <div class="card" id="'. $row['id'] . '">
                         <div class="rowList">
                             <div class="imgList">
                                 <img src="../recursos/img/productos/principal/default.png?t=' . time() . '" class="card-img-top"
