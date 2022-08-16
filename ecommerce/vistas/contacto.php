@@ -8,6 +8,9 @@ include("navbar.php");
 
 
 <body>
+<?php
+include("botonesflotantes.php");
+?>
     <!-- ENCABEZADO CATEGORIAS -->
     <div class="bg-light pt-3 ps-3 mb-2">
         <div class="col-12">

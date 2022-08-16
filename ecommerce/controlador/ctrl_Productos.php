@@ -15,10 +15,10 @@ switch($opc){
                 <div class="card" id="'. $row['id'] . '" >
                     <div class="rowList">
                         <div class="imgList">
-                        
+                            <a href="../vistas/producto.php">
                             <img src="../recursos/img/productos/principal/default.png?t=' . time() . '" class="card-img-top"
                             alt="...">
-                            
+                            </a>
                         </div>
                         <div class="bodyList">
                             <div class="card-body pb-4" style="height: 65px;">
@@ -46,7 +46,7 @@ switch($opc){
         $sql = $obj->getCategoriasProductos();
         foreach ($sql as $row) {
             $categorias =
-                '<option value="' . $row['id'] . '">' . $row['categoria'] . '</option>';
+                '<option class="text-uppercase fw-bold" value="' . $row['id'] . '">' . $row['categoria'] . '</option>';
             echo $categorias;
         }
         break;
@@ -89,10 +89,10 @@ switch($opc){
             case 4:
                 $tarjetas = null;
                 $idProducto = $_POST['idProducto'];
-                $sql = $obj -> mostrarProductosCategoria($idProducto);  
+                $sql = $obj -> mostrarProductosIndividualmente($idProducto);  
                 foreach($sql as $row){
                     $tarjetasCat = '
-                    <div class="col-12" id="'. $row['idProducto'] . '">
+                    <div class="col-12">
                     <div class="card">
                         <div class="row">
                             <div class="col-12 col-sm-4">
@@ -108,7 +108,7 @@ switch($opc){
                             <div class="col-12 col-sm-8">
                                 <div class="card-body">
                                     <p class="card-title fs-1 m-0 text-uppercase text-danger text-uppercase">' . $row['titulo'] . ' </p>
-                                    <p class="card-text fs-3">' . $row['precio'] . ' </p>
+                                    <p class="card-text fs-3">$ ' . $row['precio'] . ' </p>
                                     <p class="card-text">
                                     ' . $row['descripcion'] . ' 
                                     </p>
