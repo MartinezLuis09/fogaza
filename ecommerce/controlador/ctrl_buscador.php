@@ -44,14 +44,17 @@ switch($opc){
         echo $tarjetas;
     break;
     case 1:
-        echo $sql = $obj-> getFechaAntigua();
-     /*    $fechas = "";
-        $sql = $obj->getFecha();
+        $sql = $obj-> getPrecioMenor();
+        // $sql = $obj-> getPrecioMayor();
+        $fechas = "";
+        //$sql = $obj->getFecha();
         foreach ($sql as $row) {
-            $fechas =
-                '<option value="' . $row['id'] . '">' . $row['fecha'] . '</option>';
+            $fechas .=
+                '
+                <option value="' . $row['id'] . '">' . $row['fecha'] . '</option>
+                ';
             echo $fechas;
-        } */
+        } 
     break;
 }
 ?>

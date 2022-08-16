@@ -221,6 +221,9 @@ include("botonesflotantes.php");
                                     </div>
                                 </div>
 
+                                <div class="">
+                                </div>
+
                                 <div class="card-text text-center text-md-center text-lg-end p-3">
                                     <button class="btn btn-danger col-12 col-xl-7" aria-label="Realizar Pedido"><i
                                             class="icon-basket-1"></i>
