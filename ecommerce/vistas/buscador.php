@@ -32,8 +32,7 @@ include 'navbar.php';
             </div>
         </div>
     </div>
-    
-
+</br>
 <body>
     <main>
         <section class="container">
