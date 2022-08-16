@@ -1,5 +1,5 @@
 <?php
-include_once('../modelo/mdl_buscador.php');
+include_once('../modelo/mdl_Buscador.php');
 $obj = new Busqueda;
 
 $opc    = $_POST['opc'];
@@ -23,7 +23,7 @@ switch($opc){
                         alt="...">
                     </div>
                     <div class="bodyList">
-                        <div class="card-body pb-4" style="height: 65px;">
+                        <div class="card-body pb-4" style="height: 70px;">
                             <p class="card-title m-0 text-uppercase text-danger fw-bold"><strong>' . $row['titulo'] . '</strong></p>
                         </div>
                         <div class="card-body pb-4" style="height: 15px;">

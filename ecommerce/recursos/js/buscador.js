@@ -10,7 +10,7 @@ function busqueda(n) {
   datos.append("coincidencia", n);
   $.ajax({
     type: "POST",
-    url: "../controlador/ctrl_buscador.php",
+    url: "../controlador/ctrl_Buscador.php",
     contentType: false,
     data: datos,
     processData: false,
