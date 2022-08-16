@@ -20,5 +20,11 @@ Class Producto extends CRUD {
         $sql = $this->_Select($query, null, "1");
         return $sql;
     }
+
+    function mostrarProductosIndividualmente($idProducto) {
+        $query = "SELECT * FROM productos WHERE id = '" . $idProducto . "'";
+        $sql = $this->_Select($query,null,"1");
+        return $sql;
+      } 
 }
 ?>

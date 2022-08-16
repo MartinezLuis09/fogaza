@@ -10,9 +10,11 @@ $(function mostrarTodosProductos() {
     cache: false,
     success: function (respuesta) {
       $("#contenedorProductosLista").html(respuesta);
-    },
+/*       console.log("Mostrar",respuesta);
+ */    },
   });
 });
+
 
 $(function getCategoriasNombre() {
   let datos = new FormData();
