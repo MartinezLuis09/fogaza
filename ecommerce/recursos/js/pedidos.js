@@ -90,9 +90,9 @@ $("#listaCategorias").change(function () {
     success: function (data) {
       if (seleccion > 0) {
         $("#listaCategoriasModal").prop("selectedIndex", seleccion);
-        $("#listaCategorias").prop("selectedIndex", 0);
         $("#catalogoProductos").html(data);
         $("#modalProductos").modal("show");
+        $("#listaCategorias").prop("selectedIndex", 0);
         console.log(data);
       }
     },
@@ -122,11 +122,10 @@ $("#listaCategoriasModal").change(function () {
   });
 });
 
-//----------------------------------------------------------
-$(function () {
-  $("body").on("click", "#catalogoProductos card", function () {
-    alert($(this).attr("id"));
-  });
+//---------------------------------------------------
+$("body #catalogoProductos").on("click", "div", function () {
+  if ($(this).attr("id") != undefined) {
+  }
 });
 
 // div[id=idcapa]
