@@ -12,20 +12,7 @@ switch($opc){
         $descripcion= '';
         $precio = '';
         $portada = '';
-        //La primera es crear un arreglo independiente
-        // $array = array($coincidencia);
-
-        //Al parecer el array no esta funcionando hay que probar la 2da forma
-        //Hay que meter la variable directamente. Y modificar el modelo.
-        // Ahora si funciona
         $sql = $obj -> mostrarProductosBuscador($coincidencia);     
-        // Ahora solo modificamos un poco para que nos muestre el nombre real dentro de la BD   
-        // para ello hacemos uso de la variable $row
-        // Podemos poner el nombre de la columna existente en la BD o ponemos la posicion
-        // en la que se encuentra empezando por el 0
-        // muestra el mismo resultado ya que $row[6] = $row['titulo']
-        // en lo personal recomiendo usar $row['nombre de columna'] es mas facil de identificar
-        
         foreach($sql as $row){ 
         $tarjetas .= '
         <div class="gridProduct pointer col-6 col-lg-3 pt-4">
@@ -36,8 +23,8 @@ switch($opc){
                         alt="...">
                     </div>
                     <div class="bodyList">
-                        <div class="card-body pb-4" style="height: 65px;">
-                            <p class="card-title m-0 text-danger fw-bold"><strong>' . $row['titulo'] . '</strong></p>
+                        <div class="card-body pb-4" style="height: 70px;">
+                            <p class="card-title m-0 text-uppercase text-danger fw-bold"><strong>' . $row['titulo'] . '</strong></p>
                         </div>
                         <div class="card-body pb-4" style="height: 15px;">
                             <h4 class="card-text">$'. $row['precio'] . '</h4>

@@ -49,7 +49,6 @@ $(function MostrarInfoUsu() {
       $("#nombre").val(data["nombre"]);
       $("#email").val(data["email"]);
       $("#telefono").val(data["telefono"]);
-      console.log(data);
     },
   });
 });
@@ -69,6 +68,7 @@ $(function mostrarCategorias() {
     cache: false,
     success: function (respuesta) {
       $("#listaCategorias").html(men + respuesta);
+      $("#listaCategoriasModal").html(men + respuesta);
     },
   });
 });
@@ -89,13 +89,60 @@ $("#listaCategorias").change(function () {
     cache: false,
     success: function (data) {
       if (seleccion > 0) {
+        $("#listaCategoriasModal").prop("selectedIndex", seleccion);
         $("#listaCategorias").prop("selectedIndex", 0);
         $("#catalogoProductos").html(data);
         $("#modalProductos").modal("show");
+        console.log(data);
       }
     },
   });
 });
+
+//---------------------------------------
+$("#listaCategoriasModal").change(function () {
+  let datos = new FormData();
+  let seleccion = $(this).val();
+
+  datos.append("opc", 5);
+  datos.append("id_categoria", seleccion);
+
+  $.ajax({
+    type: "POST",
+    url: "../controlador/ctrl_Pedidos.php",
+    contentType: false,
+    data: datos,
+    processData: false,
+    cache: false,
+    success: function (data) {
+      if (seleccion > 0) {
+        $("#catalogoProductos").html(data);
+      }
+    },
+  });
+});
+
+//----------------------------------------------------------
+$(function () {
+  $("body").on("click", "#catalogoProductos card", function () {
+    alert($(this).attr("id"));
+  });
+});
+
+// div[id=idcapa]
+
+// $(function () {
+//   $("body #catalogoProductos").on("click", "card", function () {
+//     alert($(this).val());
+//   });
+// });
+
+// $(function () {
+//   $("#submit").on("click", function (event) {
+//     alert("Submit button is clicked!");
+//     event.preventDefault();
+//   });
+// });
 
 //-------------------------------------------------
 $(function () {

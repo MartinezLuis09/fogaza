@@ -20,7 +20,7 @@ switch($opc){
                         </div>
                         <div class="bodyList">
                             <div class="card-body pb-4" style="height: 65px;">
-                                <p class="card-title m-0 text-danger fw-bold"><strong>' . $row['titulo'] . '</strong></p>
+                                <p class="card-title m-0 text-uppercase text-danger fw-bold"><strong>' . $row['titulo'] . '</strong></p>
                             </div>
                             <div class="card-body pb-4" style="height: 15px;">
                                 <h4 class="card-text">$'. $row['precio'] . '</h4>
@@ -64,7 +64,7 @@ switch($opc){
                             </div>
                             <div class="bodyList">
                                 <div class="card-body pb-4" style="height: 65px;">
-                                    <p class="card-title m-0 text-danger fw-bold"><strong>' . $row['titulo'] . '</strong></p>
+                                    <p class="card-title m-0 text-uppercase text-danger fw-bold"><strong>' . $row['titulo'] . '</strong></p>
                                 </div>
                                 <div class="card-body pb-4" style="height: 15px;">
                                     <h4 class="card-text">$'. $row['precio'] . '</h4>
