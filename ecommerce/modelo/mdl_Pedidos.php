@@ -39,4 +39,11 @@ class Pedidos extends CRUD
         $sql = $this->_Select($query, null, "1");
         return $sql;
     }
+
+    function mostrarInformacionProducto($id)
+    {
+        $query = "SELECT * FROM productos WHERE id = '" . $id . "' ";
+        $sql = $this->_Select($query, null, "1");
+        return $sql;
+    }
 }
