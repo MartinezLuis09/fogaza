@@ -1,3 +1,8 @@
+// $("#divInfoPastel").hide();
+// $("#divObservaciones").hide();
+// $("#divInfoEntrega").hide();
+// $("#divCostos").hide();
+
 //-------------------------------------------------------------
 $(function fechaActual() {
   let datos = new FormData();
@@ -27,7 +32,7 @@ $(function ultimoFolioPedido() {
     processData: false,
     cache: false,
     success: function (res) {
-      $("#folioPedido").val(parseInt(res, 10) + 1);
+      $("#folioPedido").val(res.trim().padStart(5, "0"));
     },
   });
 });
@@ -154,7 +159,7 @@ $(function () {
     timePicker24Hour: true,
     startDate: moment().startOf("hour"),
     locale: {
-      format: "DD/MM/YYYY",
+      format: "DD/MM/YYYY - HH:mm",
       daysOfWeek: ["Do", "Lu", "Ma", "Mi", "Ju", "Vi", "Sa"],
       monthNames: [
         "Enero",
