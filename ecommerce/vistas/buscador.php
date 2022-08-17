@@ -20,10 +20,12 @@ include 'navbar.php';
                     </ol>
                 </nav>
                 <div class="col-11 col-sm-6 col-lg-3">
-                <select class="form-select form-select ms-4 col-2" aria-label="Categorías" id="selectFechas">
-            
-                </select>
-            </div>
+                    <select class="form-select form-select ms-4 col-2" aria-label="Categorías" id="selectFechas">
+                        <option value="0">ORDENAR</option>
+                        <option value="1">Menor a mayor</option>
+                        <option value="2">Mayor a menor</option>
+                    </select>
+                </div>
             </div>
 
             <div class="col-sm-2 col-md-6 col-lg-6 d-none d-sm-flex flex-row-reverse">
