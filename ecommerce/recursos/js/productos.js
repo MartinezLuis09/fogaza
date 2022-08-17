@@ -19,7 +19,7 @@ $(function mostrarTodosProductos() {
 $(function getCategoriasNombre() {
   let datos = new FormData();
   let opcionDesabilitada =
-    '<option class="text-uppercase  fw-bold"  disabled selected value="ELIJE UNA OPCION">ELIJE UNA OPCION</option>';
+    '<option class="text-uppercase  fw-bold"  disabled selected value="ELIJA UNA OPCION">ELIJA UNA OPCION</option>';
   datos.append("opc", 2);
   $.ajax({
     type: "POST",
@@ -54,25 +54,3 @@ $("#selectCategorias").change(function () {
   });
 });
 
-$("body #contenedorProductosLista").on("click", "div", function () {
-  if ($(this).attr("id") != undefined) {
-    let idProducto = $(this).attr("id");
-    /* alert(idProducto); */
-    let datos = new FormData();
-    datos.append("opc", 4);
-    datos.append("idProducto", idProducto);
-    $.ajax({
-      type: "POST",
-      url: "../controlador/ctrl_Productos.php",
-      contentType: false,
-      data: datos,
-      processData: false,
-      cache: false,
-      success: function (respuesta) {
-        /* window.location.replace("../vistas/producto.php"); */
-        $("#contenedorProducto").html(respuesta);
-        console.log("Mostrar", respuesta);
-      },
-    });
-  }
-});

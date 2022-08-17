@@ -36,6 +36,7 @@ include("footer.php");
 ?>
    <script src="../recursos/js/index.js"=<?php echo time(); ?>"></script>
    <script src="../recursos/js/productos.js"=<?php echo time(); ?>"></script>
+   <script src="../recursos/js/producto.js"=<?php echo time(); ?>"></script>
    <script src="../recursos/js/buscador.js"=<?php echo time(); ?>"></script>
 
    <script>

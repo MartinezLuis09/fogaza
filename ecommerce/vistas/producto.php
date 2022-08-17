@@ -27,6 +27,7 @@ include("botonesflotantes.php");
         <!-- PRODUCTOS -->
         <section class="container">
             <div class="row" id="contenedorProducto">
+                
             </div>
         </section>
     </main>
@@ -38,6 +39,8 @@ include("botonesflotantes.php");
     <script src="../recursos/js/index.js"=<?php echo time(); ?>"></script>
     <script src="../recursos/js/index.min.js"=<?php echo time(); ?>"></script>
     <script src="../recursos/js/productos.js"=<?php echo time(); ?>"></script>
+    <script src="../recursos/js/producto.js"=<?php echo time(); ?>"></script>
+
     <script>
         AOS.init();
     </script>

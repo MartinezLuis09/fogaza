@@ -1,24 +1,19 @@
 <?php
 include_once('../modelo/mdl_Productos.php');
 $obj = new Producto;
-
 $opc    = $_POST['opc'];
-
-
 switch($opc){
     case 1://FUNCION DETERMINADA POR LA VARIABLE DE OPCION
         $tarjetas = null;
-        $sql = $obj -> mostrarProductos();  
+        $sql = $obj -> mostrarProductos(); 
         foreach($sql as $row){
             $tarjetas = '
             <div class="gridProduct pointer col-6 col-lg-3 pt-4">
                 <div class="card" id="'. $row['id'] . '" >
                     <div class="rowList">
                         <div class="imgList">
-                            <a href="../vistas/producto.php">
                             <img src="../recursos/img/productos/principal/default.png?t=' . time() . '" class="card-img-top"
                             alt="...">
-                            </a>
                         </div>
                         <div class="bodyList">
                             <div class="card-body pb-4" style="height: 65px;">
@@ -52,7 +47,7 @@ switch($opc){
         break;
 
         case 3:
-            $tarjetas = null;
+            $tarjetasCat = null;
             $idCategoria = $_POST['idCategoria'];
             $sql = $obj -> mostrarProductosCategoria($idCategoria);  
             foreach($sql as $row){
@@ -87,13 +82,13 @@ switch($opc){
             break;
 
             case 4:
-                $tarjetas = null;
+                $tarjetasIn = null;
                 $idProducto = $_POST['idProducto'];
                 $sql = $obj -> mostrarProductosIndividualmente($idProducto);  
                 foreach($sql as $row){
-                    $tarjetasCat = '
+                    $tarjetasIn = '
                     <div class="col-12">
-                    <div class="card">
+                    <div class="card" id="'. $row['id'] . '">
                         <div class="row">
                             <div class="col-12 col-sm-4">
                             <img src="../recursos/img/productos/principal/default.png?t=' . time() . '" class="card-img-top"
@@ -153,7 +148,7 @@ switch($opc){
                                         <div class="input-group mb-3">
                                             <span class="input-group-text">$</span>
                                             <input type="text" class="form-control text-end" id="iptSubtotal"
-                                                aria-label="Precio total del producto" value="0.00" disabled>
+                                                aria-label="Precio total del producto" value="$ ' . $row['precio'] . '" disabled>
                                         </div>
                                     </div>
                                     <div class="card-text mt-3">
@@ -168,7 +163,7 @@ switch($opc){
                     </div>
                 </div>
                     ';
-                    echo $tarjetasCat;
+                    echo $tarjetasIn;
                    }  
                 break;
 
