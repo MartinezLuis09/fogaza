@@ -1,18 +1,8 @@
-<!DOCTYPE html>
-<html lang="es">
+<!-- ARCHIVOS PHP -->
+<?php include("header.php"); include("navbar.php");?>
 
-<?php
-include("header.php");
-include("navbar.php");
-?>
-
-
-<body>
-<?php
-include("botonesflotantes.php");
-?>
-    <!-- ENCABEZADO CATEGORIAS -->
-    <div class="bg-light pt-3 ps-3 mb-2">
+ <!-- ENCABEZADO CATEGORIAS -->
+ <div class="bg-light pt-3 ps-3 mb-2">
         <div class="col-12">
             <nav class="text-uppercase" style="--bs-breadcrumb-divider: '/';" aria-label="breadcrumb">
                 <ol class="breadcrumb">
@@ -24,9 +14,11 @@ include("botonesflotantes.php");
             </nav>
         </div>
     </div>
-
+<!-- CONTACTO -->
+<body>
+<!-- ARCHIVOS PHP -->
+<?php include("botonesflotantes.php");?>
     <main>
-        <!-- PRODUCTOS -->
         <section class="container">
             <div class="row">
                 <div class="card mb-3" style="z-index:1;">
@@ -119,29 +111,10 @@ include("botonesflotantes.php");
                 </div>
         </section>
     </main>
-    <?php
-    include("footer.php");
-    ?>
-    <!-- BOOTSTRAP -->
-    <!-- https://getbootstrap.com/docs/5.2/getting-started/introduction/ -->
-    <script src="../recursos/bootstrap-5.2.0/popper.js"=<?php echo time(); ?>"></script>
-    <script src="../recursos/bootstrap-5.2.0/js/bootstrap.min.js"></script>
-
-    <!-- JQUERY -->
-    <!-- https://jquery.com/ -->
-    <script src="../recursos/jQuery-3.6.0/jquery-3.6.0.min.js"=<?php echo time(); ?>"></script>
-
-    <!-- SWEETALERT -->
-    <!-- https://sweetalert2.github.io/ -->
-    <script src="../recursos/plugins/sweetalert2/package/dist/sweetalert2.all.min.js"=<?php echo time(); ?>"></script>
-
-    <!-- AOS Framework -->
-    <!-- https://michalsnik.github.io/aos/ -->
-    <script src="../recursos/plugins/aos-master/dist/aos.js"=<?php echo time(); ?>"></script>
-
+    <!-- ARCHIVOS PHP -->
+    <?php include("footer.php");?>
+    <!---------------------------ARCHIVOS SCRIPTS ------------------------------------------------------------>
     <script src="../recursos/js/index.js"=<?php echo time(); ?>"></script>
-    <script src="../recursos/js/index.js"=<?php echo time(); ?>"></script>
-
     <script>
         AOS.init();
     </script>

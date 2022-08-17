@@ -1,15 +1,7 @@
-<!DOCTYPE html>
-<html lang="es">
 
-<?php
-include("header.php");
-include("navbar.php");
-?>
+<!-- ARCHIVOS PHP -->
+<?php include("header.php"); include("navbar.php");?>
 
-<body>
-    <?php
-    include("botonesflotantes.php");
-    ?>
     <!-- ENCABEZADO CATEGORIAS -->
     <div class="bg-light p-2">
         <div class="col-12 ">
@@ -23,18 +15,19 @@ include("navbar.php");
         </div>
     </div>
 
+
+<!-- PEDIDOS -->
+<body>
+<!-- ARCHIVOS PHP -->
+<?php include("botonesflotantes.php");?>
     <main>
-        <!-- PRODUCTOS -->
         <section class="container ">
             <div class="row">
                 <div class="card mb-3" style="z-index:1;">
-
                     <div class="row">
-
                         <div class="card-header fw-bold">
                             <h5 class="card-title fw-bold text-uppercase text-center">Solicitud de Pedido</h5>
                         </div>
-
                         <div class="card-body">
                             <div class="card-text row">
                                 <div class="col-12 col-sm-3">
@@ -54,11 +47,7 @@ include("navbar.php");
                                             Numero de Pedido</label>
                                     </div>
                                 </div>
-
-
                                 <div class="card-text row">
-
-
                                     <div class="col-12 col-sm-3">
                                         <div class="form-floating mb-3">
                                             <input type="text" class="form-control" id="montoTotal" placeholder="$00.00"
@@ -67,8 +56,6 @@ include("navbar.php");
                                                 Monto Total</label>
                                         </div>
                                     </div>
-
-
                                     <div class="col-12 col-sm-3">
                                         <div class="form-floating mb-3">
                                             <input type="number" class="form-control" id="montoAnticipo"
@@ -94,7 +81,6 @@ include("navbar.php");
                                         </div>
                                     </div>
                                 </div>
-
                                 <div class="card-text">
                                     <div class="form-floating mb-3">
                                         <textarea class="form-control textarea" placeholder="Observacion"
@@ -104,20 +90,15 @@ include("navbar.php");
                                             Observaciones</label>
                                     </div>
                                 </div>
-
                                 <div class="">
                                 </div>
-
                                 <div class="card-text text-center text-md-center text-lg-end p-3">
                                     <button class="btn btn-danger col-12 col-xl-7" aria-label="Realizar Pedido"><i
                                             class="icon-basket-1"></i>
                                         Realizar Pedido</button>
                                 </div>
-
                             </div>
-
                             <fieldset disabled>
-
                                 <div class="card-text row">
                                     <div class="col-12 col-sm-4">
                                         <div class="form-floating mb-3">
@@ -142,11 +123,9 @@ include("navbar.php");
                                             <label for="telefono" aria-label="Telefono"><i class="icon-phone-1"></i>
                                                 Teléfono</label>
                                         </div>
-
                                     </div>
                                 </div>
                             </fieldset>
-
                             <div class="card-text row">
                                 <div class="col-12 col-sm-4">
                                     <div class="form-floating mb-3">
@@ -157,7 +136,6 @@ include("navbar.php");
                                                 class="icon-th-list"></i>
                                             Categoria de Productos</label>
                                     </div>
-
                                 </div>
                                 <div class="col-12 col-sm-4">
                                     <div class="form-floating mb-3">
@@ -186,8 +164,6 @@ include("navbar.php");
                                     </div>
                                 </div>
                             </div>
-
-
                             <div class="card-text">
                                 <div class="form-floating mb-3">
                                     <input type="text" class="form-control" id="leyenda" placeholder="La Fogaza" />
@@ -195,8 +171,6 @@ include("navbar.php");
                                         Leyenda del Pastel</label>
                                 </div>
                             </div>
-
-
                             <div class="card-text row">
                                 <div class="col-12 col-sm-4">
                                     <div class="form-floating mb-3">
@@ -207,12 +181,10 @@ include("navbar.php");
                                 </div>
                                 <div class="col-12 col-sm-4">
                                     <div class="form-floating  mb-3">
-
                                         <select class="form-select" aria-label="Entrega en Tienda">
                                             <option value="Entrega en Tienda" selected>Entrega en Tienda</option>
                                             <option value="Entrega a Domicilio">Entrega a Domicilio</option>
                                         </select>
-
                                         <label for="tipoEntrega" aria-label="Sabor de Pan"><i class="icon-truck">
                                             </i> Tipo de Entrega</label>
                                     </div>
@@ -225,7 +197,6 @@ include("navbar.php");
                                     </div>
                                 </div>
                             </div>
-
                             <div class="card-text">
                                 <div class="form-floating mb-3">
                                     <textarea class="form-control textarea" placeholder="Direccion"
@@ -234,8 +205,6 @@ include("navbar.php");
                                         Direccion</label>
                                 </div>
                             </div>
-
-
                             <div class="card-text row">
                                 <div class="col-12 col-sm-3">
                                     <div class="form-floating mb-3">
@@ -245,8 +214,6 @@ include("navbar.php");
                                             Monto Total</label>
                                     </div>
                                 </div>
-
-
                                 <div class="col-12 col-sm-3">
                                     <div class="form-floating mb-3">
                                         <input type="number" class="form-control" id="montoAnticipo"
@@ -273,7 +240,6 @@ include("navbar.php");
                                     </div>
                                 </div>
                             </div>
-
                             <div class="card-text">
                                 <div class="form-floating mb-3">
                                     <textarea class="form-control textarea" placeholder="Observacion" id="observaciones"
@@ -282,26 +248,16 @@ include("navbar.php");
                                         Observaciones</label>
                                 </div>
                             </div>
-
-
                         </div>
                     </div>
                 </div>
             </div>
-
-
-
-
-
-
             <div class="row">
                 <div class="card mb-3" style="z-index:1;">
                     <div class="row">
-
                         <div class="card-header fw-bold">
                             <h5 class="card-title fw-bold text-uppercase text-center">Lista de Productos</h5>
                         </div>
-
                         <div class="card-body p-sm-2 p-md-4 p-lg-4 p-xl-4" id="CarritoCompras">
                             <div class="row">
                                 <div class="card-text col-4 col-sm-4 col-md-4 col-lg-2 col-xl-2">
@@ -337,9 +293,7 @@ include("navbar.php");
                                 </div>
                                 <hr>
                             </div>
-
                         </div>
-
                         <div class="card-text text-center text-md-center text-lg-end p-3">
                             <button class="btn btn-danger col-12 col-xl-7" aria-label="Realizar Pedido"><i
                                     class="icon-basket-1"></i>
@@ -348,10 +302,6 @@ include("navbar.php");
                     </div>
                 </div>
             </div>
-
-
-
-
             <!-- Modal -->
             <div class="modal fade " id="modalProductos" data-bs-backdrop="static" tabindex="-1"
                 aria-labelledby="modalProductos" aria-hidden="true">
@@ -359,12 +309,10 @@ include("navbar.php");
                     <div class="modal-content">
                         <div class="modal-header">
                             <div class="col">
-
                                 <div class="card-text row">
                                     <h5 class="modal-title fw-bold text-uppercase text-center">Catalogo de Productos
                                     </h5>
                                 </div>
-
                                 <div class="card-text row">
                                     <div class="col-12 col-sm-3">
                                         <div class="form-floating ">
@@ -376,9 +324,7 @@ include("navbar.php");
                                                 Categoria de Productos</label>
                                         </div>
                                     </div>
-
                                     <div class="col-12 col-sm-6"></div>
-
                                     <!-- <div class="col-12 col-sm-3">
                                         <div class="form-floating ">
                                             <select id="ordenarModal" class="form-select form-select-sm" placeholder="Seleccionar Orden">
@@ -392,14 +338,11 @@ include("navbar.php");
                                         </div>
                                     </div> -->
                                 </div>
-
                             </div>
                         </div>
-
                         <div class="modal-body">
                             <div class="row" id="catalogoProductos"></div>
                         </div>
-
                         <div class="modal-footer">
                             <button type="button" class="btn btn-danger col-12 col-xl-7" data-bs-dismiss="modal">
                                 <i class="icon-basket-1"></i>
@@ -408,27 +351,18 @@ include("navbar.php");
                     </div>
                 </div>
             </div>
-
-
-
-
-
         </section>
     </main>
-
-    <?php
-    include("footer.php");
-    ?>
-
+<!--ARCHIVOS PHP -->
+    <?php include("footer.php");?>
+<!--ARCHIVOS SCRIPTS -->
     <link rel="stylesheet" href="../recursos/daterangepicker/daterangepicker.css?t=<?php echo time(); ?>" />
-
     <script src="../recursos/js/index.min.js?t=<?php echo time(); ?>"></script>
     <script src="../recursos/js/pedidos.js?t=<?php echo time(); ?>"></script>
-
+    <script src="../recursos/js/index.js?t=<?php echo time(); ?>"></script>
     <script src="../recursos/jQuery-3.6.0/jquery-3.6.0.min.js?t=<?php echo time(); ?>"></script>
     <script src="../recursos/daterangepicker/moment.min.js?t=<?php echo time(); ?>"></script>
     <script src="../recursos/daterangepicker/daterangepicker.js?t=<?php echo time(); ?>"></script>
-
     <script>
     AOS.init();
     </script>

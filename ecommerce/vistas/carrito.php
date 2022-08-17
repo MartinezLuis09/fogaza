@@ -1,17 +1,8 @@
-<!DOCTYPE html>
-<html lang="es">
+    <!-- ARCHIVOS PHP -->
+<?php include("header.php"); include("navbar.php");?>
 
-<?php
- include("header.php");
- include("navbar.php");
- ?>
-
-<body>
-<?php
-include("botonesflotantes.php");
-?>
-    <!-- ENCABEZADO CATEGORIAS -->
-    <div class="bg-light pt-3 ps-3 mb-2">
+ <!-- ENCABEZADO CATEGORIAS -->
+ <div class="bg-light pt-3 ps-3 mb-2">
         <div class="col-12 ">
             <nav class="text-uppercase" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
                 <ol class="breadcrumb">
@@ -23,8 +14,11 @@ include("botonesflotantes.php");
         </div>
     </div>
 
+<!-- PRODUCTOS -->
+<body>
+<!-- ARCHIVOS PHP -->
+<?php include("botonesflotantes.php");?>
     <main>
-        <!-- PRODUCTOS -->
         <section class="container">
             <div class="row">
                 <div class="card p-0">
@@ -139,12 +133,10 @@ include("botonesflotantes.php");
             </div>
         </section>
     </main>
-    <?php
- include("footer.php");
- ?>
-
+    <!-- ARCHIVOS PHP -->
+    <?php include("footer.php");?>
+<!--ARCHIVOS SCRIPTS -->
     <script src="../recursos/js/index.js"=<?php echo time(); ?>"></script>
-
     <script>
         AOS.init();
     </script>

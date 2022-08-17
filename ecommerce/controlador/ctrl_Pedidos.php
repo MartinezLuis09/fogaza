@@ -9,7 +9,7 @@ switch ($opc) {
         echo $obj->fechaActual();
         break;
     case 2:
-        echo $obj->ultimoFolioPedido();
+        echo $obj->ultimoFolioPedido() + 1;
         break;
     case 3:
         $email = $_POST['email'];
@@ -18,9 +18,11 @@ switch ($opc) {
             $infoUsuario = array(
                 'nombre' => $row['nombre'],
                 'email' => $row['email'],
-                'telefono' => $row['telefono'],
+                'telefono' => "(" . substr($row['telefono'], 0, 3) . ")" . " " . substr($row['telefono'], 5, 3) . " - " . substr($row['telefono'], 6, 4),
             );
         }
+
+
         echo json_encode($infoUsuario);
         break;
     case 4:
