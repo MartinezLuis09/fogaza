@@ -1,11 +1,5 @@
-<!DOCTYPE html>
-<html lang="es">
-
-
-<?php
-include 'header.php';
-include 'navbar.php';
-?>
+    <!-- ARCHIVOS PHP -->
+<?php include 'header.php'; include 'navbar.php';?>
 
     <!-- ENCABEZADO CATEGORIAS -->
     <div class="bg-light pt-3 ps-3 mb-2">
@@ -35,10 +29,10 @@ include 'navbar.php';
         </div>
     </div>
 </br>
+<!--BUSCADOR-->
 <body>
-<?php
-include("botonesflotantes.php");
-?>
+    <!-- ARCHIVOS PHP -->
+<?php include("botonesflotantes.php");?>
     <main>
         <section class="container">
             <div class="row" id="contenedorProductos">
@@ -46,10 +40,11 @@ include("botonesflotantes.php");
             </div>
         </section>
     </main>
+    <!-- ARCHIVOS PHP -->
     <?php include 'footer.php'; ?>
+    <!--ARCHIVOS SCRIPTS -->
     <script src="../recursos/js/index.js?t=<?php echo time(); ?>"></script>
     <script src="../recursos/js/buscador.js?t=<?php echo time(); ?>"></script>
-
     <script>
     AOS.init();
     </script>

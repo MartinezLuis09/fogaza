@@ -1,11 +1,5 @@
-<!DOCTYPE html>
-<html lang="es">
-
-<?php
- include("header.php");
- include("navbar.php");
- ?>
-
+<!--ARCHIVOS PHP -->
+<?php include("header.php"); include("navbar.php");?>
 <!-- ENCABEZADO CATEGORIAS -->
 <div class="bg-light pt-3 ps-3 mb-2">
         <div class="col-12">
@@ -17,30 +11,23 @@
             </nav>
         </div>
     </div>
-
+<!--PRODUCTO INDIVIDUAL-->
 <body>
-
-<?php
-include("botonesflotantes.php");
-?>
+<!--ARCHIVOS PHP -->
+<?php include("botonesflotantes.php");?>
     <main>
-        <!-- PRODUCTOS -->
         <section class="container">
-            <div class="row" id="contenedorProducto">
-                
+            <div class="row" id="contenedorProducto">      
             </div>
         </section>
     </main>
-
-    <?php
- include("footer.php");
- ?>
-
+<!--ARCHIVOS PHP -->
+    <?php include("footer.php");?>
+<!--ARCHIVOS SCRIPTS -->
     <script src="../recursos/js/index.js"=<?php echo time(); ?>"></script>
     <script src="../recursos/js/index.min.js"=<?php echo time(); ?>"></script>
     <script src="../recursos/js/productos.js"=<?php echo time(); ?>"></script>
     <script src="../recursos/js/producto.js"=<?php echo time(); ?>"></script>
-
     <script>
         AOS.init();
     </script>
