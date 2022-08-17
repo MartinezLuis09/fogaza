@@ -7,6 +7,9 @@ include("navbar.php");
 ?>
 
 <body>
+    <?php
+    include("botonesflotantes.php");
+    ?>
     <!-- ENCABEZADO CATEGORIAS -->
     <div class="bg-light p-2">
         <div class="col-12 ">
@@ -51,6 +54,66 @@ include("navbar.php");
                                             Numero de Pedido</label>
                                     </div>
                                 </div>
+
+
+                                <div class="card-text row">
+
+
+                                    <div class="col-12 col-sm-3">
+                                        <div class="form-floating mb-3">
+                                            <input type="text" class="form-control" id="montoTotal" placeholder="$00.00"
+                                                readonly />
+                                            <label for="montoTotal" aria-label="Monto Total"><i class="icon-dollar"></i>
+                                                Monto Total</label>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-12 col-sm-3">
+                                        <div class="form-floating mb-3">
+                                            <input type="number" class="form-control" id="montoAnticipo"
+                                                placeholder="Anticipo Minimo 30%" />
+                                            <label for="montoAnticipo" aria-label="Anticipo Minimo 30%"><i
+                                                    class="icon-percent"></i> Anticipo Recomendado</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-3">
+                                        <div class="form-floating mb-3">
+                                            <input type="number" class="form-control" id="montoRestante"
+                                                placeholder="Monto Restante" />
+                                            <label for="montoRestante" aria-label="Restante"><i class="icon-dollar"></i>
+                                                Monto Restante</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-3">
+                                        <div class="form-floating mb-3">
+                                            <input type="number" class="form-control" id="importeBase"
+                                                placeholder="Importe de Base" />
+                                            <label for="importeBase" aria-label="Importe de Base"><i
+                                                    class="icon-dollar"></i> Importe de Base</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card-text">
+                                    <div class="form-floating mb-3">
+                                        <textarea class="form-control textarea" placeholder="Observacion"
+                                            id="observaciones" style="height: 125px"></textarea>
+                                        <label for="observaciones" aria-label="Observaciones"><i
+                                                class="icon-edit-1"></i>
+                                            Observaciones</label>
+                                    </div>
+                                </div>
+
+                                <div class="">
+                                </div>
+
+                                <div class="card-text text-center text-md-center text-lg-end p-3">
+                                    <button class="btn btn-danger col-12 col-xl-7" aria-label="Realizar Pedido"><i
+                                            class="icon-basket-1"></i>
+                                        Realizar Pedido</button>
+                                </div>
+
                             </div>
 
                             <fieldset disabled>

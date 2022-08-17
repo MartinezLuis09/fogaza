@@ -10,12 +10,19 @@ Class Busqueda extends CRUD {
     return $sql;
   } 
 
-  function getFechaAntigua()
+  function getPrecioMenor()
   {
-      $query = "SELECT * FROM productos WHERE fecha BETWEEN '20220106 00:00:00' AND '2022-05-06 00:00:00'";
+      $query = "SELECT * FROM productos ORDER BY precio ASC";
       $sql = $this->_Select($query, null, "1");
       return $sql;
   }
+
+  // function getPrecioMayor()
+  // {
+  //     $query = "SELECT * FROM productos ORDER BY precio DESC";
+  //     $sql = $this->_Select($query, null, "1");
+  //     return $sql;
+  // }
     
 }
 ?>

@@ -32,9 +32,11 @@ include 'navbar.php';
             </div>
         </div>
     </div>
-    
-
+</br>
 <body>
+<?php
+include("botonesflotantes.php");
+?>
     <main>
         <section class="container">
             <div class="row" id="contenedorProductos">
