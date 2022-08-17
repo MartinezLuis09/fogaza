@@ -1,24 +1,19 @@
 <?php
 include_once('../modelo/mdl_Productos.php');
 $obj = new Producto;
-
 $opc    = $_POST['opc'];
-
-
 switch($opc){
     case 1://FUNCION DETERMINADA POR LA VARIABLE DE OPCION
         $tarjetas = null;
-        $sql = $obj -> mostrarProductos();  
+        $sql = $obj -> mostrarProductos(); 
         foreach($sql as $row){
             $tarjetas = '
             <div class="gridProduct pointer col-6 col-lg-3 pt-4">
                 <div class="card" id="'. $row['id'] . '" >
                     <div class="rowList">
                         <div class="imgList">
-                        
                             <img src="../recursos/img/productos/principal/default.png?t=' . time() . '" class="card-img-top"
                             alt="...">
-                            
                         </div>
                         <div class="bodyList">
                             <div class="card-body pb-4" style="height: 65px;">
@@ -46,13 +41,13 @@ switch($opc){
         $sql = $obj->getCategoriasProductos();
         foreach ($sql as $row) {
             $categorias =
-                '<option value="' . $row['id'] . '">' . $row['categoria'] . '</option>';
+                '<option class="text-uppercase fw-bold" value="' . $row['id'] . '">' . $row['categoria'] . '</option>';
             echo $categorias;
         }
         break;
 
         case 3:
-            $tarjetas = null;
+            $tarjetasCat = null;
             $idCategoria = $_POST['idCategoria'];
             $sql = $obj -> mostrarProductosCategoria($idCategoria);  
             foreach($sql as $row){
@@ -87,13 +82,13 @@ switch($opc){
             break;
 
             case 4:
-                $tarjetas = null;
+                $tarjetasIn = null;
                 $idProducto = $_POST['idProducto'];
-                $sql = $obj -> mostrarProductosCategoria($idProducto);  
+                $sql = $obj -> mostrarProductosIndividualmente($idProducto);  
                 foreach($sql as $row){
-                    $tarjetasCat = '
-                    <div class="col-12" id="'. $row['idProducto'] . '">
-                    <div class="card">
+                    $tarjetasIn = '
+                    <div class="col-12">
+                    <div class="card" id="'. $row['id'] . '">
                         <div class="row">
                             <div class="col-12 col-sm-4">
                             <img src="../recursos/img/productos/principal/default.png?t=' . time() . '" class="card-img-top"
@@ -108,7 +103,7 @@ switch($opc){
                             <div class="col-12 col-sm-8">
                                 <div class="card-body">
                                     <p class="card-title fs-1 m-0 text-uppercase text-danger text-uppercase">' . $row['titulo'] . ' </p>
-                                    <p class="card-text fs-3">' . $row['precio'] . ' </p>
+                                    <p class="card-text fs-3">$ ' . $row['precio'] . ' </p>
                                     <p class="card-text">
                                     ' . $row['descripcion'] . ' 
                                     </p>
@@ -153,7 +148,7 @@ switch($opc){
                                         <div class="input-group mb-3">
                                             <span class="input-group-text">$</span>
                                             <input type="text" class="form-control text-end" id="iptSubtotal"
-                                                aria-label="Precio total del producto" value="0.00" disabled>
+                                                aria-label="Precio total del producto" value="$ ' . $row['precio'] . '" disabled>
                                         </div>
                                     </div>
                                     <div class="card-text mt-3">
@@ -168,7 +163,7 @@ switch($opc){
                     </div>
                 </div>
                     ';
-                    echo $tarjetasCat;
+                    echo $tarjetasIn;
                    }  
                 break;
 

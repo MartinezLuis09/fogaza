@@ -36,6 +36,9 @@ include 'navbar.php';
     </div>
 </br>
 <body>
+<?php
+include("botonesflotantes.php");
+?>
     <main>
         <section class="container">
             <div class="row" id="contenedorProductos">
