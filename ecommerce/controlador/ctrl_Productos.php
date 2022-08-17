@@ -20,7 +20,7 @@ switch($opc){
                                 <p class="card-title m-0 text-uppercase text-danger fw-bold"><strong>' . $row['titulo'] . '</strong></p>
                             </div>
                             <div class="card-body pb-4" style="height: 15px;">
-                                <h4 class="card-text">$'. $row['precio'] . '</h4>
+                                <h4 class="card-text">$ ' . number_format($row['precio'], 2) . '</h4>
                             </div>
                             <div class="card-body pb-4" style="height: 100px;">
                                 <hr>
@@ -64,7 +64,7 @@ switch($opc){
                                     <p class="card-title m-0 text-uppercase text-danger fw-bold"><strong>' . $row['titulo'] . '</strong></p>
                                 </div>
                                 <div class="card-body pb-4" style="height: 15px;">
-                                    <h4 class="card-text">$'. $row['precio'] . '</h4>
+                                    <h4 class="card-text">$ ' . number_format($row['precio'], 2) . '</h4>
                                 </div>
                                 <div class="card-body pb-4" style="height: 100px;">
                                     <hr>
@@ -103,7 +103,7 @@ switch($opc){
                             <div class="col-12 col-sm-8">
                                 <div class="card-body">
                                     <p class="card-title fs-1 m-0 text-uppercase text-danger text-uppercase">' . $row['titulo'] . ' </p>
-                                    <p class="card-text fs-3">$ ' . $row['precio'] . ' </p>
+                                    <p class="card-text fs-3">$ ' . number_format($row['precio'], 2) . ' </p>
                                     <p class="card-text">
                                     ' . $row['descripcion'] . ' 
                                     </p>
@@ -148,7 +148,7 @@ switch($opc){
                                         <div class="input-group mb-3">
                                             <span class="input-group-text">$</span>
                                             <input type="text" class="form-control text-end" id="iptSubtotal"
-                                                aria-label="Precio total del producto" value="$ ' . $row['precio'] . '" disabled>
+                                                aria-label="Precio total del producto" value="$ ' . number_format($row['precio'], 2) . '" disabled>
                                         </div>
                                     </div>
                                     <div class="card-text mt-3">

@@ -27,7 +27,7 @@ switch($opc){
                             <p class="card-title m-0 text-uppercase text-danger fw-bold"><strong>' . $row['titulo'] . '</strong></p>
                         </div>
                         <div class="card-body pb-4" style="height: 15px;">
-                            <h4 class="card-text">$'. $row['precio'] . '</h4>
+                            <h4 class="card-text">$ ' . number_format($row['precio'], 2) . '</h4>
                         </div>
                         <div class="card-body pb-4" style="height: 100px;">
                             <hr>
