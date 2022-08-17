@@ -21,10 +21,10 @@ function busqueda(n) {
   });
 }
 
-/* $(function getOrdenamiento() {
+$("#selectOrder").change(function (){
   let datos = new FormData();
-  let opcionDesabilitadaSl ='<option disabled selected value="ORDENAR">ORDENAR</option>';
   datos.append("opc", 1);
+  datos.append("ordenar",  $(this).val());
   $.ajax({
     type: "POST",
     url: "../controlador/ctrl_Buscador.php",
@@ -33,8 +33,7 @@ function busqueda(n) {
     processData: false,
     cache: false,
     success: function (respuesta) {
-      $("#selectFechas").html(opcionDesabilitadaSl + respuesta);
-      console.log("categoriasxd",respuesta) 
-     },
+      $("#contenedorProductos").html(respuesta);
+    },
   });
-}); */
+});
