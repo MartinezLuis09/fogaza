@@ -93,7 +93,7 @@ $("#listaCategorias").change(function () {
         $("#catalogoProductos").html(data);
         $("#modalProductos").modal("show");
         $("#listaCategorias").prop("selectedIndex", 0);
-        console.log(data);
+        $("#ordenarModal").prop("selectedIndex", 0);
       }
     },
   });
@@ -117,6 +117,7 @@ $("#listaCategoriasModal").change(function () {
     success: function (data) {
       if (seleccion > 0) {
         $("#catalogoProductos").html(data);
+        $("#ordenarModal").prop("selectedIndex", 0);
       }
     },
   });
