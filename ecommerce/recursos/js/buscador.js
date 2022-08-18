@@ -8,7 +8,7 @@ function busqueda(n) {
   let datos = new FormData();
   datos.append("opc", 0);
   datos.append("coincidencia", n);
-  datos.append("ordenar",  0);
+  datos.append("ordenar", 0);
   $.ajax({
     type: "POST",
     url: "../controlador/ctrl_Buscador.php",
@@ -26,7 +26,6 @@ function ordenamiento(){
   let n = localStorage.getItem("productoBuscado");
   let datos = new FormData();
   selectORDER = $("#selectOrder").val();
-  
   datos.append("opc", 0);
   datos.append("coincidencia", n);
   datos.append("ordenar",  selectORDER);
