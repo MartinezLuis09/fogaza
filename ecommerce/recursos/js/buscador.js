@@ -23,8 +23,10 @@ function busqueda(n) {
 
 $("#selectOrder").change(function (){
   let datos = new FormData();
-  datos.append("opc", 1);
-  datos.append("ordenar",  $(this).val());
+  let seleccionDelSelectM = $(this).val();
+  datos.append("opc", 0);
+  datos.append("ordenar",  seleccionDelSelectM);
+  // alert(seleccionDelSelectM)
   $.ajax({
     type: "POST",
     url: "../controlador/ctrl_Buscador.php",
