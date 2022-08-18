@@ -54,3 +54,15 @@ $("#selectCategorias").change(function () {
   });
 });
 
+
+
+$("body #contenedorProductosLista").on("click", "div", function() {
+  if ($(this).attr("id") != undefined) {
+    let idProducto = $(this).attr("id");
+        localStorage.setItem(
+          "idProducto",
+          idProducto
+        );
+        window.location.href="../vistas/producto.php";
+  }
+});

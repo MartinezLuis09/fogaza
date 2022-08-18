@@ -1,16 +1,36 @@
-$("#divProducto").hide();
-$("#divRelleno").hide();
-$("#divInfoPastel").hide();
-$("#divObservaciones").hide();
-$("#divBtnAgregar").hide();
+$(function () {
+  $("#divProducto").hide();
+  $("#divRelleno").hide();
+  $("#divInfoPastel").hide();
+  $("#divObservaciones").hide();
+  $("#divBtnAgregar").hide();
 
-$("#divCarritoCompras").hide();
-$("#infoEntregaPago").hide();
-$("#divBtnPedido").hide();
-
-$(function jsonStorage() {
-  // localStorage
+  // alert(cantProductos);
+  if (localStorage.getItem("cantProductos") == null) {
+    $("#divCarritoCompras").hide();
+    $("#infoEntregaPago").hide();
+    $("#divBtnPedido").hide();
+  }
 });
+
+// var listCarrito = [];
+// let cantProductos = localStorage.getItem("cantProductos");
+// localStorage.removeItem("cantProductos");
+
+// localStorage.removeItem("cantProductos");
+// alert(localStorage.getItem("cantProductos"));
+// // localStorage.setItem("cantProductos", 1);
+// alert(localStorage.getItem("cantProductos"));
+// localStorage.setItem(
+//   "cantProductos",
+//   parseInt(localStorage.getItem("cantProductos")) + 1
+// );
+// alert(localStorage.getItem("cantProductos"));
+// localStorage.setItem("cantProductos", 3);
+// alert(localStorage.getItem("cantProductos"));
+// localStorage.setItem("cantProductos", 4);
+// alert(localStorage.getItem("cantProductos"));
+// localStorage.setItem("cantProductos", 5);
 
 //-------------------------------------------------------------
 $(function fechaActual() {
@@ -136,11 +156,13 @@ $("#listaCategoriasModal").change(function () {
 });
 
 //---------------------------------------------------
+var idProducto;
 $("div.modal-body #catalogoProductos").on("click", "div", function () {
   if ($(this).attr("id") != undefined) {
     let datos = new FormData();
 
     datos.append("opc", 6);
+    idProducto = $(this).attr("id");
     datos.append("id", $(this).attr("id"));
 
     $.ajax({
@@ -171,6 +193,21 @@ $("div.modal-body #catalogoProductos").on("click", "div", function () {
 
 //---------------------------------------------------------
 $("#btgAgregar").click(function () {
+  let datos = new FormData();
+
+  datos.append("opc", 6);
+  datos.append("id", idProducto);
+  alert(idProducto);
+
+  if (localStorage.getItem("cantProductos") == null) {
+    localStorage.setItem("cantProductos", 1);
+  } else {
+    localStorage.setItem(
+      "cantProductos",
+      parseInt(localStorage.getItem("cantProductos")) + 1
+    );
+  }
+
   //limpiar campos y ocultar
   $("#divMensajePro").show();
   $("#divProducto").hide();

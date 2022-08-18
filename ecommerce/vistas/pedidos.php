@@ -340,7 +340,7 @@ include("navbar.php"); ?>
                                     </div>
                                     <div class="col-12 col-sm-3">
                                         <div class="form-floating mb-3">
-                                            <input type="number" class="form-control" id="montoRestante"
+                                            <input readonly type="number" class="form-control" id="montoRestante"
                                                 placeholder="Monto Restante" />
                                             <label for="montoRestante" aria-label="Restante"><i class="icon-dollar"></i>
                                                 Monto Restante</label>
