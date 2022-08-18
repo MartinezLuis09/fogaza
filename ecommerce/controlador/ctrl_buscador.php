@@ -9,7 +9,6 @@ switch ($opc) {
         $tarjetas = '';
         $ordenar = $_POST['ordenar'];
         $coincidencia = $_POST['coincidencia'];
-
         if ($ordenar == 1) {
             $sql = $obj->getPrecioMenorMayor($coincidencia);
         } elseif ($ordenar == 2) {
