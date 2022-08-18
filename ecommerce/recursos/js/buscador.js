@@ -8,6 +8,7 @@ function busqueda(n) {
   let datos = new FormData();
   datos.append("opc", 0);
   datos.append("coincidencia", n);
+  datos.append("ordenar",  0);
   $.ajax({
     type: "POST",
     url: "../controlador/ctrl_Buscador.php",
@@ -21,10 +22,14 @@ function busqueda(n) {
   });
 }
 
-$("#selectOrder").change(function (){
+function ordenamiento(){
+  let n = localStorage.getItem("productoBuscado");
   let datos = new FormData();
-  datos.append("opc", 1);
-  datos.append("ordenar",  $(this).val());
+  selectORDER = $("#selectOrder").val();
+  
+  datos.append("opc", 0);
+  datos.append("coincidencia", n);
+  datos.append("ordenar",  selectORDER);
   $.ajax({
     type: "POST",
     url: "../controlador/ctrl_Buscador.php",
@@ -36,4 +41,4 @@ $("#selectOrder").change(function (){
       $("#contenedorProductos").html(respuesta);
     },
   });
-});
+}

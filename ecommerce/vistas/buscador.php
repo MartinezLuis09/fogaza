@@ -14,8 +14,8 @@
                     </ol>
                 </nav>
                 <div class="col-11 col-sm-6 col-lg-3">
-                    <select class="form-select form-select ms-4 col-2" id="selectOrder">
-                        <option disabled="disabled" value="0">ORDENAR</option>
+                    <select class="form-select form-select ms-4 col-2" onchange="ordenamiento()" id="selectOrder">
+                        <option value="0">PRECIO</option>
                         <option value="1">Menor a mayor</option>
                         <option value="2">Mayor a menor</option>
                     </select>

@@ -10,16 +10,16 @@ Class Busqueda extends CRUD {
     return $sql;
   } 
 
-  function getPrecioMenorMayor($ordenar)
+  function getPrecioMenorMayor($coincidencia )
   {
-      $query = "SELECT * FROM productos WHERE titulo LIKE '%".$ordenar."%' ORDER BY precio ASC";
+      $query = "SELECT * FROM productos WHERE titulo LIKE '%".$coincidencia."%' ORDER BY precio ASC";
       $sql = $this->_Select($query, null, "1");
       return $sql;
   }
 
-  function getPrecioMayorMenor($ordenar)
+  function getPrecioMayorMenor($coincidencia)
   {
-      $query = "SELECT * FROM productos WHERE titulo LIKE '%".$ordenar."%' ORDER BY precio ASC";
+      $query = "SELECT * FROM productos WHERE titulo LIKE '%".$coincidencia."%' ORDER BY precio DESC";
       $sql = $this->_Select($query, null, "1");
       return $sql;
   }
