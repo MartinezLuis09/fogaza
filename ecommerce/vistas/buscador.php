@@ -45,6 +45,9 @@
     <!--ARCHIVOS SCRIPTS -->
     <script src="../recursos/js/index.js?t=<?php echo time(); ?>"></script>
     <script src="../recursos/js/buscador.js?t=<?php echo time(); ?>"></script>
+    <script src="../recursos/js/producto.js?t=<?php echo time(); ?>"></script>
+    <script src="../recursos/js/productos.js?t=<?php echo time(); ?>"></script>
+
     <script>
     AOS.init();
     </script>
