@@ -86,7 +86,7 @@ $(".btnBusqueda").click(function () {
     $("#iptBusqueda").focus();
     $("#iptBusqueda").addClass("is-invalid");
   } else {
-    localStorage.setItem("productoBuscado", $(this).val());
+    localStorage.setItem("productoBuscado", $('#iptBusqueda').val());
     window.location.href = "buscador.php";
   }
 });
