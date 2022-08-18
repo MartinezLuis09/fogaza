@@ -10,20 +10,19 @@ Class Busqueda extends CRUD {
     return $sql;
   } 
 
-  function getPrecioMenorMayor($coincidencia)
+  function getPrecioMenorMayor($ordenar)
   {
-      $query = "SELECT * FROM productos WHERE titulo LIKE '%".$coincidencia."%' ORDER BY precio ASC";
-  //  $query = "SELECT * FROM productos ORDER BY precio ASC";
+      $query = "SELECT * FROM productos WHERE titulo LIKE '%".$ordenar."%' ORDER BY precio ASC";
       $sql = $this->_Select($query, null, "1");
       return $sql;
   }
 
-  // function getPrecioMayorMenor()
-  // {
-  //     $query = "SELECT * FROM productos WHERE titulo LIKE '%".$coincidencia."%' ORDER BY precio ASC";
-  //     $sql = $this->_Select($query, null, "1");
-  //     return $sql;
-  // }
+  function getPrecioMayorMenor($ordenar)
+  {
+      $query = "SELECT * FROM productos WHERE titulo LIKE '%".$ordenar."%' ORDER BY precio ASC";
+      $sql = $this->_Select($query, null, "1");
+      return $sql;
+  }
     
 }
 ?>
