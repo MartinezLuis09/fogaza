@@ -1,13 +1,5 @@
-<!DOCTYPE html>
-<html lang="es">
-
-
-<?php
-include 'header.php';
-include 'navbar.php';
-?>
-
-<body>
+    <!-- ARCHIVOS PHP -->
+<?php include 'header.php'; include 'navbar.php';?>
 
     <!-- ENCABEZADO CATEGORIAS -->
     <div class="bg-light pt-3 ps-3 mb-2">
@@ -22,15 +14,13 @@ include 'navbar.php';
                     </ol>
                 </nav>
                 <div class="col-11 col-sm-6 col-lg-3">
-                <select class="form-select form-select ms-4 col-2" aria-label="Categorías" id="">
-                    <option selected>Destacados</option>
-                    <option value="1">Categoría 1</option>
-                    <option value="2">Categoría 2</option>
-                    <option value="3">Categoría 3</option>
-                </select>
+                    <select class="form-select form-select ms-4 col-2" onchange="ordenamiento()" id="selectOrder">
+                        <option value="0">PRECIO</option>
+                        <option value="1">Menor a mayor</option>
+                        <option value="2">Mayor a menor</option>
+                    </select>
+                </div>
             </div>
-            </div>
-            
 
             <div class="col-sm-2 col-md-6 col-lg-6 d-none d-sm-flex flex-row-reverse">
                 <button type="button" class="btn btn-default" id="btnGridList"><i class="icon-th-list"></i></button>
@@ -38,9 +28,11 @@ include 'navbar.php';
             </div>
         </div>
     </div>
-    
-
-
+</br>
+<!--BUSCADOR-->
+<body>
+    <!-- ARCHIVOS PHP -->
+<?php include("botonesflotantes.php");?>
     <main>
         <section class="container">
             <div class="row" id="contenedorProductos">
@@ -48,9 +40,13 @@ include 'navbar.php';
             </div>
         </section>
     </main>
+    <!-- ARCHIVOS PHP -->
     <?php include 'footer.php'; ?>
+    <!--ARCHIVOS SCRIPTS -->
     <script src="../recursos/js/index.js?t=<?php echo time(); ?>"></script>
     <script src="../recursos/js/buscador.js?t=<?php echo time(); ?>"></script>
+    <script src="../recursos/js/producto.js?t=<?php echo time(); ?>"></script>
+    <script src="../recursos/js/productos.js?t=<?php echo time(); ?>"></script>
 
     <script>
     AOS.init();

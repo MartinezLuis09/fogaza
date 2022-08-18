@@ -1,28 +1,25 @@
-<!DOCTYPE html>
-<html lang="es">
-
-<?php
- include("header.php");
- ?>
-
-<body>
-    <!-- ENCABEZADO CATEGORIAS -->
-    <div class="bg-light pt-3 ps-3 mb-2">
+<!--ARCHIVOS PHP -->
+<?php include("header.php"); include("navbar.php");?>
+<!-- ENCABEZADO CATEGORIAS -->
+<div class="bg-light pt-3 ps-3 mb-2">
         <div class="col-12">
             <nav class="text-uppercase" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.php" class="txt-none bold text-danger txt-hover-reset">INICIO</a></li>
-                    <li class="breadcrumb-item active bold" aria-current="page">PRODUCTO #</li>
+                    <li class="breadcrumb-item active bold" aria-current="page" id="idtituloEncabezado"></li>
                 </ol>
             </nav>
         </div>
     </div>
-
-    <main>
+<!--PRODUCTO INDIVIDUAL-->
+<body>
+<!--ARCHIVOS PHP -->
+<?php include("botonesflotantes.php");?>
+<main>
         <!-- PRODUCTOS -->
         <section class="container">
             <div class="row">
-                <div class="col-12" producto="1">
+                <div class="col-12">
                     <div class="card">
                         <div class="row">
                             <div class="col-12 col-sm-4" data-aos="fade-up">
@@ -65,20 +62,10 @@
                             </div>
                             <div class="col-12 col-sm-8">
                                 <div class="card-body">
-                                    <p class="card-title fs-1 m-0 text-uppercase text-danger text-uppercase"></p>
-                                    <p class="card-text fs-3" id="precioProducto"></p>
-                                    <p class="card-text">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut mauris
-                                        maximus, tempor mauris non, scelerisque nunc. Nullam nunc mauris, pretium et
-                                        sollicitudin ut, elementum quis enim. Sed interdum erat id orci dictum dapibus.
-                                        Nunc ut sodales sapien. Praesent a enim tempor, mattis felis non, venenatis
-                                        orci. Nam nunc orci, blandit eget mattis vel, cursus hendrerit metus. Duis ante
-                                        ligula, blandit quis diam at, lacinia luctus ante. Duis sit amet risus nec elit
-                                        laoreet ultrices quis ac risus. Pellentesque orci tellus, condimentum tempor
-                                        erat vitae, imperdiet finibus eros. Quisque tincidunt felis in dolor vehicula,
-                                        congue varius orci consequat. In egestas congue nisl, eget lacinia elit dictum
-                                        a. Nulla facilisi. Vestibulum finibus est odio, vitae auctor lacus mattis at. Ut
-                                        interdum auctor ex, eget ultrices nunc.
+                                    <p class="card-title fs-1 m-0 text-uppercase text-danger text-uppercase" id="idtitulo"></p>
+                                    <p class="card-text fs-3" >$<strong id="idprecio"></strong></p>
+                                    <p class="card-text" id="iddescripcion">
+                                        
                                     </p>
                                     <p class="card-text">
                                         <small class="text-muted">
@@ -138,16 +125,12 @@
             </div>
         </section>
     </main>
-
-    <?php
- include("footer.php");
- ?>
-
+<!--ARCHIVOS PHP -->
+    <?php include("footer.php");?>
+<!--ARCHIVOS SCRIPTS -->
     <script src="../recursos/js/index.js"=<?php echo time(); ?>"></script>
-
-    
-    <!-- <script src="../recursos/js/producto.min.js"></script> -->
-
+    <script src="../recursos/js/index.min.js"=<?php echo time(); ?>"></script>
+    <script src="../recursos/js/producto.js"=<?php echo time(); ?>"></script>
     <script>
         AOS.init();
     </script>

@@ -90,3 +90,20 @@ $(".btnBusqueda").click(function () {
     window.location.href = "buscador.php";
   }
 });
+
+$(document).ready(function(){
+	$('.btn-subir').click(function(){
+		$('body, html').animate({
+			scrollTop: '0px'
+		}, 300);
+	});
+
+	$(window).scroll(function(){
+		if( $(this).scrollTop() > 0 ){
+			$('.btn-subir').slideDown(300);
+		} else {
+			$('.btn-subir').slideUp(300);
+		}
+	});
+
+});

@@ -9,7 +9,7 @@ switch ($opc) {
         echo $obj->fechaActual();
         break;
     case 2:
-        echo $obj->ultimoFolioPedido();
+        echo $obj->ultimoFolioPedido() + 1;
         break;
     case 3:
         $email = $_POST['email'];
@@ -18,7 +18,7 @@ switch ($opc) {
             $infoUsuario = array(
                 'nombre' => $row['nombre'],
                 'email' => $row['email'],
-                'telefono' => $row['telefono'],
+                'telefono' => "(" . substr($row['telefono'], 0, 3) . ")" . " " . substr($row['telefono'], 5, 3) . " - " . substr($row['telefono'], 6, 4),
             );
         }
         echo json_encode($infoUsuario);
@@ -37,35 +37,49 @@ switch ($opc) {
         $sql = $obj->mostrarProductosFiltrados($id_categoria);
 
         foreach ($sql as $row) {
+
             $diseño =
                 '
-                <div class="gridProduct pointer col-6 col-lg-3 pt-4">
-            <div class="card">
-                <div class="rowList">
-                    <div class="imgList">
-                        <img src="../recursos/img/productos/principal/default.png?t=' . time() . '" class="card-img-top"
-                        alt="...">
-                    </div>
-                    <div class="bodyList">
-                        <div class="card-body pb-4" style="height: 65px;">
-                            <p class="card-title m-0 text-danger fw-bold"><strong>' . $row['titulo'] . '</strong></p>
-                        </div>
-                        <div class="card-body pb-4" style="height: 15px;">
-                            <h4 class="card-text">$' . $row['precio'] . '</h4>
-                        </div>
-                        <div class="card-body pb-4" style="height: 100px;">
-                            <hr>
-                            <p class="card-text ellipsis-2 text-muted descripcion">
-                            ' . $row['descripcion'] . ' 
-                            </p>
+                <div id="' . $row['id'] . '" class="gridProduct pointer col-6 col-lg-3 pt-4">
+                    <div class="card" >
+                        <div class="rowList" >
+                            <div class="imgList" >
+                                <img src="../recursos/img/productos/principal/default.png?t=' . time() . '" 
+                                class="card-img-top" alt="...">
+                            </div>
+                            <div class="bodyList">
+                                <div class="card-body pb-4" style="height: 65px;">
+                                    <p class="card-title m-0 text-danger fw-bold"><strong>' . $row['titulo'] . '</strong></p>
+                                </div>
+                                <div class="card-body pb-4" style="height: 15px;">
+                                    <h4 class="card-text">$ ' . number_format($row['precio'], 2) . '</h4>
+                                </div>
+                                <div class="card-body pb-4" style="height: 100px;">
+                                    <hr>
+                                    <p class="card-text ellipsis-2 text-muted descripcion">
+                                    ' . $row['titular'] . ' 
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
             ';
             echo $diseño;
         }
+        break;
 
+    case 6:
+        $id = $_POST['id'];
+        $sql = $obj->mostrarInformacionProducto($id);
+        foreach ($sql as $row) {
+            $infoProducto = array(
+                'titulo' => $row['titulo'],
+                'descripcion' => $row['descripcion'],
+                'precio' => $row['precio'],
+                'id_categoria' => $row['id_categoria'],
+            );
+        }
+        echo json_encode($infoProducto);
         break;
 }

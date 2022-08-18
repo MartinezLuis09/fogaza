@@ -1,4 +1,4 @@
-$(function mostrartodo() {
+$(function mostrarTodosProductos() {
   let datos = new FormData();
   datos.append("opc", 1);
   $.ajax({
@@ -10,14 +10,16 @@ $(function mostrartodo() {
     cache: false,
     success: function (respuesta) {
       $("#contenedorProductosLista").html(respuesta);
+      /*       console.log("Mostrar",respuesta);
+       */
     },
   });
 });
 
-$(function getCategorias() {
+$(function getCategoriasNombre() {
   let datos = new FormData();
-  let sl =
-  '<option disabled selected value="CATEGORIAS">CATEGORIAS</option>';
+  let opcionDesabilitada =
+    '<option class="text-uppercase  fw-bold"  disabled selected value="ELIJA UNA OPCION">ELIJA UNA OPCION</option>';
   datos.append("opc", 2);
   $.ajax({
     type: "POST",
@@ -27,19 +29,18 @@ $(function getCategorias() {
     processData: false,
     cache: false,
     success: function (respuesta) {
-      $("#slCat").html(sl + respuesta);
-      console.log("categorias",respuesta) 
-     },
+      $("#selectCategorias").html(opcionDesabilitada + respuesta);
+      // console.log("categorias",respuesta)
+    },
   });
 });
 
-$("#slCat").change(function () {
+$("#selectCategorias").change(function () {
   let datos = new FormData();
-  let seleccion = $(this).val();
-  let cat = $('#slCat>option:selected').text();
+  let seleccionDelSelect = $(this).val();
   datos.append("opc", 3);
-  datos.append("idCat", seleccion);
-   $.ajax({
+  datos.append("idCategoria", seleccionDelSelect);
+  $.ajax({
     type: "POST",
     url: "../controlador/ctrl_Productos.php",
     contentType: false,
@@ -48,9 +49,20 @@ $("#slCat").change(function () {
     cache: false,
     success: function (respuesta) {
       $("#contenedorProductosLista").html(respuesta);
-      $(".breadcrumb-item.active.bold").html(cat);
       // console.log("Mostrar",respuesta);
-        },
+    },
   });
 });
 
+
+
+$("body #contenedorProductosLista").on("click", "div", function() {
+  if ($(this).attr("id") != undefined) {
+    let idProducto = $(this).attr("id");
+        localStorage.setItem(
+          "idProducto",
+          idProducto
+        );
+        window.location.href="../vistas/producto.php";
+  }
+});

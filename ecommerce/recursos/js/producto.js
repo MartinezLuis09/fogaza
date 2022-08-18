@@ -1,23 +1,4 @@
-$(function () {
-  if (localStorage.getItem("precio")) {
-    // $('#card-title').html(localStorage.getItem('idProducto'));
-    $(".card-title").html(
-      "<strong>" + localStorage.getItem("nameProducto") + "</strong>"
-    );
-    $("#precioProducto").html(
-      "<strong>$ " +
-        parseFloat(localStorage.getItem("precio")).toFixed(2) +
-        "</strong>"
-    );
-    $("#iptSubtotal").val(
-      parseFloat(localStorage.getItem("precio")).toFixed(2)
-    );
-    $("#iptCantidad").attr(
-      "precio",
-      parseFloat(localStorage.getItem("precio"))
-    );
-  }
-});
+
 
 $("#iptMinus").click(function () {
   let cantidad = $("#iptCantidad").val();
@@ -70,4 +51,25 @@ $("#btnCarrito").click(function () {
 //       window.location.href = "./";
 //     }
 //   });
+});
+
+$(function () {
+ let datos = new FormData();
+ datos.append("opc", 4);
+ datos.append("idProducto", localStorage.getItem("idProducto"));
+ $.ajax({
+  type: "POST",
+      url: "../controlador/ctrl_Productos.php",
+      contentType: false,
+      data: datos,
+      processData: false,
+      cache: false,
+      dataType: "JSON",
+      success: function (data)  {
+      $("#idtituloEncabezado").html(data["titulo"]);
+      $("#idtitulo").html(data["titulo"]);
+      $("#iddescripcion").html(data["descripcion"]);
+      $("#idprecio").html(data["precio"]);
+    },
+  });
 });
