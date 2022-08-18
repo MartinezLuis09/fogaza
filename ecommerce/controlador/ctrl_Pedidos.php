@@ -21,8 +21,6 @@ switch ($opc) {
                 'telefono' => "(" . substr($row['telefono'], 0, 3) . ")" . " " . substr($row['telefono'], 5, 3) . " - " . substr($row['telefono'], 6, 4),
             );
         }
-
-
         echo json_encode($infoUsuario);
         break;
     case 4:
@@ -59,7 +57,7 @@ switch ($opc) {
                                 <div class="card-body pb-4" style="height: 100px;">
                                     <hr>
                                     <p class="card-text ellipsis-2 text-muted descripcion">
-                                    ' . $row['descripcion'] . ' 
+                                    ' . $row['titular'] . ' 
                                     </p>
                                 </div>
                             </div>
@@ -76,11 +74,12 @@ switch ($opc) {
         $sql = $obj->mostrarInformacionProducto($id);
         foreach ($sql as $row) {
             $infoProducto = array(
-                'nombre' => $row['nombre'],
-                'email' => $row['email'],
-                'telefono' => $row['telefono'],
+                'titulo' => $row['titulo'],
+                'descripcion' => $row['descripcion'],
+                'precio' => $row['precio'],
+                'id_categoria' => $row['id_categoria'],
             );
         }
-        echo json_encode($infoUsuario);
+        echo json_encode($infoProducto);
         break;
 }
