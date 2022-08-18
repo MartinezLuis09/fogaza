@@ -1,7 +1,16 @@
-// $("#divInfoPastel").hide();
-// $("#divObservaciones").hide();
-// $("#divInfoEntrega").hide();
-// $("#divCostos").hide();
+$("#divProducto").hide();
+$("#divRelleno").hide();
+$("#divInfoPastel").hide();
+$("#divObservaciones").hide();
+$("#divBtnAgregar").hide();
+
+$("#divCarritoCompras").hide();
+$("#infoEntregaPago").hide();
+$("#divBtnPedido").hide();
+
+$(function jsonStorage() {
+  // localStorage
+});
 
 //-------------------------------------------------------------
 $(function fechaActual() {
@@ -98,7 +107,6 @@ $("#listaCategorias").change(function () {
         $("#catalogoProductos").html(data);
         $("#modalProductos").modal("show");
         $("#listaCategorias").prop("selectedIndex", 0);
-        $("#ordenarModal").prop("selectedIndex", 0);
       }
     },
   });
@@ -122,7 +130,6 @@ $("#listaCategoriasModal").change(function () {
     success: function (data) {
       if (seleccion > 0) {
         $("#catalogoProductos").html(data);
-        $("#ordenarModal").prop("selectedIndex", 0);
       }
     },
   });
@@ -131,8 +138,65 @@ $("#listaCategoriasModal").change(function () {
 //---------------------------------------------------
 $("div.modal-body #catalogoProductos").on("click", "div", function () {
   if ($(this).attr("id") != undefined) {
-    let id = $(this).attr("id");
-    alert(id);
+    let datos = new FormData();
+
+    datos.append("opc", 6);
+    datos.append("id", $(this).attr("id"));
+
+    $.ajax({
+      type: "POST",
+      url: "../controlador/ctrl_Pedidos.php",
+      contentType: false,
+      data: datos,
+      processData: false,
+      cache: false,
+      dataType: "JSON",
+      success: function (data) {
+        $("#divMensajePro").hide();
+        $("#modalProductos").modal("hide");
+        $("#divProducto").show();
+        $("#divRelleno").show();
+        $("#divObservaciones").show();
+        $("#divBtnAgregar").show();
+
+        if (data["id_categoria"] == 1) {
+          $("#divInfoPastel").show();
+        }
+
+        $("#NombreProducto").val(data["titulo"]);
+      },
+    });
+  }
+});
+
+//---------------------------------------------------------
+$("#btgAgregar").click(function () {
+  //limpiar campos y ocultar
+  $("#divMensajePro").show();
+  $("#divProducto").hide();
+  $("#divRelleno").hide();
+  $("#divObservaciones").hide();
+  $("#divBtnAgregar").hide();
+  $("#divInfoPastel").hide();
+
+  // Mostrar nuevos campos de entrega
+  $("#divMensajeLista").hide();
+  $("#divCarritoCompras").show();
+  $("#infoEntregaPago").show();
+  $("#divBtnPedido").show();
+  $("#divDireccionEntrega").hide();
+
+  if ($("#listaCategoriasModal").val() != 1) {
+    $("#divImporteBase").hide();
+  }
+});
+
+//---------------------------------------
+$("#tipoEntrega").change(function () {
+  if ($(this).val() == "Entrega a Domicilio") {
+    $("#divDireccionEntrega").show();
+  } else {
+    $("#divDireccionEntrega").hide();
   }
 });
 
