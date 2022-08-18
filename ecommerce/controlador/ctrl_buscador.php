@@ -14,9 +14,11 @@ switch($opc){
         $precio = '';
         $portada = '';
         if ($ordenar = 1) {
-            $sql = $obj -> getPrecioMenorMayor($coincidencia);
-          }if ($ordenar = 1) {
-            $sql = $obj -> getPrecioMayorMenor($coincidencia);
+            $sql = $obj -> getPrecioMenorMayor($ordenar);
+          }if ($ordenar = 2) {
+            $sql = $obj -> getPrecioMayorMenor($ordenar);
+          }else{
+            $sql = $obj -> mostrarProductosBuscador($coincidencia);
           }
              
         foreach($sql as $row){ 
