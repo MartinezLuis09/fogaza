@@ -49,7 +49,6 @@ $("body #contenedorProductos").on("click", "div", function() {
           "idProducto",
           idProducto
         );
-        alert(idProducto);
         window.location.href="../vistas/producto.php";
   }
 });

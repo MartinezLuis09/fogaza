@@ -1,5 +1,4 @@
 
-
 $("#iptMinus").click(function () {
   let cantidad = $("#iptCantidad").val();
   let precio = $("#iptCantidad").attr("precio");

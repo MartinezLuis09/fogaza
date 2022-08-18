@@ -22,7 +22,7 @@ switch ($opc) {
             $tarjetas .=
                 '
                 <div class="gridProduct pointer col-6 col-lg-3 pt-4">
-                    <div class="card" >
+                    <div class="card" id="'. $row['id'] . '">
                         <div class="rowList">
                             <div class="imgList">
                                 <img src="../recursos/img/productos/principal/default.png?t=' .
