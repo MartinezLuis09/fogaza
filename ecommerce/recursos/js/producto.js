@@ -75,7 +75,6 @@ $("#btnCarrito").click(function () {
 $("body #contenedorProductosLista").on("click", "div", function() {
   if ($(this).attr("id") != undefined) {
     let idProducto = $(this).attr("id");
-    /* alert(idProducto); */
     let datos = new FormData();
     datos.append("opc", 4);
     datos.append("idProducto", idProducto);
@@ -87,8 +86,8 @@ $("body #contenedorProductosLista").on("click", "div", function() {
       processData: false,
       cache: false,
       success: function (respuesta) {
-        window.location.replace("../vistas/producto.php");
         $("#contenedorProducto").html(respuesta);
+        window.location.href="../vistas/producto.php";
          console.log("Mostrar", respuesta);
       },
     });
