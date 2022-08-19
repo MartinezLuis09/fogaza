@@ -9,13 +9,16 @@ switch ($opc) {
         $tarjetas = '';
         $ordenar = $_POST['ordenar'];
         $coincidencia = $_POST['coincidencia'];
+
         if ($ordenar == 1) {
-            $sql = $obj->getPrecioMenorMayor($coincidencia);
+            $ordenar = 'ASC';
         } elseif ($ordenar == 2) {
-            $sql = $obj->getPrecioMayorMenor($coincidencia);
-        } elseif ($ordenar == 0) {
-            $sql = $obj->mostrarProductosBuscador($coincidencia);
+            $ordenar = 'DESC';
+        } else {
+            $ordenar = null;
         }
+
+        $sql = $obj->mostrarProductosBuscador($coincidencia,$ordenar);
 
         foreach ($sql as $row) {
             $tarjetas .=
@@ -24,28 +27,22 @@ switch ($opc) {
                     <div class="card" id="'. $row['id'] . '">
                         <div class="rowList">
                             <div class="imgList">
-                                <img src="../recursos/img/productos/principal/default.png?t=' .
-                time() .
-                '" class="card-img-top"
+                                <img src="../recursos/img/productos/principal/default.png?t='.time().'" class="card-img-top"
                                 alt="...">
                             </div>
                             <div class="bodyList">
                                 <div class="card-body pb-4" style="height: 70px;">
-                                    <p class="card-title m-0 text-uppercase text-danger fw-bold"><strong>' .
-                $row['titulo'] .
-                '</strong></p>
+                                    <p class="card-title m-0 text-uppercase text-danger fw-bold">
+                                        <strong>'.$row['titulo'].'</strong>
+                                    </p>
                                 </div>
                                 <div class="card-body pb-4" style="height: 15px;">
-                                    <h4 class="card-text">$' .
-                $row['precio'] .
-                '</h4>
+                                    <h4 class="card-text">$' .$row['precio'] .'</h4>
                                 </div>
                                 <div class="card-body pb-4" style="height: 100px;">
                                     <hr>
                                     <p class="card-text ellipsis-2 text-muted descripcion">
-                                    ' .
-                $row['descripcion'] .
-                ' 
+                                        '.$row['descripcion'] .' 
                                     </p>
                                 </div>
                             </div>
