@@ -186,9 +186,6 @@ include("navbar.php"); ?>
                     </div>
                 </div>
             </div>
-
-
-
             <div class="row" id="divListaProductos">
                 <div class="card mb-3" style="z-index:1;">
                     <div class="row">
