@@ -1,14 +1,15 @@
 $(function () {
-  let productoBuscado = localStorage.getItem("productoBuscado");
-  $("#productoBuscado").html(productoBuscado);
-  busqueda(productoBuscado);
+  busqueda();
 });
 
-function busqueda(n) {
+function busqueda() {
+  let productoBuscado = localStorage.getItem("productoBuscado");
+  $("#productoBuscado").html(productoBuscado);
+
   let datos = new FormData();
   datos.append("opc", 0);
-  datos.append("coincidencia", n);
-  datos.append("ordenar", 0);
+  datos.append("coincidencia", productoBuscado);
+  datos.append("ordenar", $("#selectOrder").val());
   $.ajax({
     type: "POST",
     url: "../controlador/ctrl_Buscador.php",
@@ -22,33 +23,10 @@ function busqueda(n) {
   });
 }
 
-function ordenamiento(){
-  let n = localStorage.getItem("productoBuscado");
-  let datos = new FormData();
-  selectORDER = $("#selectOrder").val();
-  datos.append("opc", 0);
-  datos.append("coincidencia", n);
-  datos.append("ordenar",  selectORDER);
-  $.ajax({
-    type: "POST",
-    url: "../controlador/ctrl_Buscador.php",
-    contentType: false,
-    data: datos,
-    processData: false,
-    cache: false,
-    success: function (respuesta) {
-      $("#contenedorProductos").html(respuesta);
-    },
-  });
-}
-
-$("body #contenedorProductos").on("click", "div", function() {
+$("body #contenedorProductos").on("click", "div", function () {
   if ($(this).attr("id") != undefined) {
     let idProducto = $(this).attr("id");
-        localStorage.setItem(
-          "idProducto",
-          idProducto
-        );
-        window.location.href="../vistas/producto.php";
+    localStorage.setItem("idProducto", idProducto);
+    window.location.href = "../vistas/producto.php";
   }
 });
