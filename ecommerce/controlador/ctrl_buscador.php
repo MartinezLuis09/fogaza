@@ -37,16 +37,12 @@ switch ($opc) {
                                     </p>
                                 </div>
                                 <div class="card-body pb-4" style="height: 15px;">
-                                    <h4 class="card-text">$' .
-                $row['precio'] .
-                '</h4>
+                                    <h4 class="card-text">$' .$row['precio'] .'</h4>
                                 </div>
                                 <div class="card-body pb-4" style="height: 100px;">
                                     <hr>
                                     <p class="card-text ellipsis-2 text-muted descripcion">
-                                    ' .
-                $row['descripcion'] .
-                ' 
+                                        '.$row['descripcion'] .' 
                                     </p>
                                 </div>
                             </div>

@@ -5,7 +5,6 @@ $(function () {
 function busqueda() {
   let productoBuscado = localStorage.getItem("productoBuscado");
   $("#productoBuscado").html(productoBuscado);
-
   let datos = new FormData();
   datos.append("opc", 0);
   datos.append("coincidencia", productoBuscado);
