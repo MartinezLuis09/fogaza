@@ -7,14 +7,13 @@ $(function () {
 
   // alert(cantProductos);
   if (localStorage.getItem("cantidad") == null) {
+    let pedidos = [];
+
     $("#divCarritoCompras").hide();
     $("#infoEntregaPago").hide();
     $("#divBtnPedido").hide();
   } else {
     $("#divMensajeLista").hide();
-
-    //pedidos.push(JSON.parse(localStorage.getItem("lcsPedidos")));
-    // alert(pedidos);
   }
 });
 
@@ -166,24 +165,22 @@ $("div.modal-body #catalogoProductos").on("click", "div", function () {
   }
 });
 
-let pedidos = [];
 $("#btgAgregar").click(function () {
   if (localStorage.getItem("cantidad") == null) {
     localStorage.setItem("cantidad", 0);
+    alert(5);
   } else {
     localStorage.setItem(
       "cantidad",
       parseInt(localStorage.getItem("cantidad")) + 1
     );
   }
-  pedidos[parseInt(localStorage.getItem("cantidad"))] = ("#NombreProducto").val();
+
+  alert(5);
+  pedidos.push("#NombreProducto".val());
   localStorage.setItem("lcsPedidos", JSON.stringify(pedidos));
 
   // JSON.parse(localStorage.getItem("lcsPedidos"));
-
-  let datos = new FormData();
-  datos.append("opc", 7);
-  datos.append("id", idProducto);
 
   $.ajax({
     type: "POST",
@@ -193,25 +190,10 @@ $("#btgAgregar").click(function () {
     processData: false,
     cache: false,
     success: function (respuesta) {
+      alert(5);
       $("#divCarritoCompras").html(respuesta);
     },
   });
-
-  // let datos = new FormData();
-  // datos.append("opc", 7);
-  // datos.append("id", idProducto);
-
-  // $.ajax({
-  //   type: "POST",
-  //   url: "../controlador/ctrl_Pedidos.php",
-  //   contentType: false,
-  //   data: datos,
-  //   processData: false,
-  //   cache: false,
-  //   success: function (respuesta) {
-  //     $("#divCarritoCompras").html(respuesta);
-  //   },
-  // });
 
   //limpiar campos y ocultar
   $("#divMensajePro").show();
