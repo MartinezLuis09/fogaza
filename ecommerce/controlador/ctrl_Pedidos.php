@@ -13,7 +13,7 @@ switch ($opc) {
         break;
     case 3:
         $email = $_POST['email'];
-        $sql = $obj->consutarInformacionCliente($email);
+        $sql = $obj->informacionUsuario($email);
         foreach ($sql as $row) {
             $infoUsuario = array(
                 'nombre' => $row['nombre'],
@@ -24,23 +24,23 @@ switch ($opc) {
         echo json_encode($infoUsuario);
         break;
     case 4:
-        $diseño = null;
-        $sql = $obj->mostrarCategoriaProdudctos();
+        $diseño = '<option selected value="0" disabled >Seleccione una Opción</option>';
+        $sql = $obj->categoriaProductos();
         foreach ($sql as $row) {
-            $diseño = '<option value="' . $row['id'] . '">' . $row['categoria'] . '</option>';
-            echo $diseño;
+            $diseño .= '<option value="' . $row['id'] . '">' . $row['categoria'] . '</option>';
         }
+        echo $diseño;
         break;
     case 5:
         $diseño = null;
         $id_categoria = $_POST['id_categoria'];
-        $sql = $obj->mostrarProductosFiltrados($id_categoria);
+        $sql = $obj->productosPorCategoria($id_categoria);
 
         foreach ($sql as $row) {
 
             $diseño =
                 '
-                <div id="' . $row['id'] . '" class="gridProduct pointer col-6 col-lg-3 pt-4">
+                <div id="' . $row['titulo'] . '" class="gridProduct pointer col-6 col-lg-3 pt-4">
                     <div class="card" >
                         <div class="rowList" >
                             <div class="imgList" >
@@ -52,12 +52,12 @@ switch ($opc) {
                                     <p class="card-title m-0 text-danger fw-bold"><strong>' . $row['titulo'] . '</strong></p>
                                 </div>
                                 <div class="card-body pb-4" style="height: 15px;">
-                                    <h4 class="card-text">$ ' . number_format($row['precio'], 2) . '</h4>
+                                    <h4 class="card-text">$ ' . number_format($row['precio'], 2, ',', '.') . '</h4>
                                 </div>
                                 <div class="card-body pb-4" style="height: 100px;">
                                     <hr>
                                     <p class="card-text ellipsis-2 text-muted descripcion">
-                                    ' . $row['titular'] . ' 
+                                    ' . $row['descripcion'] . ' 
                                     </p>
                                 </div>
                             </div>
@@ -70,8 +70,8 @@ switch ($opc) {
         break;
 
     case 6:
-        $id = $_POST['id'];
-        $sql = $obj->mostrarInformacionProducto($id);
+        $titulo = $_POST['titulo'];
+        $sql = $obj->informacionProducto($titulo);
         foreach ($sql as $row) {
             $infoProducto = array(
                 'titulo' => $row['titulo'],
@@ -81,5 +81,43 @@ switch ($opc) {
             );
         }
         echo json_encode($infoProducto);
+        break;
+    case 7:
+        $diseño = null;
+        $titulo = $_POST['titulo'];
+        $sql = $obj->informacionProducto($titulo);
+        foreach ($sql as $row) {
+            $diseño = '
+            <div class="row">
+                <div class="card-text col-4 col-sm-4 col-md-4 col-lg-2 col-xl-2">
+                       <img src="../recursos/img/productos/principal/default.png" width="100px" alt="">
+                </div>
+                <div class="card-text col-8 col-sm-8 col-md-8 col-lg-4 col-xl-5">
+                    <p class="text-uppercase fw-bold">' . $row['titulo'] . '</p>
+                    <p class="text-muted m-0">Sabor: #</p>
+                    <p class="text-muted m-0">Tamaño: #</p>
+                    <p class="text-muted m-0 ellipsis-2">' . $row['descripcion'] . '</p>
+                </div>
+                <div class="card-text col-6 col-sm-6 col-md-6 col-lg-3 col-xl-2">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text bg-white pointer" id="iptMinus"
+                            aria-label="Restar cantidad"><i class="icon-minus"></i></span>
+                        <input type="text" class="form-control c-auto text-center" id="iptCantidad"
+                            aria-label="cantidad" value="1" readonly>
+                        <span class="input-group-text bg-white pointer" aria-label="Sumar cantidad"
+                            id="iptPlus"><i class="icon-plus"></i></span>
+                    </div>
+                </div>
+                <div class="card-text col-3 col-sm-2 col-md-3 col-lg-2 col-xl-2 text-center">
+                    <p class="fw-bold" id="precio' . $row['id'] . '" >$ ' . number_format($row['precio'], 2) . '</p>
+                </div>
+                <div class="card-text col-3 col-sm-2 col-md-3 col-lg-1 col-xl-1 text-center">
+                    <button class="btn btn-outline-danger"><i class="icon-trash"></i></button>
+                </div>
+                <hr>
+            </div>            
+            ';
+        }
+        echo $diseño;
         break;
 }
