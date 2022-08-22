@@ -5,7 +5,8 @@
         <div class="col-12">
             <nav class="text-uppercase" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.php" class="txt-none bold text-danger txt-hover-reset">INICIO</a></li>
+                    <li class="breadcrumb-item"><a href="index.php" class="txt-none bold text-danger txt-hover-reset">SEGUIR
+                                COMPRANDO</a></li>
                     <li class="breadcrumb-item active bold" aria-current="page" id="idtituloEncabezado"></li>
                 </ol>
             </nav>

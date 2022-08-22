@@ -54,7 +54,7 @@ $("#btnCarrito").click(function () {
 
 $(function () {
  let datos = new FormData();
- datos.append("opc", 4);
+ datos.append("opc", 3);
  datos.append("idProducto", localStorage.getItem("idProducto"));
  $.ajax({
   type: "POST",

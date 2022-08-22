@@ -7,15 +7,8 @@ Class Producto extends CRUD {
         $sql = $this->_Select($query,null,"1");
         return $sql;
     }
-
-    function mostrarProductosCategoria($idCategoria) {
-        $query = "SELECT * FROM productos WHERE id_categoria = '" . $idCategoria . "'";
-        $sql = $this->_Select($query,null,"1");
-        return $sql;
-      } 
       
-    function getCategoriasProductos()
-    {
+    function getCategoriasProductos() {
         $query = "SELECT * FROM categorias ORDER BY id ASC";
         $sql = $this->_Select($query, null, "1");
         return $sql;
@@ -25,6 +18,6 @@ Class Producto extends CRUD {
         $query = "SELECT * FROM productos WHERE id = '" . $idProducto . "'";
         $sql = $this->_Select($query,null,"1");
         return $sql;
-      } 
+    } 
 }
 ?>

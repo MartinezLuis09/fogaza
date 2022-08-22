@@ -19,30 +19,30 @@ class Pedidos extends CRUD
         return  $row[0];
     }
 
-    function consutarInformacionCliente($email)
+    function informacionUsuario($email)
     {
         $query = "SELECT * FROM usuarios WHERE email = '" . $email . "'";
         $sql = $this->_Select($query, null, "1");
         return $sql;
     }
 
-    function mostrarCategoriaProdudctos()
+    function categoriaProductos()
     {
         $query = "SELECT * FROM categorias ORDER BY id ASC";
         $sql = $this->_Select($query, null, "1");
         return $sql;
     }
 
-    function mostrarProductosFiltrados($id_categoria)
+    function productosPorCategoria($id_categoria)
     {
         $query = "SELECT * FROM productos WHERE id_categoria = '" . $id_categoria . "' ";
         $sql = $this->_Select($query, null, "1");
         return $sql;
     }
 
-    function mostrarInformacionProducto($id)
+    function informacionProducto($titulo)
     {
-        $query = "SELECT * FROM productos WHERE id = '" . $id . "' ";
+        $query = "SELECT * FROM productos WHERE titulo = '" . $titulo . "' ";
         $sql = $this->_Select($query, null, "1");
         return $sql;
     }

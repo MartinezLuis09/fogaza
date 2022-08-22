@@ -6,36 +6,21 @@ $(function () {
   $("#divBtnAgregar").hide();
 
   // alert(cantProductos);
-  if (localStorage.getItem("cantProductos") == null) {
+  if (localStorage.getItem("cantidad") == null) {
+    let pedidos = [];
+
     $("#divCarritoCompras").hide();
     $("#infoEntregaPago").hide();
     $("#divBtnPedido").hide();
+  } else {
+    $("#divMensajeLista").hide();
   }
 });
 
-// var listCarrito = [];
-// let cantProductos = localStorage.getItem("cantProductos");
-// localStorage.removeItem("cantProductos");
-
-// localStorage.removeItem("cantProductos");
-// alert(localStorage.getItem("cantProductos"));
-// // localStorage.setItem("cantProductos", 1);
-// alert(localStorage.getItem("cantProductos"));
-// localStorage.setItem(
-//   "cantProductos",
-//   parseInt(localStorage.getItem("cantProductos")) + 1
-// );
-// alert(localStorage.getItem("cantProductos"));
-// localStorage.setItem("cantProductos", 3);
-// alert(localStorage.getItem("cantProductos"));
-// localStorage.setItem("cantProductos", 4);
-// alert(localStorage.getItem("cantProductos"));
-// localStorage.setItem("cantProductos", 5);
-
-//-------------------------------------------------------------
 $(function fechaActual() {
   let datos = new FormData();
   datos.append("opc", 1);
+
   $.ajax({
     type: "POST",
     url: "../controlador/ctrl_Pedidos.php",
@@ -49,10 +34,10 @@ $(function fechaActual() {
   });
 });
 
-//-------------------------------------------------------------
 $(function ultimoFolioPedido() {
   let datos = new FormData();
   datos.append("opc", 2);
+
   $.ajax({
     type: "POST",
     url: "../controlador/ctrl_Pedidos.php",
@@ -66,11 +51,11 @@ $(function ultimoFolioPedido() {
   });
 });
 
-//-----------------------------------------------
-$(function MostrarInfoUsu() {
+$(function informacionUsuario() {
   let datos = new FormData();
   datos.append("opc", 3);
   datos.append("email", "asdasd@asasdasd.bk");
+
   $.ajax({
     type: "POST",
     url: "../controlador/ctrl_Pedidos.php",
@@ -87,12 +72,10 @@ $(function MostrarInfoUsu() {
   });
 });
 
-//------------------------
-$(function mostrarCategorias() {
+$(function categoriasProductos() {
   let datos = new FormData();
-  let men =
-    '<option selected value="0" disabled >Seleccione una Opción</option>';
   datos.append("opc", 4);
+
   $.ajax({
     type: "POST",
     url: "../controlador/ctrl_Pedidos.php",
@@ -101,18 +84,16 @@ $(function mostrarCategorias() {
     processData: false,
     cache: false,
     success: function (respuesta) {
-      $("#listaCategorias").html(men + respuesta);
-      $("#listaCategoriasModal").html(men + respuesta);
+      $("#listaCategorias").html(respuesta);
+      $("#listaCategoriasModal").html(respuesta);
     },
   });
 });
 
 $("#listaCategorias").change(function () {
   let datos = new FormData();
-  let seleccion = $(this).val();
-
   datos.append("opc", 5);
-  datos.append("id_categoria", seleccion);
+  datos.append("id_categoria", $("#listaCategorias").val());
 
   $.ajax({
     type: "POST",
@@ -122,23 +103,21 @@ $("#listaCategorias").change(function () {
     processData: false,
     cache: false,
     success: function (data) {
-      if (seleccion > 0) {
-        $("#listaCategoriasModal").prop("selectedIndex", seleccion);
-        $("#catalogoProductos").html(data);
-        $("#modalProductos").modal("show");
-        $("#listaCategorias").prop("selectedIndex", 0);
-      }
+      $("#listaCategoriasModal").prop(
+        "selectedIndex",
+        $("#listaCategorias").val()
+      );
+      $("#catalogoProductos").html(data);
+      $("#modalProductos").modal("show");
+      $("#listaCategorias").prop("selectedIndex", 0);
     },
   });
 });
 
-//---------------------------------------
 $("#listaCategoriasModal").change(function () {
   let datos = new FormData();
-  let seleccion = $(this).val();
-
   datos.append("opc", 5);
-  datos.append("id_categoria", seleccion);
+  datos.append("id_categoria", $("#listaCategoriasModal").val());
 
   $.ajax({
     type: "POST",
@@ -148,22 +127,17 @@ $("#listaCategoriasModal").change(function () {
     processData: false,
     cache: false,
     success: function (data) {
-      if (seleccion > 0) {
-        $("#catalogoProductos").html(data);
-      }
+      $("#catalogoProductos").html(data);
     },
   });
 });
 
 //---------------------------------------------------
-var idProducto;
 $("div.modal-body #catalogoProductos").on("click", "div", function () {
   if ($(this).attr("id") != undefined) {
     let datos = new FormData();
-
     datos.append("opc", 6);
-    idProducto = $(this).attr("id");
-    datos.append("id", $(this).attr("id"));
+    datos.append("titulo", $(this).attr("id"));
 
     $.ajax({
       type: "POST",
@@ -191,22 +165,35 @@ $("div.modal-body #catalogoProductos").on("click", "div", function () {
   }
 });
 
-//---------------------------------------------------------
 $("#btgAgregar").click(function () {
-  let datos = new FormData();
-
-  datos.append("opc", 6);
-  datos.append("id", idProducto);
-  alert(idProducto);
-
-  if (localStorage.getItem("cantProductos") == null) {
-    localStorage.setItem("cantProductos", 1);
+  if (localStorage.getItem("cantidad") == null) {
+    localStorage.setItem("cantidad", 0);
+    alert(5);
   } else {
     localStorage.setItem(
-      "cantProductos",
-      parseInt(localStorage.getItem("cantProductos")) + 1
+      "cantidad",
+      parseInt(localStorage.getItem("cantidad")) + 1
     );
   }
+
+  alert(5);
+  pedidos.push("#NombreProducto".val());
+  localStorage.setItem("lcsPedidos", JSON.stringify(pedidos));
+
+  // JSON.parse(localStorage.getItem("lcsPedidos"));
+
+  $.ajax({
+    type: "POST",
+    url: "../controlador/ctrl_Pedidos.php",
+    contentType: false,
+    data: datos,
+    processData: false,
+    cache: false,
+    success: function (respuesta) {
+      alert(5);
+      $("#divCarritoCompras").html(respuesta);
+    },
+  });
 
   //limpiar campos y ocultar
   $("#divMensajePro").show();
@@ -228,7 +215,6 @@ $("#btgAgregar").click(function () {
   }
 });
 
-//---------------------------------------
 $("#tipoEntrega").change(function () {
   if ($(this).val() == "Entrega a Domicilio") {
     $("#divDireccionEntrega").show();
